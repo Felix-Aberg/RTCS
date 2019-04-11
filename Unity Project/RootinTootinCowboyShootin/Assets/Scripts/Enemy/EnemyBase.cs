@@ -30,6 +30,7 @@ public class EnemyBase : MonoBehaviour
 
         //make reticle
         //reticle = Instantiate(reticle_prefab, reticle_position.position, Quaternion.identity);
+
         reticle.GetComponent<ReticleScript>().InstantiateArrows(indicated_arrow_1, indicated_arrow_2);
     }
 

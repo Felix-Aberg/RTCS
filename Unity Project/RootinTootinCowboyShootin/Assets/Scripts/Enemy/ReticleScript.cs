@@ -26,13 +26,6 @@ public class ReticleScript : MonoBehaviour
     ArrowDirection indicated_arrow_1;
     ArrowDirection indicated_arrow_2;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        foreach (GameObject arrow in arrow_objects) //Set all arrows to default sprite
-            arrow.GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)ArrowType.DEFAULT];
-    }
-
     public void UpdateArrow(ArrowDirection dir, bool pressed)
     {
         if(pressed)
