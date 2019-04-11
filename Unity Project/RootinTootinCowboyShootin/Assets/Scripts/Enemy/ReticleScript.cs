@@ -19,7 +19,7 @@ public enum ArrowType
     NOT_INDICATED_PRESSED
 };
 
-public class Reticle : MonoBehaviour
+public class ReticleScript : MonoBehaviour
 {
     public GameObject[] arrow_objects;
     public Sprite[] arrow_sprites;
