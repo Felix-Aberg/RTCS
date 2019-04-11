@@ -175,6 +175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2779681272e5ff642894eb3af9cf23ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reticle_sprites:
+  - {fileID: 21300000, guid: 5846a1ceb8a93fa44a391365827c8c69, type: 3}
+  - {fileID: 21300000, guid: 6d6c55a97b1907f48872c774b7b09266, type: 3}
+  - {fileID: 21300000, guid: 7d30a235b6ced9a418620c1177c37373, type: 3}
   arrow_objects:
   - {fileID: 2161999719791149283}
   - {fileID: 2161999720094281477}
@@ -185,6 +189,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 637ce8104a7f8934aae60cd38e400e70, type: 3}
   - {fileID: 21300000, guid: f8d3da6696235d94eb58c0f29852b6b2, type: 3}
   - {fileID: 21300000, guid: 4bc845b2bc4aed74ea29a0b4145feb82, type: 3}
+  directions_correct: 0
 --- !u!1 &2161999719791149283
 GameObject:
   m_ObjectHideFlags: 0

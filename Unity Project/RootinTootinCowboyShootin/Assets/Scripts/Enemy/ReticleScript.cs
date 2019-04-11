@@ -21,12 +21,49 @@ public enum ArrowType
 
 public class ReticleScript : MonoBehaviour
 {
+    public Sprite[] reticle_sprites;
     public GameObject[] arrow_objects;
     public Sprite[] arrow_sprites;
     ArrowDirection indicated_arrow_1;
     ArrowDirection indicated_arrow_2;
+    ArrowDirection wrong_arrow_1;
+    ArrowDirection wrong_arrow_2;
 
-    public void UpdateArrow(ArrowDirection dir, bool pressed)
+    bool indicated_arrow_pressed_1;
+    bool indicated_arrow_pressed_2;
+    bool wrong_arrow_pressed_1;
+    bool wrong_arrow_pressed_2;
+
+    public bool directions_correct;
+
+    void Update() //Remove once InputHandler is implemented
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+            UpdateReticle(ArrowDirection.UP, true);
+
+        if (Input.GetKeyUp(KeyCode.W))
+            UpdateReticle(ArrowDirection.UP, false);
+
+        if (Input.GetKeyDown(KeyCode.S))
+            UpdateReticle(ArrowDirection.DOWN, true);
+
+        if (Input.GetKeyUp(KeyCode.S))
+            UpdateReticle(ArrowDirection.DOWN, false);
+
+        if (Input.GetKeyDown(KeyCode.A))
+            UpdateReticle(ArrowDirection.LEFT, true);
+
+        if (Input.GetKeyUp(KeyCode.A))
+            UpdateReticle(ArrowDirection.LEFT, false);
+
+        if (Input.GetKeyDown(KeyCode.D))
+            UpdateReticle(ArrowDirection.RIGHT, true);
+
+        if (Input.GetKeyUp(KeyCode.D))
+            UpdateReticle(ArrowDirection.RIGHT, false);
+    }
+
+    public void UpdateReticle(ArrowDirection dir, bool pressed)
     {
         if(pressed)
         {
@@ -45,12 +82,58 @@ public class ReticleScript : MonoBehaviour
 
             else
                 arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.DEFAULT)];
+        }
 
+        if (dir == indicated_arrow_1)
+            indicated_arrow_pressed_1 = pressed;
+
+        if (dir == indicated_arrow_2)
+            indicated_arrow_pressed_2 = pressed;
+
+        if (dir == wrong_arrow_1)
+            wrong_arrow_pressed_1 = pressed;
+
+        if (dir == wrong_arrow_2)
+            wrong_arrow_pressed_2 = pressed;
+
+
+        if (indicated_arrow_pressed_1 && indicated_arrow_pressed_2 &&
+               !wrong_arrow_pressed_1 && !wrong_arrow_pressed_2)
+        {
+            directions_correct = true;
+            GetComponent<SpriteRenderer>().sprite = reticle_sprites[1];
+        }
+
+        else
+        {
+            directions_correct = false;
+            GetComponent<SpriteRenderer>().sprite = reticle_sprites[0];
         }
     }
 
     public void InstantiateArrows(ArrowDirection dir1, ArrowDirection dir2) // When enemy is spawned set 2 arrows to indicated and enable reticle
     {
+        indicated_arrow_1 = dir1;
+        indicated_arrow_2 = dir2;
+
+        for(int i = 0; i < 4; i++)
+        {
+            if (i != (int)dir1 && i != (int)dir2)
+            {
+                wrong_arrow_1 = (ArrowDirection)i;
+                break;
+            }
+        }
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (i != (int)dir1 && i != (int)dir2 && i != (int)wrong_arrow_1)
+            {
+                wrong_arrow_2 = (ArrowDirection)i;
+                break;
+            }
+        }
+
         SetArrowSprite(dir1, ArrowType.INDICATED);
         SetArrowSprite(dir2, ArrowType.INDICATED);
         gameObject.SetActive(true);
