@@ -4,17 +4,52 @@ using UnityEngine;
 
 public class CrosshairScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject current_reticle;
+    public int reticles_correct; //How many reticles that are correct
+
     void Start()
     {
         Cursor.visible = false;
     }
 
-    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            if (current_reticle != null)
+            {
+                Debug.Log("reticle exists");
+                if (current_reticle.GetComponent<ReticleScript>().directions_correct)
+                {
+                    Debug.Log("directions correct");
+                    if (current_reticle.GetComponent<ReticleScript>().crosshair_correct)
+                    {
+                        Debug.Log("crosshair correct");
+                        Shoot();
+                    }
+                }
+            }
+
+            if (reticles_correct < 1)
+                ShootFoot();
+        }
+    }
+
     void LateUpdate()
     {
         Vector2 mousepos; mousepos = Input.mousePosition;
         mousepos = Camera.main.ScreenToWorldPoint(mousepos);
         transform.position = mousepos;
+    }
+
+    void Shoot()
+    {
+        Debug.Log("BigIron down");
+    }
+
+    void ShootFoot()
+    {
+
+        Debug.Log("Ouch owie my footsie");
     }
 }

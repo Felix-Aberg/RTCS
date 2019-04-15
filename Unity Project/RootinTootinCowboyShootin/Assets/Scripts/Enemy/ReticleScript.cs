@@ -34,8 +34,8 @@ public class ReticleScript : MonoBehaviour
     bool wrong_arrow_pressed_1;
     bool wrong_arrow_pressed_2;
 
-    bool directions_correct;
-    bool crosshair_correct;
+    public bool directions_correct;
+    public bool crosshair_correct;
 
     GameObject crosshair;
 
@@ -107,12 +107,23 @@ public class ReticleScript : MonoBehaviour
 
         if (indicated_arrow_pressed_1 && indicated_arrow_pressed_2 &&
                !wrong_arrow_pressed_1 && !wrong_arrow_pressed_2)
-            directions_correct = true;
+        {
+            if (!directions_correct)
+            {
+                directions_correct = true;
+                crosshair.GetComponent<CrosshairScript>().reticles_correct++;
+                Debug.Log(crosshair.GetComponent<CrosshairScript>().reticles_correct);
+            }
+        }
 
-        else
+        else if (directions_correct)
+        {
             directions_correct = false;
+            crosshair.GetComponent<CrosshairScript>().reticles_correct--;
+            Debug.Log(crosshair.GetComponent<CrosshairScript>().reticles_correct);
+        }
 
-        UpdateReticle();
+            UpdateReticle();
     }
 
     public void InstantiateArrows(ArrowDirection dir1, ArrowDirection dir2) // When enemy is spawned set 2 arrows to indicated and enable reticle
@@ -198,6 +209,7 @@ public class ReticleScript : MonoBehaviour
         if (other.tag == "Crosshair")
         {
             crosshair_correct = true;
+            crosshair.GetComponent<CrosshairScript>().current_reticle = gameObject;
             UpdateReticle();
         }
     }
@@ -207,6 +219,7 @@ public class ReticleScript : MonoBehaviour
         if (other.tag == "Crosshair")
         {
             crosshair_correct = false;
+            crosshair.GetComponent<CrosshairScript>().current_reticle = null;
             UpdateReticle();
         }
     }
