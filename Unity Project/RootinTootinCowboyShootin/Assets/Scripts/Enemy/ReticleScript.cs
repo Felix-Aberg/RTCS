@@ -34,7 +34,15 @@ public class ReticleScript : MonoBehaviour
     bool wrong_arrow_pressed_1;
     bool wrong_arrow_pressed_2;
 
-    public bool directions_correct;
+    bool directions_correct;
+    bool crosshair_correct;
+
+    GameObject crosshair;
+
+    void Start()
+    {
+        crosshair = GameObject.Find("Crosshair");
+    }
 
     void Update() //Remove once InputHandler is implemented
     {
@@ -99,16 +107,12 @@ public class ReticleScript : MonoBehaviour
 
         if (indicated_arrow_pressed_1 && indicated_arrow_pressed_2 &&
                !wrong_arrow_pressed_1 && !wrong_arrow_pressed_2)
-        {
             directions_correct = true;
-            GetComponent<SpriteRenderer>().sprite = reticle_sprites[1];
-        }
 
         else
-        {
             directions_correct = false;
-            GetComponent<SpriteRenderer>().sprite = reticle_sprites[0];
-        }
+
+        UpdateReticle();
     }
 
     public void InstantiateArrows(ArrowDirection dir1, ArrowDirection dir2) // When enemy is spawned set 2 arrows to indicated and enable reticle
@@ -177,5 +181,33 @@ public class ReticleScript : MonoBehaviour
         }
     }
 
-    
+    void UpdateReticle()
+    {
+        if (!directions_correct && !crosshair_correct)
+            GetComponent<SpriteRenderer>().sprite = reticle_sprites[0];
+
+        if (directions_correct || crosshair_correct)
+            GetComponent<SpriteRenderer>().sprite = reticle_sprites[1];
+
+        if (directions_correct && crosshair_correct)
+            GetComponent<SpriteRenderer>().sprite = reticle_sprites[2];
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Crosshair")
+        {
+            crosshair_correct = true;
+            UpdateReticle();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Crosshair")
+        {
+            crosshair_correct = false;
+            UpdateReticle();
+        }
+    }
 }

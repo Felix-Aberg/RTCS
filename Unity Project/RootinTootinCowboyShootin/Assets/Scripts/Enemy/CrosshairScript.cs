@@ -7,12 +7,14 @@ public class CrosshairScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        Vector2 mousepos; mousepos = Input.mousePosition;
+        mousepos = Camera.main.ScreenToWorldPoint(mousepos);
+        transform.position = mousepos;
     }
 }
