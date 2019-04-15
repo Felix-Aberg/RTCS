@@ -112,7 +112,6 @@ public class ReticleScript : MonoBehaviour
             {
                 directions_correct = true;
                 crosshair.GetComponent<CrosshairScript>().reticles_correct++;
-                Debug.Log(crosshair.GetComponent<CrosshairScript>().reticles_correct);
             }
         }
 
@@ -120,7 +119,6 @@ public class ReticleScript : MonoBehaviour
         {
             directions_correct = false;
             crosshair.GetComponent<CrosshairScript>().reticles_correct--;
-            Debug.Log(crosshair.GetComponent<CrosshairScript>().reticles_correct);
         }
 
             UpdateReticle();
