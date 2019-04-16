@@ -33,10 +33,4 @@ public class EnemyBase : MonoBehaviour
 
         reticle.GetComponent<ReticleScript>().InstantiateArrows(indicated_arrow_1, indicated_arrow_2);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

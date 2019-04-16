@@ -7,6 +7,12 @@ public enum SpecialEnemies
     BIGIRON
 };
 
+public struct SpawnPackage
+{
+    public GameObject enemy;
+    public Transform spawn_point;
+}
+
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] basic_enemies;
@@ -14,18 +20,44 @@ public class EnemySpawner : MonoBehaviour
 
     public Transform[] spawn_points;
     
-    public void SpawnBasic()
+    public SpawnPackage SpawnBasic()
     {
-        GameObject clone = Instantiate(basic_enemies[Random.Range(0, basic_enemies.Length - 1)],
-                                       spawn_points[Random.Range(0, basic_enemies.Length - 1)].position,
+        Transform spawnpoint = SelectSpawnPoint();
+
+        GameObject clone = Instantiate(basic_enemies[Random.Range(0, basic_enemies.Length)],
+                                       spawnpoint.position,
                                        Quaternion.identity);
+        SpawnPackage sp;
+        sp.enemy = clone;
+        sp.spawn_point = spawnpoint;
+        return sp;
     }
 
-    public void SpawnSpecial(SpecialEnemies special_enemy)
+    public SpawnPackage SpawnSpecial(SpecialEnemies special_enemy)
     {
-        GameObject clone = Instantiate(basic_enemies[(int)special_enemy],
-                                       spawn_points[Random.Range(0, basic_enemies.Length - 1)].position,
+        Transform spawnpoint = SelectSpawnPoint();
+
+        GameObject clone = Instantiate(special_enemies[(int)special_enemy],
+                                       spawnpoint.position,
                                        Quaternion.identity);
+        SpawnPackage sp;
+        sp.enemy = clone;
+        sp.spawn_point = spawnpoint;
+        return sp;
     }
 
+    Transform SelectSpawnPoint()
+    {
+        while (true)
+        {
+            Transform spawnpoint = spawn_points[Random.Range(0, spawn_points.Length)];
+            foreach (Transform spawnp in GetComponent<GameMaster>().spawnpoints_used)
+            {
+                if (spawnpoint = spawnp)
+                    continue;
+            }
+
+            return spawnpoint;
+        }
+    }
 }
