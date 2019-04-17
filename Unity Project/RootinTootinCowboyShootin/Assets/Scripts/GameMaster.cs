@@ -65,7 +65,9 @@ public class GameMaster : MonoBehaviour
             if (enemy == dead_enemy)
             {
                 Destroy(enemies[index]);
+                enemies.Remove(enemies[index]);
                 spawnpoints_used.Remove(spawnpoints_used[index]);
+                return;
             }
 
             index++;

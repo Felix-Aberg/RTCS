@@ -5,6 +5,7 @@ using UnityEngine;
 public class CrosshairScript : MonoBehaviour
 {
     public GameObject current_reticle;
+    public GameObject current_enemy;
     public int reticles_correct; //How many reticles that are correct
 
     void Start()
@@ -44,7 +45,7 @@ public class CrosshairScript : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log("BigIron down");
+        GameObject.Find("GameMaster").GetComponent<GameMaster>().ClearSpawn(current_enemy);
     }
 
     void ShootFoot()

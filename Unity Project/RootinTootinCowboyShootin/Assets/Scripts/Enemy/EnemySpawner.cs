@@ -49,17 +49,12 @@ public class EnemySpawner : MonoBehaviour
     Transform SelectSpawnPoint()
     {
         Transform spawnpoint;
-        while (true)
+        RandomSpawn:
+        spawnpoint = spawn_points[Random.Range(0, spawn_points.Length)];
+        foreach (Transform sp in GetComponent<GameMaster>().spawnpoints_used)
         {
-            Restart:
-            spawnpoint = spawn_points[Random.Range(0, spawn_points.Length)];
-            foreach (Transform spawnp in GetComponent<GameMaster>().spawnpoints_used)
-            {
-                if (spawnpoint = spawnp)
-                    goto Restart;
-            }
-
-            break;
+            if (spawnpoint == sp)
+            goto RandomSpawn;
         }
 
         return spawnpoint;
