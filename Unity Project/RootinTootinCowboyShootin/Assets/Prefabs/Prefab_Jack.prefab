@@ -539,3 +539,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reticle: {fileID: 5543768212892803833}
+  indicated_arrow_1: 4
+  indicated_arrow_2: 4

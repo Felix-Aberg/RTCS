@@ -94,6 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reticle: {fileID: 8599695200423857161}
+  indicated_arrow_1: 2
+  indicated_arrow_2: 3
 --- !u!1001 &7591017775417576280
 PrefabInstance:
   m_ObjectHideFlags: 0
