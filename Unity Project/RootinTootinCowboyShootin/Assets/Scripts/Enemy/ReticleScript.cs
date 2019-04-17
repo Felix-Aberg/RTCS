@@ -208,7 +208,7 @@ public class ReticleScript : MonoBehaviour
         {
             crosshair_correct = true;
             crosshair.GetComponent<CrosshairScript>().current_reticle = gameObject;
-            crosshair.GetComponent<CrosshairScript>().current_enemy = transform.parent.gameObject;
+            crosshair.GetComponent<CrosshairScript>().current_enemy = transform.parent.gameObject
             UpdateReticle();
         }
     }
