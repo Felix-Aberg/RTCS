@@ -7,8 +7,8 @@ public class EnemyBase : MonoBehaviour
 {
     public GameObject reticle;
 
-    ArrowDirection indicated_arrow_1;
-    ArrowDirection indicated_arrow_2;
+    public ArrowDirection indicated_arrow_1;
+    public ArrowDirection indicated_arrow_2;
 
     //public Vector2 hide_position; //Where the enemy hides
     //public Vector2 final_position; //Where the enemy jumps out
@@ -17,16 +17,21 @@ public class EnemyBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //randomise arrows
-        int rand = Random.Range(0, 4);
-        indicated_arrow_1 = (ArrowDirection)rand;
-        
-        //randomise until a different value
-        while (rand == (int)indicated_arrow_1)
+        //randomise arrows if at least one of them isn't set
+        if (indicated_arrow_1 == ArrowDirection.NONE || indicated_arrow_2 == ArrowDirection.NONE)
         {
-            rand = Random.Range(0, 4);
+            int rand = Random.Range(0, 4);
+            indicated_arrow_1 = (ArrowDirection)rand;
+
+            //randomise until a different value
+            while (rand == (int)indicated_arrow_1)
+            {
+                rand = Random.Range(0, 4);
+            }
+            indicated_arrow_2 = (ArrowDirection)rand; 
         }
-        indicated_arrow_2 = (ArrowDirection)rand;
+
+
 
         //make reticle
         //reticle = Instantiate(reticle_prefab, reticle_position.position, Quaternion.identity);
