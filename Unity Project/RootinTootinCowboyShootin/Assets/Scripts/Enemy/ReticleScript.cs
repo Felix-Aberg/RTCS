@@ -46,6 +46,7 @@ public class ReticleScript : MonoBehaviour
 
     void Update() //Remove once InputHandler is implemented
     {
+        /*
         if (Input.GetKeyDown(KeyCode.W))
             UpdateReticle(ArrowDirection.UP, true);
 
@@ -69,6 +70,7 @@ public class ReticleScript : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.D))
             UpdateReticle(ArrowDirection.RIGHT, false);
+        //*/
     }
 
     public void UpdateReticle(ArrowDirection dir, bool pressed)
