@@ -44,35 +44,6 @@ public class ReticleScript : MonoBehaviour
         crosshair = GameObject.Find("Crosshair");
     }
 
-    void Update() //Remove once InputHandler is implemented
-    {
-        /*
-        if (Input.GetKeyDown(KeyCode.W))
-            UpdateReticle(ArrowDirection.UP, true);
-
-        if (Input.GetKeyUp(KeyCode.W))
-            UpdateReticle(ArrowDirection.UP, false);
-
-        if (Input.GetKeyDown(KeyCode.S))
-            UpdateReticle(ArrowDirection.DOWN, true);
-
-        if (Input.GetKeyUp(KeyCode.S))
-            UpdateReticle(ArrowDirection.DOWN, false);
-
-        if (Input.GetKeyDown(KeyCode.A))
-            UpdateReticle(ArrowDirection.LEFT, true);
-
-        if (Input.GetKeyUp(KeyCode.A))
-            UpdateReticle(ArrowDirection.LEFT, false);
-
-        if (Input.GetKeyDown(KeyCode.D))
-            UpdateReticle(ArrowDirection.RIGHT, true);
-
-        if (Input.GetKeyUp(KeyCode.D))
-            UpdateReticle(ArrowDirection.RIGHT, false);
-        //*/
-    }
-
     public void UpdateReticle(ArrowDirection dir, bool pressed)
     {
         if(pressed)

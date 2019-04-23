@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class CrosshairScript : MonoBehaviour
 {
+    public Transform crosshair_tracker;
     public GameObject current_reticle;
     public GameObject current_enemy;
     public int reticles_correct; //How many reticles that are correct
+    GameObject game_master;
 
     void Start()
     {
-        Cursor.visible = false;
+        //    Cursor.visible = false;
+        game_master = GameObject.Find("GameMaster");
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (game_master.GetComponent<WiiMote>().btn_b_down)
         {
             if (current_reticle != null)
             {
@@ -38,9 +41,8 @@ public class CrosshairScript : MonoBehaviour
 
     void LateUpdate()
     {
-        Vector2 mousepos; mousepos = Input.mousePosition;
-        mousepos = Camera.main.ScreenToWorldPoint(mousepos);
-        transform.position = mousepos;
+        Vector2 temppos = crosshair_tracker.position;
+        transform.position = temppos;
     }
 
     void Shoot()
