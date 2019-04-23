@@ -25,10 +25,10 @@ public class InputHandler : MonoBehaviour
         }
 
         //check dance mat input, update arrows
-        arrows[(int)ArrowDirection.UP] = Input.GetKey(KeyCode.W); //fix these later, dummy names
-        arrows[(int)ArrowDirection.DOWN] = Input.GetKey(KeyCode.S);
-        arrows[(int)ArrowDirection.LEFT] = Input.GetKey(KeyCode.A);
-        arrows[(int)ArrowDirection.RIGHT] = Input.GetKey(KeyCode.D);
+        arrows[(int)ArrowDirection.UP] = Input.GetButton("DanceMatUp"); //fix these later, dummy names
+        arrows[(int)ArrowDirection.DOWN] = Input.GetButton("DanceMatDown");
+        arrows[(int)ArrowDirection.LEFT] = Input.GetButton("DanceMatLeft");
+        arrows[(int)ArrowDirection.RIGHT] = Input.GetButton("DanceMatRight");
 
         //compare input
         for (int i = 0; i < arrows.Length; i++)
