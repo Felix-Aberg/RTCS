@@ -18,7 +18,7 @@ public class CrosshairScript : MonoBehaviour
 
     void Update()
     {
-        if (game_master.GetComponent<WiiMote>().btn_b_down)
+        if (game_master.GetComponent<InputHandler>().shooting)
         {
             if (current_reticle != null)
             {

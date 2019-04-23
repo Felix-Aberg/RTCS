@@ -5,13 +5,19 @@ using UnityEngine;
 public class InputHandler : MonoBehaviour
 {
     GameObject crosshair;
+    WiiMote wiimote;
 
     bool[] arrows = new bool[4];
     bool[] arrows_last_frame = new bool[4];
 
+    bool shoot;
+    bool shoot_last_frame;
+    public bool shooting;
+
     void Start()
     {
         crosshair = GameObject.Find("Crosshair");
+        wiimote = GetComponent<WiiMote>();
     }
 
     void Update()
@@ -44,7 +50,15 @@ public class InputHandler : MonoBehaviour
             }
         }
 
-        // WIIMOTE INPUT
+        // WIIMOTE SHOOTY
         // do code
+        shoot_last_frame = shoot;
+        shoot = wiimote.btn_b_down;
+
+        if ((!shoot_last_frame) && shoot)
+            shooting = true;
+        else
+            shooting = false;
+
     }
 }
