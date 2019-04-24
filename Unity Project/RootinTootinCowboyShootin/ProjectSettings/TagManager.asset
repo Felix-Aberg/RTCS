@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2069226297
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -50,4 +53,13 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 2719044021
+    locked: 0
+  - name: Menu
+    uniqueID: 1920819651
+    locked: 0
+  - name: CrossHair
+    uniqueID: 667238729
+    locked: 0
+  - name: HUD
+    uniqueID: 2488005607
     locked: 0

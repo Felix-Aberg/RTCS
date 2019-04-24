@@ -14,7 +14,7 @@ public class EnemyBase : MonoBehaviour
     public Vector2 final_position; //Where the enemy jumps out
 
     public float jump_time;
-    bool jumping;
+    public bool jumping;
 
     public float jump_speed;
 
@@ -53,10 +53,10 @@ public class EnemyBase : MonoBehaviour
     {
         if (jumping)
         {
-            Vector2.MoveTowards(hide_position, final_position, jump_speed / 100);
+            transform.position = Vector2.MoveTowards(transform.position, final_position, jump_speed/100);
 
             //To disable jumping
-            if (Vector2.Distance(transform.position, final_position) < 0.02f)
+            if (Vector2.Distance(transform.position, final_position) < 0.000002f)
             {
                 jumping = false;
                 reticle.gameObject.SetActive(true);

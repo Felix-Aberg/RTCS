@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
                                        spawnpoint.position,
                                        Quaternion.identity);
 
-        clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetComponentInChildren<Transform>().position);
+        clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
 
         SpawnPackage sp;
         sp.enemy = clone;
@@ -44,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
                                        spawnpoint.position,
                                        Quaternion.identity);
 
-        clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetComponentInChildren<Transform>().position);
+        clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
 
         SpawnPackage sp;
         sp.enemy = clone;
