@@ -36,12 +36,17 @@ public class ReticleScript : MonoBehaviour
 
     public bool directions_correct;
     public bool crosshair_correct;
-
+    
     GameObject crosshair;
 
     void Start()
     {
         crosshair = GameObject.Find("Crosshair");
+    }
+
+    void Update()
+    {
+        UpdateReticle();
     }
 
     public void UpdateReticle(ArrowDirection dir, bool pressed)

@@ -15,14 +15,13 @@ public class WiiMote : MonoBehaviour {
 
     private Vector2 scrollPosition;
 
-    private Vector3 wmpOffset = Vector3.zero;
-
     public bool btn_b_down;
 
     void Start()
     {
         WiimoteManager.FindWiimotes();
         wiimote = WiimoteManager.Wiimotes[0];
+        wiimote.SendPlayerLED(true, false, false, true);
         wiimote.SetupIRCamera(IRDataType.FULL);
     }
 
@@ -40,8 +39,6 @@ public class WiiMote : MonoBehaviour {
                 Vector3 offset = new Vector3(  -wiimote.MotionPlus.PitchSpeed,
                                                 wiimote.MotionPlus.YawSpeed,
                                                 wiimote.MotionPlus.RollSpeed) / 95f; // Divide by 95Hz (average updates per second from wiimote)
-                wmpOffset += offset;
-
             }
         } while (ret > 0);
 

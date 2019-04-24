@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    GameObject crosshair;
     WiiMote wiimote;
 
     bool[] arrows = new bool[4];
     bool[] arrows_last_frame = new bool[4];
+    int enemies_last_frame;
 
     bool shoot;
     bool shoot_last_frame;
@@ -16,7 +16,6 @@ public class InputHandler : MonoBehaviour
 
     void Start()
     {
-        crosshair = GameObject.Find("Crosshair");
         wiimote = GetComponent<WiiMote>();
     }
 
@@ -36,19 +35,7 @@ public class InputHandler : MonoBehaviour
         arrows[(int)ArrowDirection.LEFT] = Input.GetButton("DanceMatLeft");
         arrows[(int)ArrowDirection.RIGHT] = Input.GetButton("DanceMatRight");
 
-        //compare input
-        for (int i = 0; i < arrows.Length; i++)
-        {
-            if(arrows_last_frame[i] != arrows[i])
-            {
-                //delta detected!!!
-                //update the appropriate arrow on all enemies reticles
-                foreach(GameObject enemy in GetComponent<GameMaster>().enemies)
-                {
-                    enemy.GetComponentInChildren<ReticleScript>().UpdateReticle((ArrowDirection)i, arrows[i]);
-                }
-            }
-        }
+        UpdateArrows();
 
         // WIIMOTE SHOOTY
         // do code
@@ -59,6 +46,26 @@ public class InputHandler : MonoBehaviour
             shooting = true;
         else
             shooting = false;
+    }
 
+    void LateUpdate()
+    {
+        enemies_last_frame = GetComponent<GameMaster>().enemies.Count;
+    }
+
+    public void UpdateArrows()
+    {
+        for (int i = 0; i < arrows.Length; i++)
+        {
+            if (arrows_last_frame[i] != arrows[i] || GetComponent<GameMaster>().enemies.Count > enemies_last_frame)
+            {
+                //delta detected!!!
+                //update the appropriate arrow on all enemies reticles
+                foreach (GameObject enemy in GetComponent<GameMaster>().enemies)
+                {
+                    enemy.GetComponentInChildren<ReticleScript>().UpdateReticle((ArrowDirection)i, arrows[i]);
+                }
+            }
+        }
     }
 }

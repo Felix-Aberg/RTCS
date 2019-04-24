@@ -7,7 +7,7 @@ public class CrosshairScript : MonoBehaviour
     public Transform crosshair_tracker;
     public GameObject current_reticle;
     public GameObject current_enemy;
-    public int reticles_correct; //How many reticles that are correct
+    public int reticles_correct = 0; //How many reticles that are correct
     GameObject game_master;
 
     void Start()
