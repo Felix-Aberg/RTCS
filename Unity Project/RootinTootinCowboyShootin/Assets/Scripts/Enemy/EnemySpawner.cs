@@ -27,6 +27,9 @@ public class EnemySpawner : MonoBehaviour
         GameObject clone = Instantiate(basic_enemies[Random.Range(0, basic_enemies.Length)],
                                        spawnpoint.position,
                                        Quaternion.identity);
+
+        clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetComponentInChildren<Transform>().position);
+
         SpawnPackage sp;
         sp.enemy = clone;
         sp.spawn_point = spawnpoint;
@@ -40,6 +43,9 @@ public class EnemySpawner : MonoBehaviour
         GameObject clone = Instantiate(special_enemies[(int)special_enemy],
                                        spawnpoint.position,
                                        Quaternion.identity);
+
+        clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetComponentInChildren<Transform>().position);
+
         SpawnPackage sp;
         sp.enemy = clone;
         sp.spawn_point = spawnpoint;

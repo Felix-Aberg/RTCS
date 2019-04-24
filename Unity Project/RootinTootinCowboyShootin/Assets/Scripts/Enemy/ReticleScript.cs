@@ -127,7 +127,6 @@ public class ReticleScript : MonoBehaviour
 
         SetArrowSprite(dir1, ArrowType.INDICATED);
         SetArrowSprite(dir2, ArrowType.INDICATED);
-        gameObject.SetActive(true);
     }
 
     void SetArrowSprite(ArrowDirection dir, ArrowType type)

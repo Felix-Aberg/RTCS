@@ -45,6 +45,9 @@ TagManager:
   - name: Reticle
     uniqueID: 1733210963
     locked: 0
+  - name: Covers
+    uniqueID: 2960257461
+    locked: 0
   - name: UI
     uniqueID: 2719044021
     locked: 0

@@ -30,7 +30,7 @@ public class GameMaster : MonoBehaviour
         {
             spawn_time = Time.time + spawn_interval;
 
-            if (spawnpoints_used.Count != 4)
+            if (spawnpoints_used.Count != es.spawn_points.Length)
             {
                 if (events_spawned == nr_of_events)
                 {

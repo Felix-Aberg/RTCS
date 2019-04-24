@@ -541,3 +541,7 @@ MonoBehaviour:
   reticle: {fileID: 5543768212892803833}
   indicated_arrow_1: 4
   indicated_arrow_2: 4
+  hide_position: {x: 0, y: 0}
+  final_position: {x: 0, y: 0}
+  jump_time: 1
+  jump_speed: 3
