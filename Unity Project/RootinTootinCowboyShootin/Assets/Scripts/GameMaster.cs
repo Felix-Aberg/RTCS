@@ -30,16 +30,17 @@ public class GameMaster : MonoBehaviour
         {
             spawn_time = Time.time + spawn_interval;
 
+
+            if (events_spawned == nr_of_events)
+            {
+                Debug.Log("it's bomb");
+            }
+
             if (spawnpoints_used.Count != es.spawn_points.Length)
             {
-                if (events_spawned == nr_of_events)
+                if (events_spawned % special_waves == 0)
                 {
-                    Debug.Log("it's bomb");
-                }
-
-                else if (events_spawned % special_waves == 0)
-                {
-                    SpawnPackage sp = es.SpawnSpecial(SpecialEnemies.BIGIRON);
+                    SpawnPackage sp = es.SpawnSpecial();
                     enemies.Add(sp.enemy);
                     spawnpoints_used.Add(sp.spawn_point);
                 }
