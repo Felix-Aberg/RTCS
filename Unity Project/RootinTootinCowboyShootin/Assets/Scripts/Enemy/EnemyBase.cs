@@ -21,9 +21,6 @@ public class EnemyBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //get the depth controller
-        gameObject.AddComponent<DepthController>();
-
         //randomise arrows if at least one of them isn't set
         if (indicated_arrow_1 == ArrowDirection.NONE || indicated_arrow_2 == ArrowDirection.NONE)
         {

@@ -5,16 +5,18 @@ using UnityEngine;
 public class DepthController : MonoBehaviour
 {
     SpriteRenderer sr;
+    float sort_order;
 
     // Start is called before the first frame update
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        sr = GetComponentInParent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        sr.sortingOrder = (int)(transform.position.y * -1000);
+        sort_order = gameObject.transform.position.y * -1000;
+        sr.sortingOrder = (int)sort_order;
     }
 }
