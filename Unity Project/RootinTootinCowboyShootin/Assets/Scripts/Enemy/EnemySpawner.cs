@@ -2,11 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum SpecialEnemies
-{
-    BIGIRON
-};
-
 public struct SpawnPackage
 {
     public GameObject enemy;
@@ -16,10 +11,19 @@ public struct SpawnPackage
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] basic_enemies;
-    public GameObject[] special_enemies; //Add enemies in enum order
+    public GameObject[] se_temp_array;
+    Queue<GameObject> special_enemies;
 
     public Transform[] spawn_points;
-    
+
+    void Start()
+    {
+        for (int i = 0; i < se_temp_array.Length; i++)
+        {
+            special_enemies.Enqueue(se_temp_array[i]);
+        }
+    }
+
     public SpawnPackage SpawnBasic()
     {
         Transform spawnpoint = SelectSpawnPoint();
@@ -36,11 +40,11 @@ public class EnemySpawner : MonoBehaviour
         return sp;
     }
 
-    public SpawnPackage SpawnSpecial(SpecialEnemies special_enemy)
+    public SpawnPackage SpawnSpecial()
     {
         Transform spawnpoint = SelectSpawnPoint();
 
-        GameObject clone = Instantiate(special_enemies[(int)special_enemy],
+        GameObject clone = Instantiate(special_enemies.Dequeue(),
                                        spawnpoint.position,
                                        Quaternion.identity);
 
