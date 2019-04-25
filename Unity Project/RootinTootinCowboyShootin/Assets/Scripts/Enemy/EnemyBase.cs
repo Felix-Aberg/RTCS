@@ -16,7 +16,7 @@ public class EnemyBase : MonoBehaviour
     public float jump_time;
     public bool jumping;
 
-    public float jump_speed;
+    public float jump_speed = 10;
 
     // Start is called before the first frame update
     void Start()
