@@ -11,18 +11,9 @@ public struct SpawnPackage
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] basic_enemies;
-    public GameObject[] se_temp_array;
-    Queue<GameObject> special_enemies;
+    public List<GameObject> special_enemies;
 
     public Transform[] spawn_points;
-
-    void Start()
-    {
-        for (int i = 0; i < se_temp_array.Length; i++)
-        {
-            special_enemies.Enqueue(se_temp_array[i]);
-        }
-    }
 
     public SpawnPackage SpawnBasic()
     {
@@ -44,10 +35,11 @@ public class EnemySpawner : MonoBehaviour
     {
         Transform spawnpoint = SelectSpawnPoint();
 
-        GameObject clone = Instantiate(special_enemies.Dequeue(),
+        GameObject clone = Instantiate(special_enemies[0],
                                        spawnpoint.position,
                                        Quaternion.identity);
 
+        special_enemies.Remove(special_enemies[0]);
         clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
 
         SpawnPackage sp;

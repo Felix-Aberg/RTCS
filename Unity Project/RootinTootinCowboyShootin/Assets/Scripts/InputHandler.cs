@@ -63,7 +63,7 @@ public class InputHandler : MonoBehaviour
                 //update the appropriate arrow on all enemies reticles
                 foreach (GameObject enemy in GetComponent<GameMaster>().enemies)
                 {
-                    if (enemy.GetComponent<ReticleScript>().isActiveAndEnabled)
+                    if (enemy.transform.GetChild(0).gameObject.activeInHierarchy)
                     {
                         enemy.GetComponentInChildren<ReticleScript>().UpdateReticle((ArrowDirection)i, arrows[i]);
                     }

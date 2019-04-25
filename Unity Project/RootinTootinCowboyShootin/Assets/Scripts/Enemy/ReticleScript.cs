@@ -42,6 +42,8 @@ public class ReticleScript : MonoBehaviour
     void Start()
     {
         crosshair = GameObject.Find("Crosshair");
+        transform.localScale = Vector3.one;
+        transform.localScale = new Vector3(1 / transform.lossyScale.x, 1 / transform.lossyScale.y, 1 / transform.lossyScale.z);
     }
 
     void Update()
