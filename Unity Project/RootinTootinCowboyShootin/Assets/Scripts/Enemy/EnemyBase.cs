@@ -51,8 +51,7 @@ public class EnemyBase : MonoBehaviour
     {
         //Play shooting anim
         GameObject.Find("Player").GetComponent<PlayerHealth>().ShootPlayer();
-        reticle.gameObject.SetActive(true);
-        //GameObject.Find("GameMaster").GetComponent<InputHandler>().UpdateArrows();
+        StartReturn();
     }
 
    void StartReturn()
@@ -91,5 +90,21 @@ public class EnemyBase : MonoBehaviour
     {
         hide_position = spawn_point;
         final_position = jump_point;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Cover")
+        {
+            reticle.SetActive(false);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Cover")
+        {
+            reticle.SetActive(true);
+        }
     }
 }
