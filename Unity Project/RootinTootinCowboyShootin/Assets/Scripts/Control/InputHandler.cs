@@ -16,9 +16,9 @@ public class InputHandler : MonoBehaviour
 
     void Start()
     {
-        wiimote = GetComponent<WiiMote>();
+        wiimote = GameObject.Find("WiimoteHandler").GetComponent<WiiMote>();
     }
-
+    
     void Update()
     {
         // DANCE MAT INPUT
