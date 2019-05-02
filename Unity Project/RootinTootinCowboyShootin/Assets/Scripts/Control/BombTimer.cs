@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BombTimer : MonoBehaviour
 {
+
+    public float bomb_timer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -11,8 +14,8 @@ public class BombTimer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        bomb_timer -= Time.fixedDeltaTime;
     }
 }

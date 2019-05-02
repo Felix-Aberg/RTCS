@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6322381242667279026}
   - component: {fileID: 6322381242667279024}
   - component: {fileID: 6322381242667279025}
-  - component: {fileID: 6322381242667279037}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -52,6 +51,7 @@ MonoBehaviour:
   enemies: []
   spawnpoints_used: []
   spawn_interval: 2
+  bomb_timer: 0
   special_waves: 2
 --- !u!114 &6322381242667279024
 MonoBehaviour:
@@ -67,9 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basic_enemies:
   - {fileID: 5976167421542373025, guid: 5c6628e1a4dfc7e4f88ab2b566d9adf3, type: 3}
-  se_temp_array:
-  - {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337, type: 3}
-  - {fileID: 6831735478197026319, guid: 6fad7d9b8673e2f46820ad350fef064d, type: 3}
+  special_enemies: []
   spawn_points:
   - {fileID: 6322381243409017659}
   - {fileID: 6322381243348460841}
@@ -87,30 +85,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooting: 0
---- !u!114 &6322381242667279037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6322381242667279036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af2fd267d6940d408c54702aaf49f95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ir_dots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ir_bb:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ir_pointer: {fileID: 0}
-  btn_b_down: 0
 --- !u!1 &6322381242704305760
 GameObject:
   m_ObjectHideFlags: 0
