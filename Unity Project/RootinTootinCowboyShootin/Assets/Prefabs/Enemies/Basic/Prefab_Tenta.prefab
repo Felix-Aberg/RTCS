@@ -265,7 +265,7 @@ Transform:
   m_GameObject: {fileID: 5543768212892803833}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_Children:
   - {fileID: 5543768211954279748}
   - {fileID: 5543768212525599406}
@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 5976167421542373039}
   - component: {fileID: 5976167421542373038}
   m_Layer: 0
-  m_Name: Prefab_Jack
+  m_Name: Prefab_Tenta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -471,11 +471,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5976167421542373025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.88, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 2.42, z: 0}
+  m_LocalScale: {x: 0.17, y: 0.17, z: 1}
   m_Children:
   - {fileID: 5543768212892803835}
-  - {fileID: 2853617739759432296}
+  - {fileID: 8560548676552248173}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -516,7 +516,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e872a12f286a21848ba44a7888234b5a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a7ee4021d755f484698d34f9fd225b1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -545,9 +545,9 @@ MonoBehaviour:
   hide_position: {x: 0, y: 0}
   final_position: {x: 0, y: 0}
   jump_time: 1
-  jumping: 0
   jump_speed: 10
---- !u!1001 &2447225430074887244
+  shoot_time: 5
+--- !u!1001 &8115892306288178505
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -567,7 +567,7 @@ PrefabInstance:
     - target: {fileID: 462846734510833188, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.87
+      value: -6.04
       objectReference: {fileID: 0}
     - target: {fileID: 462846734510833188, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}
@@ -616,9 +616,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1228dbd158ecaad41857c6216f4c5211, type: 3}
---- !u!4 &2853617739759432296 stripped
+--- !u!4 &8560548676552248173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 462846734510833188, guid: 1228dbd158ecaad41857c6216f4c5211,
     type: 3}
-  m_PrefabInstance: {fileID: 2447225430074887244}
+  m_PrefabInstance: {fileID: 8115892306288178505}
   m_PrefabAsset: {fileID: 0}
