@@ -131,6 +131,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prefab_DepthController
       objectReference: {fileID: 0}
+    - target: {fileID: 243248842691811581, guid: 1228dbd158ecaad41857c6216f4c5211,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 462846734510833188, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}
       propertyPath: m_LocalPosition.x

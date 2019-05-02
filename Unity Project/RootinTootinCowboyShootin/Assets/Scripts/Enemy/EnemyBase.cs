@@ -50,7 +50,7 @@ public class EnemyBase : MonoBehaviour
     void Shoot()
     {
         //Play shooting anim
-        GameObject.Find("Player").GetComponent<PlayerHealth>().ShootPlayer();
+        GameObject.Find("Prefab_Player").GetComponent<PlayerHealth>().ShootPlayer();
         StartReturn();
     }
 
