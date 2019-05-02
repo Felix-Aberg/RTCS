@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
     public List<GameObject> enemies;
     public List<Transform> spawnpoints_used;
     public float spawn_interval;
+    public float bomb_timer;
+    float spawn_time;
     public int special_waves;
     EnemySpawner es;
-    float spawn_time;
     uint events_spawned;
     public const uint nr_of_events = 20;
+    Scene scene;
 
     void Start()
     {
@@ -26,15 +29,14 @@ public class GameMaster : MonoBehaviour
             spawn_time = Time.time - .1f;
         }
 
+        if (events_spawned == nr_of_events)
+        {
+                Debug.Log("it's bomb");
+        }
+
         if (Time.time > spawn_time)
         {
             spawn_time = Time.time + spawn_interval;
-
-
-            if (events_spawned == nr_of_events)
-            {
-                Debug.Log("it's bomb");
-            }
 
             if (spawnpoints_used.Count != es.spawn_points.Length)
             {
