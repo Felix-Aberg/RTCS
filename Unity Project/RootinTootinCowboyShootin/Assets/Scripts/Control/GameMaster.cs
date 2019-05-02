@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
@@ -17,6 +18,14 @@ public class GameMaster : MonoBehaviour
     {
         es = GetComponent<EnemySpawner>();
         spawn_time = Time.time + spawn_interval * 2;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("EmilScene");
+        }
     }
 
     void FixedUpdate()

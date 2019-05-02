@@ -14,9 +14,11 @@ public class EnemyBase : MonoBehaviour
     public Vector2 final_position; //Where the enemy jumps out
 
     public float jump_time;
-    public bool jumping;
+    bool jumping;
+    bool returning;
 
     public float jump_speed = 10;
+    public float shoot_time = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -37,15 +39,25 @@ public class EnemyBase : MonoBehaviour
 
         Invoke("StartJump", jump_time);
 
-        //make reticle
-        //reticle = Instantiate(reticle_prefab, reticle_position.position, Quaternion.identity);
-
         reticle.GetComponent<ReticleScript>().InstantiateArrows(indicated_arrow_1, indicated_arrow_2);
     }
 
     void StartJump()
     {
         jumping = true;
+    }
+
+    void Shoot()
+    {
+        //Play shooting anim
+        GameObject.Find("Player").GetComponent<PlayerHealth>().ShootPlayer();
+        reticle.gameObject.SetActive(true);
+        //GameObject.Find("GameMaster").GetComponent<InputHandler>().UpdateArrows();
+    }
+
+   void StartReturn()
+    {
+        returning = true;
     }
 
 
@@ -59,7 +71,18 @@ public class EnemyBase : MonoBehaviour
             if (Vector2.Distance(transform.position, final_position) < 0.000002f)
             {
                 jumping = false;
-                reticle.gameObject.SetActive(true);
+                Invoke("Shoot", shoot_time);
+            }
+        }
+
+        else if (returning)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, hide_position, jump_speed / 100);
+
+            if(Vector2.Distance(transform.position, hide_position) < 0.000002f)
+            {
+                returning = false;
+                Invoke("StartJump", jump_time);
             }
         }
     }

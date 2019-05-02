@@ -57,8 +57,8 @@ public class InputHandler : MonoBehaviour
     {
         for (int i = 0; i < arrows.Length; i++)
         {
-            if (arrows_last_frame[i] != arrows[i] || GetComponent<GameMaster>().enemies.Count > enemies_last_frame)
-            {
+            if (arrows_last_frame[i] != arrows[i] || GetComponent<GameMaster>().enemies.Count > enemies_last_frame) //Cause of delayed reticle bug
+            {   
                 //delta detected!!!
                 //update the appropriate arrow on all enemies reticles
                 foreach (GameObject enemy in GetComponent<GameMaster>().enemies)

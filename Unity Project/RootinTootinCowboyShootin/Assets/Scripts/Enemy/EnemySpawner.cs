@@ -33,19 +33,20 @@ public class EnemySpawner : MonoBehaviour
 
     public SpawnPackage SpawnSpecial()
     {
-        Transform spawnpoint = SelectSpawnPoint();
+        return SpawnBasic();
+        //Transform spawnpoint = SelectSpawnPoint();
 
-        GameObject clone = Instantiate(special_enemies[0],
-                                       spawnpoint.position,
-                                       Quaternion.identity);
+        //GameObject clone = Instantiate(special_enemies[0],
+        //                               spawnpoint.position,
+        //                               Quaternion.identity);
 
-        special_enemies.Remove(special_enemies[0]);
-        clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
+        //special_enemies.Remove(special_enemies[0]);
+        //clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
 
-        SpawnPackage sp;
-        sp.enemy = clone;
-        sp.spawn_point = spawnpoint;
-        return sp;
+        //SpawnPackage sp;
+        //sp.enemy = clone;
+        //sp.spawn_point = spawnpoint;
+        //return sp;
     }
 
     Transform SelectSpawnPoint()
