@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EmilScene.unity
     guid: 56f4adfda48727c489a2c9caf1306fc9
+  - enabled: 1
+    path: Assets/Scenes/BombStompScene.unity
+    guid: 512fbb11ca18179409323233fb640b9b
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 23e556c108ad0af41bca35414ccfed19
   m_configObjects: {}

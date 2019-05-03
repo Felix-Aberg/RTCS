@@ -8,7 +8,6 @@ public class GameMaster : MonoBehaviour
     public List<GameObject> enemies;
     public List<Transform> spawnpoints_used;
     public float spawn_interval;
-    public float bomb_timer;
     float spawn_time;
     public int special_waves;
     EnemySpawner es;
@@ -35,11 +34,6 @@ public class GameMaster : MonoBehaviour
         if (enemies.Count == 0 && Time.time < spawn_time)
         {
             spawn_time = Time.time - .1f;
-        }
-
-        if (events_spawned == nr_of_events)
-        {
-                Debug.Log("it's bomb");
         }
 
         if (Time.time > spawn_time)
