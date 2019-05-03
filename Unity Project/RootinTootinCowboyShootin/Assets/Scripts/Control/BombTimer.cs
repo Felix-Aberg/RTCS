@@ -21,7 +21,7 @@ public class BombTimer : MonoBehaviour
 
         if(bomb_timer <= 0)
         {
-            //Boom.
+            Debug.Log("Boom.");
             SceneManager.LoadScene("GameOver");
         }
     }

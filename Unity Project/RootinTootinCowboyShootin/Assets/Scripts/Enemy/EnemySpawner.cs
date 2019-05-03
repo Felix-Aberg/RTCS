@@ -15,6 +15,9 @@ public class EnemySpawner : MonoBehaviour
 
     public Transform[] spawn_points;
 
+    [Tooltip("Height offset of enemy spawning compared to spawnpoint depth controller. Higher value = further up.")]
+    public float offset = 0.1f;
+
     public SpawnPackage SpawnBasic()
     {
         Transform spawnpoint = SelectSpawnPoint();
@@ -33,20 +36,46 @@ public class EnemySpawner : MonoBehaviour
 
     public SpawnPackage SpawnSpecial()
     {
-        return SpawnBasic();
-        //Transform spawnpoint = SelectSpawnPoint();
+        //return SpawnBasic();
+        Transform spawnpoint = SelectSpawnPoint();
 
-        //GameObject clone = Instantiate(special_enemies[0],
-        //                               spawnpoint.position,
-        //                               Quaternion.identity);
+        if (special_enemies[0] != null )
+        {
+            GameObject clone = Instantiate(special_enemies[0],
+                                       spawnpoint.position,
+                                       Quaternion.identity);
 
-        //special_enemies.Remove(special_enemies[0]);
-        //clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
+            special_enemies.Remove(special_enemies[0]);
+            clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
 
-        //SpawnPackage sp;
-        //sp.enemy = clone;
-        //sp.spawn_point = spawnpoint;
-        //return sp;
+            SpawnPackage sp;
+            sp.enemy = clone;
+            sp.spawn_point = spawnpoint;
+            return sp;
+        }
+        else
+        {
+            return SpawnBasic();
+        }
+
+        
+    }
+
+    Vector2 AdjustSpawnHeight(GameObject enemy, Transform spawnpoint)
+    {
+        /*
+         * 1 Get position of both enemy depthcontroller and sp depthcontroller
+         * 2 check enemy depthcontroller local position
+         * 3 set the enemy's hide position & position to spawnpoint.position subtracted by the enemy depthcontrollers localposition
+         * 4 return it
+         */
+
+        Vector2 foot_offset = enemy.transform.Find("Prefab_Depthcontroller").localPosition;
+        Vector2 sdc = spawnpoint.transform.Find("Prefab_Depthcontroller").position;
+
+        Vector2 adjusted_position = sdc - foot_offset - new Vector2 (0, offset);
+
+        return adjusted_position;
     }
 
     Transform SelectSpawnPoint()
