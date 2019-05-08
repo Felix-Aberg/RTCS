@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
+    public ReticleScript reticle;
+    public GameObject crosshair;
+
+    public WiiMote wiimote;
+
+    public SpriteRenderer checkmark;
+    public SpriteRenderer explosion;
+
     public GameObject boot_left;
     public GameObject boot_right;
-
-    public GameObject arrow_left_pressed;
-    public GameObject arrow_right_pressed;
 
     public Vector2[] boot_left_positions;
     public Vector2[] boot_right_positions;
@@ -22,86 +28,157 @@ public class Tutorial : MonoBehaviour
     bool left_pressed_last_frame;
     bool right_pressed_last_frame;
 
+    bool dancemat_done;
+
+    bool shoot;
+    bool shoot_last_frame;
+
     // Start is called before the first frame update
     void Start()
     {
         next_change = Time.time + step_time;
+
+        crosshair.SetActive(false);
+        reticle.InstantiateArrows(ArrowDirection.LEFT, ArrowDirection.RIGHT);
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         left_pressed_last_frame = left_pressed;
         right_pressed_last_frame = right_pressed;
         left_pressed = Input.GetButton("DanceMatLeft");
         right_pressed = Input.GetButton("DanceMatRight");
-    }
 
-    void FixedUpdate()
-    {
+        if (left_pressed && right_pressed)
+        {
+            if (!dancemat_done)
+                DirectionsCorrect();
+
+            shoot_last_frame = shoot;
+            shoot = wiimote.btn_b_down;
+
+            if ((!shoot_last_frame) && shoot)
+            {
+                if (crosshair.GetComponent<CrosshairScript>().current_reticle != null)
+                {
+                    TutorialComplete();
+                }
+            }
+        }
+
         if (!left_pressed_last_frame && left_pressed)
             LeftBootDown();
+
+        else if (left_pressed_last_frame && !left_pressed)
+            LeftBootUp();
 
         if (!right_pressed_last_frame && right_pressed)
             RightBootDown();
 
-        if (Time.time > next_change)
+        else if (right_pressed_last_frame && !right_pressed)
+            RightBootUp();
+
+        if (Time.time > next_change && !dancemat_done)
         {
-            if (up)
-            {
-                if (!left_pressed)
-                {
-                    LeftBootUp();
-                }
-
-                if (!right_pressed)
-                {
-                    RightBootUp();
-                }
-
-                up = false;
-            }
-
-            else if (!up)
-            {
-                if (!left_pressed)
-                {
-                    LeftBootDown();
-                }
-
-                if (!right_pressed)
-                {
-                    RightBootDown();
-                }
-
-                up = true;
-            }
-
-            next_change += step_time;
+            IndicateBoots();
         }
     }
 
     void LeftBootUp()
     {
-        arrow_left_pressed.SetActive(false);
+        reticle.UpdateReticle(ArrowDirection.LEFT, false);
         boot_left.transform.position = boot_left_positions[0];
     }
 
     void LeftBootDown()
     {
-        arrow_left_pressed.SetActive(true);
+        reticle.UpdateReticle(ArrowDirection.LEFT, true);
         boot_left.transform.position = boot_left_positions[1];
     }
 
     void RightBootUp()
     {
-        arrow_right_pressed.SetActive(false);
+        reticle.UpdateReticle(ArrowDirection.RIGHT, false);
         boot_right.transform.position = boot_right_positions[0];
     }
 
     void RightBootDown()
     {
-        arrow_right_pressed.SetActive(true);
+        reticle.UpdateReticle(ArrowDirection.RIGHT, true);
         boot_right.transform.position = boot_right_positions[1];
+    }
+
+    void IndicateBoots() //Boots move up and down to show where to place feet
+    {
+        if (up)
+        {
+            if (!left_pressed)
+            {
+                LeftBootUp();
+            }
+
+            if (!right_pressed)
+            {
+                RightBootUp();
+            }
+        }
+
+        else if (!up)
+        {
+            if (!left_pressed)
+            {
+                LeftBootDown();
+            }
+
+            if (!right_pressed)
+            {
+                RightBootDown();
+            }
+        }
+
+        next_change += step_time;
+
+        if (up)
+            up = false;
+        else if (!up)
+            up = true;
+    }
+
+    void DirectionsCorrect() //Flashes checkmark and enables crosshair for shooting section
+    {
+        dancemat_done = true;
+
+        StartCoroutine(ToggleSprite(checkmark, true, 0f));
+        StartCoroutine(ToggleSprite(checkmark, false, .3f));
+        StartCoroutine(ToggleSprite(checkmark, true, .5f));
+        StartCoroutine(ToggleSprite(checkmark, false, 1.2f));
+
+        crosshair.gameObject.SetActive(true);
+    }
+
+    void TutorialComplete()
+    {
+        StartCoroutine(ToggleSprite(explosion, true, 0f));
+        StartCoroutine(ToggleSprite(explosion, false, .2f));
+        StartCoroutine(ToggleSprite(explosion, true, .1f));
+        StartCoroutine(ToggleSprite(explosion, false, .5f));
+        StartCoroutine(ToggleSprite(explosion, true, .6f));
+        StartCoroutine(ToggleSprite(explosion, false, .8f));
+        StartCoroutine(ToggleSprite(explosion, true, .9f));
+        StartCoroutine(ToggleSprite(explosion, false, .11f));
+
+        StartCoroutine(StartGame(1.5f));
+    }
+
+    IEnumerator ToggleSprite(SpriteRenderer spriterenderer, bool enabled, float time) //Toggle a sprite on or off after given time
+    {
+        yield return new WaitForSeconds(time);
+        spriterenderer.enabled = enabled;
+    }
+
+    IEnumerator StartGame(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene("GameScene");
     }
 }

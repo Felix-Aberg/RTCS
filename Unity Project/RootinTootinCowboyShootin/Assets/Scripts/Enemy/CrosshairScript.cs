@@ -12,7 +12,7 @@ public class CrosshairScript : MonoBehaviour
 
     void Start()
     {
-        //    Cursor.visible = false;
+        Cursor.visible = false;
         game_master = GameObject.Find("GameMaster");
     }
 
