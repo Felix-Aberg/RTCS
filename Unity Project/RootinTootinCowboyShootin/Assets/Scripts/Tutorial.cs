@@ -69,13 +69,13 @@ public class Tutorial : MonoBehaviour
         if (!left_pressed_last_frame && left_pressed)
             LeftBootDown();
 
-        else if (left_pressed_last_frame && !left_pressed)
+        if (left_pressed_last_frame && !left_pressed)
             LeftBootUp();
 
         if (!right_pressed_last_frame && right_pressed)
             RightBootDown();
 
-        else if (right_pressed_last_frame && !right_pressed)
+        if (right_pressed_last_frame && !right_pressed)
             RightBootUp();
 
         if (Time.time > next_change && !dancemat_done)

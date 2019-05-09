@@ -14,6 +14,8 @@ public class InputHandler : MonoBehaviour
     bool shoot_last_frame;
     public bool shooting;
 
+    public bool use_mouse;
+
     void Start()
     {
         wiimote = GameObject.Find("WiimoteHandler").GetComponent<WiiMote>();
@@ -21,6 +23,15 @@ public class InputHandler : MonoBehaviour
     
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (!use_mouse)
+                use_mouse = true;
+
+            else if (use_mouse)
+                use_mouse = false;
+        }
+
         // DANCE MAT INPUT
 
         //set arrows last frame to arrows
@@ -40,7 +51,12 @@ public class InputHandler : MonoBehaviour
         // WIIMOTE SHOOTY
         // do code
         shoot_last_frame = shoot;
-        shoot = wiimote.btn_b_down;
+
+        if (!use_mouse)
+            shoot = wiimote.btn_b_down;
+
+        else if (use_mouse)
+            shoot = Input.GetButton("Fire1");
 
         if ((!shoot_last_frame) && shoot)
             shooting = true;
@@ -50,7 +66,7 @@ public class InputHandler : MonoBehaviour
 
     void LateUpdate()
     {
-        enemies_last_frame = GetComponent<GameMaster>().enemies.Count;
+        //enemies_last_frame = GetComponent<GameMaster>().enemies.Count;
     }
 
     public void UpdateArrows()

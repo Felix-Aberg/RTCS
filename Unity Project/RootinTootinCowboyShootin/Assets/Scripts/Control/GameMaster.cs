@@ -8,7 +8,6 @@ public class GameMaster : MonoBehaviour
     public List<GameObject> enemies;
     public List<Transform> spawnpoints_used;
     public float spawn_interval;
-    public float bomb_timer;
     float spawn_time;
     public int special_waves;
     EnemySpawner es;

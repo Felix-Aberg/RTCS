@@ -424,7 +424,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba8f8cc534ab3645a35c93d40f8defd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bomb_timer: 10
+  bomb_timer: 120
+  fuse: {fileID: 2130064565}
+  fuse_fire: {fileID: 1343125970}
 --- !u!224 &508932943 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1144981973418513401, guid: bdb840b7d075f714a87aadfbddb8923d,
@@ -2229,6 +2231,11 @@ PrefabInstance:
         type: 3}
       propertyPath: spawn_interval
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322381242667279026, guid: b4dc635166763f746acbc5d76a36d04b,
+        type: 3}
+      propertyPath: bomb_timer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6322381242667279024, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}

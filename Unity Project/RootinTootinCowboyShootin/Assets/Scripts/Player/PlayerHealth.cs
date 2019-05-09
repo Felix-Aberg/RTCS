@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     void CheckHealth()
     {
         if (lives <= 0)
-            Debug.Log("Game Over"); //lose game
+            SceneManager.LoadScene("GameOver");
     }
 
     public void ShootPlayer()

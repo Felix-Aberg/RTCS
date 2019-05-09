@@ -41,7 +41,13 @@ public class CrosshairScript : MonoBehaviour
 
     void LateUpdate()
     {
-        Vector2 temppos = crosshair_tracker.position;
+        Vector2 temppos = transform.position;
+
+        if (!game_master.GetComponent<InputHandler>().use_mouse)
+            temppos = crosshair_tracker.position;
+        else if (game_master.GetComponent<InputHandler>().use_mouse)
+            temppos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         transform.position = temppos;
     }
 
