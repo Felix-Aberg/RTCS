@@ -210,8 +210,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reticle: {fileID: 1556299730}
   crosshair: {fileID: 1288762653}
-  checkmark: {fileID: 1629839184}
-  explosion: {fileID: 0}
+  wiimote: {fileID: 889698023}
+  checkmark: {fileID: 983124508}
+  explosion: {fileID: 1629839184}
   boot_left: {fileID: 2024734523}
   boot_right: {fileID: 651141594}
   boot_left_positions:
@@ -427,6 +428,18 @@ PrefabInstance:
       objectReference: {fileID: 1578981835}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be0b4ca2c8e505d4da9041cd99b468fb, type: 3}
+--- !u!114 &889698023 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1690020145752860641, guid: be0b4ca2c8e505d4da9041cd99b468fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 889698022}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af2fd267d6940d408c54702aaf49f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &983124507
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,8 +491,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1575923275
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f1eeead520f3a67478717d32f83e494c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -927,8 +940,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1575923275
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ca871f0b5de883c4b867419f051b2fec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
