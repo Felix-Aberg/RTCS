@@ -8,6 +8,7 @@ public class GameMaster : MonoBehaviour
     public List<GameObject> enemies;
     public List<Transform> spawnpoints_used;
     public float spawn_interval;
+    public float bomb_timer;
     float spawn_time;
     public int special_waves;
     EnemySpawner es;
@@ -36,29 +37,50 @@ public class GameMaster : MonoBehaviour
             spawn_time = Time.time - .1f;
         }
 
+        if (events_spawned >= nr_of_events && enemies.Count == 0)
+        {
+            Invoke("LoadBombScene", 0.5f);
+        }
+
         if (Time.time > spawn_time)
         {
             spawn_time = Time.time + spawn_interval;
 
             if (spawnpoints_used.Count != es.spawn_points.Length)
             {
-                if (events_spawned % special_waves == 0)
+                if(events_spawned < nr_of_events)
                 {
-                    SpawnPackage sp = es.SpawnSpecial();
-                    enemies.Add(sp.enemy);
-                    spawnpoints_used.Add(sp.spawn_point);
-                }
+                    if (events_spawned % special_waves == 0)
+                    {
+                        SpawnPackage sp = es.SpawnSpecial();
+                        enemies.Add(sp.enemy);
+                        spawnpoints_used.Add(sp.spawn_point);
+                    }
 
-                else
-                {
-                    SpawnPackage sp = es.SpawnBasic();
-                    enemies.Add(sp.enemy);
-                    spawnpoints_used.Add(sp.spawn_point);
+                    else
+                    {
+                        SpawnPackage sp = es.SpawnBasic();
+                        enemies.Add(sp.enemy);
+                        spawnpoints_used.Add(sp.spawn_point);
+                    }
+
                 }
             }
 
             events_spawned++;
         }
+    }
+
+    public void SpawnEnemy(GameObject enemy)
+    {
+        SpawnPackage sp = es.SpawnBasic(enemy);
+        enemies.Add(sp.enemy);
+        spawnpoints_used.Add(sp.spawn_point);
+    }
+
+    void LoadBombScene()
+    {
+        SceneManager.LoadScene("BombStompScene");
     }
 
     public void ClearSpawn(GameObject dead_enemy) //Call after enemy death anim

@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum SpawnPoint
+{
+    UP_LEFT,
+    UP_RIGHT,
+    DOWN_LEFT,
+    DOWN_RIGHT,
+    RANDOM
+}
+
 public struct SpawnPackage
 {
     public GameObject enemy;
@@ -23,6 +32,38 @@ public class EnemySpawner : MonoBehaviour
         Transform spawnpoint = SelectSpawnPoint();
 
         GameObject clone = Instantiate(basic_enemies[Random.Range(0, basic_enemies.Length)],
+                                       spawnpoint.position,
+                                       Quaternion.identity);
+
+        clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
+
+        SpawnPackage sp;
+        sp.enemy = clone;
+        sp.spawn_point = spawnpoint;
+        return sp;
+    }
+
+    public SpawnPackage SpawnBasic(GameObject enemy)
+    {
+        Transform spawnpoint = SelectSpawnPoint();
+
+        GameObject clone = Instantiate(enemy,
+                                       spawnpoint.position,
+                                       Quaternion.identity);
+
+        clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
+
+        SpawnPackage sp;
+        sp.enemy = clone;
+        sp.spawn_point = spawnpoint;
+        return sp;
+    }
+
+    public SpawnPackage SpawnBasic(GameObject enemy, SpawnPoint spawnpoint_index)
+    {
+        Transform spawnpoint = SelectSpawnPoint(spawnpoint_index);
+
+        GameObject clone = Instantiate(enemy,
                                        spawnpoint.position,
                                        Quaternion.identity);
 
@@ -91,4 +132,28 @@ public class EnemySpawner : MonoBehaviour
 
         return spawnpoint;
     }
+
+    Transform SelectSpawnPoint(SpawnPoint spawnpoint)
+    {
+    switch (spawnpoint)
+        {
+            case SpawnPoint.UP_LEFT:
+                return spawn_points[0];
+
+            case SpawnPoint.UP_RIGHT:
+                return spawn_points[1];
+
+            case SpawnPoint.DOWN_LEFT:
+                return spawn_points[2];
+
+            case SpawnPoint.DOWN_RIGHT:
+                return spawn_points[3];
+
+            case SpawnPoint.RANDOM:
+                return SelectSpawnPoint();
+        }
+
+    return null;
+    }
+    
 }

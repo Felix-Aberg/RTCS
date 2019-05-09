@@ -163,6 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 286399251}
+  - component: {fileID: 286399252}
   - component: {fileID: 286399250}
   m_Layer: 0
   m_Name: RuneScape - Sea Shanty 2
@@ -281,6 +282,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &286399252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286399249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74535a110e120444487caafc0fdf8848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current_score: 0
+  score_kill_basic: 0
+  score_kill_special: 0
+  score_stomping_bomb: 0
+  score_defused_bomb: 0
+  score_time_left_multiplier: 0
+  score_get_shot: 0
+  score_shoot_yourself: 0
 --- !u!224 &317736799 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1144981973479188457, guid: bdb840b7d075f714a87aadfbddb8923d,
@@ -830,6 +851,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1992852328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1992852330}
+  - component: {fileID: 1992852329}
+  m_Layer: 0
+  m_Name: TestObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1992852329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992852328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768c15566d143b7449ae2d3acf8dd9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point:
+    color: {r: 0, g: 0, b: 0, a: 0}
+    position: {x: 0, y: 0, z: 0}
+  points:
+  - color: {r: 0, g: 0, b: 0, a: 0}
+    position: {x: 0, y: 0, z: 0}
+  - color: {r: 0, g: 0, b: 0, a: 0}
+    position: {x: 0, y: 0, z: 0}
+  vector: {x: 0, y: 0, z: 0}
+  vectors:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+--- !u!4 &1992852330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992852328}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.54557484, y: -0.18306074, z: -19.384302}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1144981973178228918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1274,3 +1350,76 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6322381242667279037, guid: b4dc635166763f746acbc5d76a36d04b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b4dc635166763f746acbc5d76a36d04b, type: 3}
+--- !u!1 &6322381242755455355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6322381242667279036, guid: b4dc635166763f746acbc5d76a36d04b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6322381242755455354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6322381242755455356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6322381242755455355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1420f723b6af5424291c6294da782dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  test_array:
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+    special_event: 0
+    test_integer: 0
+    controllable: 0
+  - type_of_event: 1
+    enemy_variables:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+    special_event: 0
+    test_integer: 0
+    controllable: 0
+  - type_of_event: 2
+    enemy_variables:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+    special_event: 0
+    test_integer: 0
+    controllable: 0
+  events: 000000000100000002000000
+  enemies:
+  - enemy: {fileID: 5976167421542373025, guid: 06cc85380f510ef4fb0cf09f4123b19d, type: 3}
+    spawnpoint: 1
+  - enemy: {fileID: 0}
+    spawnpoint: 0
+  - enemy: {fileID: 0}
+    spawnpoint: 0
+  - enemy: {fileID: 0}
+    spawnpoint: 0
+  - enemy: {fileID: 0}
+    spawnpoint: 0
+  - enemy: {fileID: 0}
+    spawnpoint: 0
+  - enemy: {fileID: 0}
+    spawnpoint: 0
+  - enemy: {fileID: 0}
+    spawnpoint: 0
+  twin_enemies:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  special_events: 010000000000000002000000
