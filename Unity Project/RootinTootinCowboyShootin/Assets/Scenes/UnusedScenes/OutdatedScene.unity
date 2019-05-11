@@ -1368,7 +1368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1420f723b6af5424291c6294da782dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test_array:
+  max_enemies_on_screen: 3
+  event_array:
   - type_of_event: 0
     enemy_variables:
       enemy: {fileID: 0}
@@ -1377,9 +1378,7 @@ MonoBehaviour:
       enemy: {fileID: 0}
       spawnpoint: 0
     special_event: 0
-    test_integer: 0
-    controllable: 0
-  - type_of_event: 1
+  - type_of_event: 0
     enemy_variables:
       enemy: {fileID: 0}
       spawnpoint: 0
@@ -1387,9 +1386,7 @@ MonoBehaviour:
       enemy: {fileID: 0}
       spawnpoint: 0
     special_event: 0
-    test_integer: 0
-    controllable: 0
-  - type_of_event: 2
+  - type_of_event: 0
     enemy_variables:
       enemy: {fileID: 0}
       spawnpoint: 0
@@ -1397,29 +1394,11 @@ MonoBehaviour:
       enemy: {fileID: 0}
       spawnpoint: 0
     special_event: 0
-    test_integer: 0
-    controllable: 0
-  events: 000000000100000002000000
-  enemies:
-  - enemy: {fileID: 5976167421542373025, guid: 06cc85380f510ef4fb0cf09f4123b19d, type: 3}
-    spawnpoint: 1
-  - enemy: {fileID: 0}
-    spawnpoint: 0
-  - enemy: {fileID: 0}
-    spawnpoint: 0
-  - enemy: {fileID: 0}
-    spawnpoint: 0
-  - enemy: {fileID: 0}
-    spawnpoint: 0
-  - enemy: {fileID: 0}
-    spawnpoint: 0
-  - enemy: {fileID: 0}
-    spawnpoint: 0
-  - enemy: {fileID: 0}
-    spawnpoint: 0
-  twin_enemies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  special_events: 010000000000000002000000
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+    special_event: 0

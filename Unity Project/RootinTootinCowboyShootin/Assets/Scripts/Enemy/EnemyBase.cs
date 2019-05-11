@@ -10,6 +10,9 @@ public class EnemyBase : MonoBehaviour
     public ArrowDirection indicated_arrow_1;
     public ArrowDirection indicated_arrow_2;
 
+    [Tooltip("Don't touch this, public for the sake of passing reference ;w;")]
+    public float life_time;
+
     public Vector2 hide_position; //Where the enemy hides
     public Vector2 final_position; //Where the enemy jumps out
 
@@ -39,7 +42,7 @@ public class EnemyBase : MonoBehaviour
 
         Invoke("StartJump", jump_time);
 
-        reticle.GetComponent<ReticleScript>().InstantiateArrows(indicated_arrow_1, indicated_arrow_2);
+        //reticle.GetComponent<ReticleScript>().InstantiateArrows(indicated_arrow_1, indicated_arrow_2);
     }
 
     void StartJump()
@@ -62,6 +65,8 @@ public class EnemyBase : MonoBehaviour
 
     void FixedUpdate()
     {
+        life_time += Time.fixedDeltaTime;
+
         if (jumping)
         {
             transform.position = Vector2.MoveTowards(transform.position, final_position, jump_speed/100);

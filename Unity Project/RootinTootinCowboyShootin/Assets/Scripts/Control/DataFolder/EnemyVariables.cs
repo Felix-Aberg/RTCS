@@ -8,4 +8,6 @@ public class EnemyVariables
 {
     public GameObject enemy;
     public SpawnPoint spawnpoint;
+    public ArrowDirection arrow_direction_1;
+    public ArrowDirection arrow_direction_2;
 }

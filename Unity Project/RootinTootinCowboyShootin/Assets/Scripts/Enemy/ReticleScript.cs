@@ -24,10 +24,10 @@ public class ReticleScript : MonoBehaviour
     public Sprite[] reticle_sprites;
     public GameObject[] arrow_objects;
     public Sprite[] arrow_sprites;
-    ArrowDirection indicated_arrow_1;
-    ArrowDirection indicated_arrow_2;
-    ArrowDirection wrong_arrow_1;
-    ArrowDirection wrong_arrow_2;
+    public ArrowDirection indicated_arrow_1;
+    public ArrowDirection indicated_arrow_2;
+    public ArrowDirection wrong_arrow_1;
+    public ArrowDirection wrong_arrow_2;
 
     bool indicated_arrow_pressed_1;
     bool indicated_arrow_pressed_2;

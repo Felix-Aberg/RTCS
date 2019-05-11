@@ -96,8 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reticle: {fileID: 2060637129121942190}
-  indicated_arrow_1: 0
-  indicated_arrow_2: 1
+  indicated_arrow_1: 4
+  indicated_arrow_2: 4
+  life_time: 0
   hide_position: {x: 0, y: 0}
   final_position: {x: 0, y: 0}
   jump_time: 1

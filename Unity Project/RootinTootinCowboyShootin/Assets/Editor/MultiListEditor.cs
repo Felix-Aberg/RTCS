@@ -4,7 +4,7 @@ using UnityEngine;
 [CustomEditor(typeof(MultiList)), CanEditMultipleObjects]
 public class MultiListEditor : Editor
 {
-
+    /*
     public SerializedProperty state_property;
     public SerializedProperty enemy_variables_property;
     public SerializedProperty enemy_variables_twin_property;
@@ -31,7 +31,7 @@ public class MultiListEditor : Editor
 
         EditorGUILayout.PropertyField(state_property);
 
-        MultiList.Status state = (MultiList.Status)state_property.enumValueIndex;
+        MultiList.Events state = (MultiList.Status)state_property.enumValueIndex;
 
         switch (state)
         {
@@ -53,4 +53,5 @@ public class MultiListEditor : Editor
 
         serializedObject.ApplyModifiedProperties();
     }
+    //*/
 }
