@@ -60,7 +60,6 @@ public class ReticleScript : MonoBehaviour
 
             else
                 arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.NOT_INDICATED_PRESSED)];
-
         }
 
         else if (!pressed)
