@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public enum ArrowDirection
 {
     UP,
     DOWN,
     LEFT,
-    RIGHT,
-    NONE
+    RIGHT
 };
 
 public enum ArrowType
@@ -19,21 +19,32 @@ public enum ArrowType
     NOT_INDICATED_PRESSED
 };
 
+//Make arrow class
+//arrow class arrays
+//replace stuff with "for each arrow in indicated_arrows" & "...in wrong_arrows"
+//instantiate function
+
 public class ReticleScript : MonoBehaviour
 {
     public Sprite[] reticle_sprites;
     public GameObject[] arrow_objects;
     public Sprite[] arrow_sprites;
-    public ArrowDirection indicated_arrow_1;
-    public ArrowDirection indicated_arrow_2;
-    public ArrowDirection wrong_arrow_1;
-    public ArrowDirection wrong_arrow_2;
 
-    bool indicated_arrow_pressed_1;
-    bool indicated_arrow_pressed_2;
-    bool wrong_arrow_pressed_1;
-    bool wrong_arrow_pressed_2;
+    //Instantiated by InstantiateArrows()
+    public List<Arrow> all_arrows;
+    public List<Arrow> indicated_arrows;
+    public List<Arrow> wrong_arrows;
+    /*
+    public ArrowDirection indicated_arrow_1; //outdated, D E L E T E
+    public ArrowDirection indicated_arrow_2; //outdated, D E L E T E
+    public ArrowDirection wrong_arrow_1; //outdated, D E L E T E
+    public ArrowDirection wrong_arrow_2; //outdated, D E L E T E ⁾:
 
+    bool indicated_arrow_pressed_1; //outdated, D E L E T E
+    bool indicated_arrow_pressed_2; //outdated, D E L E T E
+    bool wrong_arrow_pressed_1; //outdated, D E L E T E
+    bool wrong_arrow_pressed_2; //outdated, D E L E T E
+    //*/
     public bool directions_correct;
     public bool crosshair_correct;
     
@@ -51,123 +62,6 @@ public class ReticleScript : MonoBehaviour
         UpdateReticle();
     }
 
-    public void UpdateReticle(ArrowDirection dir, bool pressed)
-    {
-        if(pressed)
-        {
-            if (dir == indicated_arrow_1 || dir == indicated_arrow_2)
-                arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.INDICATED_PRESSED)];
-
-            else
-                arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.NOT_INDICATED_PRESSED)];
-        }
-
-        else if (!pressed)
-        {
-            if (dir == indicated_arrow_1 || dir == indicated_arrow_2)
-                arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.INDICATED)];
-
-            else
-                arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.DEFAULT)];
-        }
-
-        if (dir == indicated_arrow_1)
-            indicated_arrow_pressed_1 = pressed;
-
-        if (dir == indicated_arrow_2)
-            indicated_arrow_pressed_2 = pressed;
-
-        if (dir == wrong_arrow_1)
-            wrong_arrow_pressed_1 = pressed;
-
-        if (dir == wrong_arrow_2)
-            wrong_arrow_pressed_2 = pressed;
-
-
-        if (indicated_arrow_pressed_1 && indicated_arrow_pressed_2 &&
-               !wrong_arrow_pressed_1 && !wrong_arrow_pressed_2)
-        {
-            if (!directions_correct)
-            {
-                directions_correct = true;
-                crosshair.GetComponent<CrosshairScript>().reticles_correct++;
-            }
-        }
-
-        else if (directions_correct)
-        {
-            directions_correct = false;
-            crosshair.GetComponent<CrosshairScript>().reticles_correct--;
-        }
-
-            UpdateReticle();
-    }
-
-    public void InstantiateArrows(ArrowDirection dir1, ArrowDirection dir2) // When enemy is spawned set 2 arrows to indicated and enable reticle
-    {
-        indicated_arrow_1 = dir1;
-        indicated_arrow_2 = dir2;
-
-        for(int i = 0; i < 4; i++)
-        {
-            if (i != (int)dir1 && i != (int)dir2)
-            {
-                wrong_arrow_1 = (ArrowDirection)i;
-                break;
-            }
-        }
-
-        for (int i = 0; i < 4; i++)
-        {
-            if (i != (int)dir1 && i != (int)dir2 && i != (int)wrong_arrow_1)
-            {
-                wrong_arrow_2 = (ArrowDirection)i;
-                break;
-            }
-        }
-
-        SetArrowSprite(dir1, ArrowType.INDICATED);
-        SetArrowSprite(dir2, ArrowType.INDICATED);
-    }
-
-    void SetArrowSprite(ArrowDirection dir, ArrowType type)
-    {
-        switch (dir)
-        {
-            case ArrowDirection.UP:
-                {
-                    arrow_objects[(int)ArrowDirection.UP].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)type];
-                    break;
-                }
-
-            case ArrowDirection.DOWN:
-                {
-                    arrow_objects[(int)ArrowDirection.DOWN].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)type];
-                    break;
-                }
-
-            case ArrowDirection.LEFT:
-                {
-                    arrow_objects[(int)ArrowDirection.LEFT].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)type];
-                    break;
-                }
-
-            case ArrowDirection.RIGHT:
-                {
-                    arrow_objects[(int)ArrowDirection.RIGHT].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)type];
-                    break;
-                }
-
-            case ArrowDirection.NONE:
-                {
-                    break;
-                }
-
-            default:
-                break;
-        }
-    }
-
     void UpdateReticle()
     {
         if (!directions_correct && !crosshair_correct)
@@ -178,6 +72,106 @@ public class ReticleScript : MonoBehaviour
 
         if (directions_correct && crosshair_correct)
             GetComponent<SpriteRenderer>().sprite = reticle_sprites[2];
+    }
+
+    public void UpdateReticle(ArrowDirection dir, bool pressed)
+    {
+        if(pressed)
+        {
+            foreach (Arrow arrow in indicated_arrows)
+            {
+                if (dir == arrow.dir)
+                {
+                    arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.INDICATED_PRESSED)];
+                    arrow.pressed = pressed;
+                }
+                else
+                {
+                    arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.NOT_INDICATED_PRESSED)];
+                    arrow.pressed = pressed;
+                }
+            }
+        }
+        else if (!pressed)
+        {
+            foreach (Arrow arrow in indicated_arrows)
+            {
+                if (dir == arrow.dir)
+                    arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.INDICATED)];
+                else
+                    arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.DEFAULT)];
+            }
+        }
+
+        directions_correct = true;
+
+        foreach (Arrow arrow in indicated_arrows)
+        {
+            //Check for errors.
+            if (!arrow.pressed)
+            {
+                //Debug.Log("Player isn't pressing a indicated arrow.")
+                directions_correct = false;
+            }
+        }
+
+        foreach (Arrow arrow in wrong_arrows)
+        {
+            //Check for errors.
+            if (arrow.pressed)
+            {
+                //Debug.Log("Player isn't pressing a indicated arrow.")
+                directions_correct = false;
+            }
+        }
+            UpdateReticle();
+    }
+
+    public void InstantiateArrows(ArrowDirection dir) // When enemy is spawned set 2 arrows to indicated and enable reticle
+    {
+        IndicateArrow(dir);
+        WrongArrow();
+    }
+
+    public void InstantiateArrows(ArrowDirection dir1, ArrowDirection dir2) // When enemy is spawned set 2 arrows to indicated and enable reticle
+    {
+        IndicateArrow(dir1);
+        IndicateArrow(dir2);
+        WrongArrow();
+    }
+
+    /// <summary>
+    /// Puts an arrow into the indicated_arrows list
+    /// </summary>
+    void IndicateArrow(ArrowDirection dir)
+    {
+        indicated_arrows.Add(all_arrows[(int)dir]);
+    }
+
+    /// <summary>
+    /// Sets all arrows that are not in the indicated_arrows list into the wrong_arrows list. Do this at the end of instantiating arrows.
+    /// </summary>
+    void WrongArrow()
+    { 
+        //Official order of arrows in arrays: up down left right
+        foreach (Arrow arrow in all_arrows)
+        {
+            bool indicated = false;
+
+            //Compare the current arrow with all indicated arrows
+            foreach (Arrow indicated_arrow in indicated_arrows)
+            {
+                if (arrow == indicated_arrow)
+                    indicated = true;
+            }
+
+            //If the arrow isn't in the indicated list
+            if (!indicated)
+            {
+                //Add it to the wrong arrow list
+                wrong_arrows.Add(arrow);
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

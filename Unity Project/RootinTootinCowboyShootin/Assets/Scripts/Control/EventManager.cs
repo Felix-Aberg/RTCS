@@ -22,6 +22,9 @@ public class EventManager : MonoBehaviour
 
     // OTHER VARIABLES //
 
+    [Tooltip("Enables debugs stating why an enemy wasn't spawned. Floods the console log when enabled.")]
+    public bool spawn_rejection_debugs;
+
     [Tooltip("Maximum enemies allowed on screen simultaneously. \n" +
              "Will not spawn more enemies if that will make it exceed this number.")]
     public int max_enemies_on_screen;
@@ -69,10 +72,21 @@ public class EventManager : MonoBehaviour
                 {
                     //Insert fail conditions here! If it makes it past all checks it will spawn
 
+                    //Check if the next enemy exists
+                    if (event_array[event_array_index].enemy_variables.enemy == null)
+                    {
+                        if (spawn_rejection_debugs)
+                            Debug.Log("Prevented enemy spawn. Enemy gameobject doesn't exist.");
+
+                        return false;
+                    }
+
                     //Check if there are too many enemies
                     if (game_master.spawnpoints_used.Count > max_enemies_on_screen - 1)
                     {
-                        Debug.Log("Prevented enemy spawn. Not enough space.");
+                        if(spawn_rejection_debugs)
+                            Debug.Log("Prevented enemy spawn. Not enough space.");
+
                         return false;
                     }
 
@@ -81,7 +95,9 @@ public class EventManager : MonoBehaviour
                     {
                         if (enemy_spawner.SelectSpawnPoint(event_array[event_array_index].enemy_variables.spawnpoint) == sp_used)
                         {
-                            Debug.Log("Prevented enemy spawn. Spawnpoint is occupied!");
+                            if (spawn_rejection_debugs)
+                                Debug.Log("Prevented enemy spawn. Spawnpoint is occupied!");
+
                             return false;
                         }
                     }
@@ -94,10 +110,21 @@ public class EventManager : MonoBehaviour
                 {
                     //Insert fail conditions here! If it makes it past all checks it will spawn
 
+                    //Check if the next enemy exists
+                    if (event_array[event_array_index].enemy_variables.enemy == null || event_array[event_array_index].enemy_variables_twin.enemy == null)
+                    {
+                        if (spawn_rejection_debugs)
+                            Debug.Log("Prevented twin enemy spawn. One of the enemy gameobjects doesn't exist.");
+
+                        return false;
+                    }
+
                     //Check if there are too many enemies
                     if (game_master.spawnpoints_used.Count > max_enemies_on_screen - 2)
                     {
-                        Debug.Log("Prevented twin enemy spawn. Not enough space.");
+                        if (spawn_rejection_debugs)
+                            Debug.Log("Prevented twin enemy spawn. Not enough space.");
+
                         return false;
                     }
 
@@ -107,7 +134,9 @@ public class EventManager : MonoBehaviour
                         if (enemy_spawner.SelectSpawnPoint(event_array[event_array_index].enemy_variables.spawnpoint) == sp_used ||
                             enemy_spawner.SelectSpawnPoint(event_array[event_array_index].enemy_variables_twin.spawnpoint) == sp_used)
                         {
-                            Debug.Log("Prevented twin enemy spawn. Spawnpoint is occupied!");
+                            if (spawn_rejection_debugs)
+                                Debug.Log("Prevented twin enemy spawn. Spawnpoint is occupied!");
+
                             return false;
                         }
                     }

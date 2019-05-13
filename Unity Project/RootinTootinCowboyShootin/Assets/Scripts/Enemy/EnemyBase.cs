@@ -26,23 +26,7 @@ public class EnemyBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //randomise arrows if at least one of them isn't set
-        if (indicated_arrow_1 == ArrowDirection.NONE || indicated_arrow_2 == ArrowDirection.NONE)
-        {
-            int rand = Random.Range(0, 4);
-            indicated_arrow_1 = (ArrowDirection)rand;
-
-            //randomise until a different value
-            while (rand == (int)indicated_arrow_1)
-            {
-                rand = Random.Range(0, 4);
-            }
-            indicated_arrow_2 = (ArrowDirection)rand; 
-        }
-
         Invoke("StartJump", jump_time);
-
-        //reticle.GetComponent<ReticleScript>().InstantiateArrows(indicated_arrow_1, indicated_arrow_2);
     }
 
     void StartJump()

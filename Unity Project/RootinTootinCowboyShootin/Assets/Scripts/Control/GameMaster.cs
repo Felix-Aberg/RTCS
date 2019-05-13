@@ -11,9 +11,10 @@ public class GameMaster : MonoBehaviour
     [Tooltip("A list of the spawnpoints used by the current enemies.")]
     public List<Transform> spawnpoints_used;
 
-    [Tooltip("A queue of the time it took to kill the last three enemies. \n" +
+    [Tooltip("An array of the time it took to kill the X enemies. \n" +
              "Used to delay spawns for slower players.")]
-    public Queue<float> death_queue;
+    public float[] death_array;
+    private int death_index;
 
     [Tooltip("Time until the first enemy spawns.")]
     public float first_spawn_delay;
@@ -29,11 +30,9 @@ public class GameMaster : MonoBehaviour
     [Tooltip("Work In Progress!!")] //Work in progress!!
     public float event_spawn_delay;
 
-    public float[] first_death_queue_values;
-
     public bool in_event;
 
-    private float death_queue_total;
+    public float death_queue_total;
     private float spawn_time;
 
     EventManager em;
@@ -46,10 +45,7 @@ public class GameMaster : MonoBehaviour
         es = GetComponent<EnemySpawner>();
         em = GetComponent<EventManager>();
         spawn_time = Time.time + first_spawn_delay;
-
-        death_queue_total += first_death_queue_values[0];
-        death_queue_total += first_death_queue_values[1];
-        death_queue_total += first_death_queue_values[2];
+        death_queue_total = death_array[0] + death_array[1] + death_array[2];
     }
 
     void Update()
@@ -139,6 +135,9 @@ public class GameMaster : MonoBehaviour
         {
             if (enemy == dead_enemy)
             {
+                Debug.Log(enemy);
+                Debug.Log(index);
+                Debug.Log(enemy.GetComponent<EnemyBase>().life_time);
                 RequeDeath(enemy.GetComponent<EnemyBase>().life_time);
                 Destroy(enemies[index]);
                 enemies.Remove(enemies[index]);
@@ -153,24 +152,18 @@ public class GameMaster : MonoBehaviour
     ///<summary>
     ///Call this whenever an enemy dies via the enemy.
     ///</summary>
-    public void RequeDeath(float death_time)
+    public void RequeDeath(float life_time)
     {
-        EnqueDeath(death_time);
-        DequeDeath();
-    }
+        //Replace the oldest value in the total with the newest one
+        death_queue_total -= death_array[death_index];
+        death_queue_total += life_time;
 
-    ///<summary>
-    ///Call this at the start of gamemaster and whenever an enemy dies.
-    ///</summary>
-    void EnqueDeath(float death_time)
-    {
-        death_queue_total += death_time;
-        death_queue.Enqueue(death_time);
-    }
+        //Replace the oldest value in the array with the newest one
+        death_array[death_index] = life_time;
 
-    void DequeDeath()
-    {
-        float death_time = death_queue.Dequeue();
-        death_queue_total -= death_time;
+        //Move onto the oldest value in the array for next time
+        death_index++;
+        if (death_index == death_array.Length)
+            death_index = 0;
     }
 }

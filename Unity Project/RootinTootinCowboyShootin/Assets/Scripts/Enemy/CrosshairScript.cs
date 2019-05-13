@@ -25,10 +25,10 @@ public class CrosshairScript : MonoBehaviour
                 Debug.Log("reticle exists");
                 if (current_reticle.GetComponent<ReticleScript>().directions_correct)
                 {
-                    Debug.Log("directions correct");
+                    Debug.Log("directions correct + reticle");
                     if (current_reticle.GetComponent<ReticleScript>().crosshair_correct)
                     {
-                        Debug.Log("crosshair correct");
+                        Debug.Log("everything correct, shooting");
                         Shoot();
                     }
                 }

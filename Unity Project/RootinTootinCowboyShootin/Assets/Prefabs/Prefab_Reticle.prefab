@@ -66,7 +66,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1733210963
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c9061ea0e6b0aaf4d8bb401d6212639c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -151,7 +151,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1733210963
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5846a1ceb8a93fa44a391365827c8c69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -190,7 +190,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 637ce8104a7f8934aae60cd38e400e70, type: 3}
   - {fileID: 21300000, guid: f8d3da6696235d94eb58c0f29852b6b2, type: 3}
   - {fileID: 21300000, guid: 4bc845b2bc4aed74ea29a0b4145feb82, type: 3}
+  all_arrows:
+  - dir: 0
+    pressed: 0
+  - dir: 1
+    pressed: 0
+  - dir: 2
+    pressed: 0
+  - dir: 3
+    pressed: 0
+  indicated_arrows: []
+  wrong_arrows: []
   directions_correct: 0
+  crosshair_correct: 0
 --- !u!58 &5249677319548466409
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -273,7 +285,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1733210963
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c9061ea0e6b0aaf4d8bb401d6212639c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -352,7 +364,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1733210963
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c9061ea0e6b0aaf4d8bb401d6212639c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -431,7 +443,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1733210963
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c9061ea0e6b0aaf4d8bb401d6212639c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
