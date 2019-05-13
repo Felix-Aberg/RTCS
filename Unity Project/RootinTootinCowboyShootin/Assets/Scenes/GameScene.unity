@@ -2041,12 +2041,12 @@ PrefabInstance:
     - target: {fileID: 1323464475637953566, guid: c7cb3a324d48f5a47ab4ef7ac2fb133b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.94
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1323464475637953566, guid: c7cb3a324d48f5a47ab4ef7ac2fb133b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1323464475637953566, guid: c7cb3a324d48f5a47ab4ef7ac2fb133b,
         type: 3}
@@ -2098,6 +2098,11 @@ PrefabInstance:
       propertyPath: crosshair_tracker
       value: 
       objectReference: {fileID: 440450013}
+    - target: {fileID: 1323464475637953565, guid: c7cb3a324d48f5a47ab4ef7ac2fb133b,
+        type: 3}
+      propertyPath: lerp_bias
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1323464475637953567, guid: c7cb3a324d48f5a47ab4ef7ac2fb133b,
         type: 3}
       propertyPath: m_SortingLayerID
