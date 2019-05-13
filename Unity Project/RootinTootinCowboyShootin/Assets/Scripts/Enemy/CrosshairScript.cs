@@ -10,6 +10,8 @@ public class CrosshairScript : MonoBehaviour
     public int reticles_correct = 0; //How many reticles that are correct
     GameObject game_master;
 
+    public float lerp_bias;
+
     void Start()
     {
         Cursor.visible = false;
@@ -42,11 +44,15 @@ public class CrosshairScript : MonoBehaviour
     void LateUpdate()
     {
         Vector2 temppos = transform.position;
-
+        
         if (!game_master.GetComponent<InputHandler>().use_mouse)
-            temppos = crosshair_tracker.position;
+        {
+            temppos.x = Mathf.Lerp(transform.position.x, crosshair_tracker.transform.position.x, lerp_bias);
+            temppos.y = Mathf.Lerp(transform.position.y, crosshair_tracker.transform.position.y, lerp_bias);
+        }
+
         else if (game_master.GetComponent<InputHandler>().use_mouse)
-            temppos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        temppos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         transform.position = temppos;
     }
@@ -58,7 +64,6 @@ public class CrosshairScript : MonoBehaviour
 
     void ShootFoot()
     {
-
         Debug.Log("Ouch owie my footsie");
     }
 }
