@@ -123,7 +123,6 @@ public class ReticleScript : MonoBehaviour
                 directions_correct = false;
             }
         }
-            UpdateReticle();
     }
 
     public void InstantiateArrows(ArrowDirection dir1, ArrowDirection dir2) // When enemy is spawned set 2 arrows to indicated and enable reticle
@@ -146,7 +145,7 @@ public class ReticleScript : MonoBehaviour
     /// </summary>
     void IndicateArrow(ArrowDirection dir)
     {
-        //indicated_arrows.Add(all_arrows[(int)dir]);
+        indicated_arrows.Add(all_arrows[(int)dir]);
     }
 
     /// <summary>
