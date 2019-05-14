@@ -2216,6 +2216,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameMaster
       objectReference: {fileID: 0}
+    - target: {fileID: 6322381242667279036, guid: b4dc635166763f746acbc5d76a36d04b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6322381243867954307, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
       propertyPath: m_TagString
@@ -2364,12 +2369,12 @@ PrefabInstance:
     - target: {fileID: 6322381242667279026, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
       propertyPath: single_spawn_delay
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6322381242667279026, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
       propertyPath: twin_spawn_delay
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6322381242667279026, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
@@ -2379,17 +2384,17 @@ PrefabInstance:
     - target: {fileID: 6322381242667279026, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
       propertyPath: death_array.Array.data[0]
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6322381242667279026, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
       propertyPath: death_array.Array.data[1]
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6322381242667279026, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
       propertyPath: death_array.Array.data[2]
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6322381242667279024, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}

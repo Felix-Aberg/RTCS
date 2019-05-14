@@ -119,7 +119,7 @@ public class GameMaster : MonoBehaviour
     public void SpawnEnemy(EnemyVariables enemy_variables)
     {;
         SpawnPackage sp = es.SpawnBasic(enemy_variables);
-        Debug.Log("ENEMY SPAWNED!!");
+        Debug.Log("");
         enemies.Add(sp.enemy);
         Debug.Log("test");
         Debug.Log("sp.enemy: " + sp.enemy);

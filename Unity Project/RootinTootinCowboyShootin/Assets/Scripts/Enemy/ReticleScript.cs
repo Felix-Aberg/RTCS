@@ -8,7 +8,7 @@ public enum ArrowDirection
     UP,
     DOWN,
     LEFT,
-    RIGHT,
+    RIGHT
 };
 
 public enum ArrowType
@@ -34,17 +34,7 @@ public class ReticleScript : MonoBehaviour
     public List<Arrow> all_arrows;
     public List<Arrow> indicated_arrows;
     public List<Arrow> wrong_arrows;
-    /*
-    public ArrowDirection indicated_arrow_1; //outdated, D E L E T E
-    public ArrowDirection indicated_arrow_2; //outdated, D E L E T E
-    public ArrowDirection wrong_arrow_1; //outdated, D E L E T E
-    public ArrowDirection wrong_arrow_2; //outdated, D E L E T E ⁾:
 
-    bool indicated_arrow_pressed_1; //outdated, D E L E T E
-    bool indicated_arrow_pressed_2; //outdated, D E L E T E
-    bool wrong_arrow_pressed_1; //outdated, D E L E T E
-    bool wrong_arrow_pressed_2; //outdated, D E L E T E
-    //*/
     public bool directions_correct;
     public bool crosshair_correct;
     
@@ -74,35 +64,44 @@ public class ReticleScript : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = reticle_sprites[2];
     }
 
+    /// <summary>
+    /// Called by the InputHandler to update all arrows accordingly with the input. Gives an arrowdirection and boolean at a time
+    /// </summary>
     public void UpdateReticle(ArrowDirection dir, bool pressed)
     {
-        if(pressed)
+        //Find the corresponding indicated arrow and update it accordingly
+        foreach (Arrow arrow in indicated_arrows)
         {
-            foreach (Arrow arrow in indicated_arrows)
+            if (pressed && dir == arrow.dir)
             {
-                if (dir == arrow.dir)
-                {
-                    arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.INDICATED_PRESSED)];
-                    arrow.pressed = pressed;
-                }
-                else
-                {
-                    arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.NOT_INDICATED_PRESSED)];
-                    arrow.pressed = pressed;
-                }
+                arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.INDICATED_PRESSED)];
+                arrow.pressed = pressed;
             }
-        }
-        else if (!pressed)
-        {
-            foreach (Arrow arrow in indicated_arrows)
+            else if (!pressed && dir == arrow.dir)
             {
-                if (dir == arrow.dir)
-                    arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.INDICATED)];
-                else
-                    arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.DEFAULT)];
+                arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.INDICATED)];
+                arrow.pressed = pressed;
             }
         }
 
+        //Find the corresponding indicated arrow and update it accordingly
+        foreach (Arrow arrow in wrong_arrows)
+        {
+            if (pressed && dir == arrow.dir)
+            {
+                arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.NOT_INDICATED_PRESSED)];
+                arrow.pressed = pressed;
+            }
+            else if (!pressed && dir == arrow.dir)
+            {
+                arrow_objects[(int)dir].GetComponent<SpriteRenderer>().sprite = arrow_sprites[(int)(ArrowType.DEFAULT)];
+                arrow.pressed = pressed;
+            }
+        }
+        //*/
+
+        //Check if directions_correct
+        //Automatically set to true, can get disabled by the conitions below
         directions_correct = true;
 
         foreach (Arrow arrow in indicated_arrows)
@@ -131,6 +130,7 @@ public class ReticleScript : MonoBehaviour
     {
         if (dir1 == dir2)
         {
+            Debug.Log("Only instantiated one direction!");
             IndicateArrow(dir1);
         }
         else
