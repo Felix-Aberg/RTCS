@@ -1663,8 +1663,8 @@ MonoBehaviour:
       enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
         type: 3}
       spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 4
+      arrow_direction_1: 2
+      arrow_direction_2: 2
     enemy_variables_twin:
       enemy: {fileID: 0}
       spawnpoint: 0
