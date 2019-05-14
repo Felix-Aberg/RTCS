@@ -31,13 +31,19 @@ public class CrosshairScript : MonoBehaviour
             if (wiimote.btn_left_down && !left_pressed_last_frame)
             {
                 if (lerp_preset_nr > 0)
+                {
                     lerp_preset_nr--;
+                    ChangeLerpBias();
+                }
             }
 
-            else if (wiimote.btn_right_down && !right_pressed_last_frame)
+            else if (wiimote.btn_right_down  && !right_pressed_last_frame)
             {
-                if (lerp_preset_nr < 4)
+                if (lerp_preset_nr < 3)
+                {
                     lerp_preset_nr++;
+                    ChangeLerpBias();
+                }
             }
         }
 
@@ -60,23 +66,23 @@ public class CrosshairScript : MonoBehaviour
             if (reticles_correct < 1)
                 ShootFoot();
         }
+
+        left_pressed_last_frame = wiimote.btn_left_down;
+        right_pressed_last_frame = wiimote.btn_right_down;
     }
 
     void LateUpdate()
     {
         Vector2 temppos = transform.position;
-        
+
         if (!game_master.GetComponent<InputHandler>().use_mouse)
         {
             temppos.x = Mathf.Lerp(transform.position.x, crosshair_tracker.transform.position.x, lerp_bias);
             temppos.y = Mathf.Lerp(transform.position.y, crosshair_tracker.transform.position.y, lerp_bias);
-
-            left_pressed_last_frame = wiimote.btn_left_down;
-            right_pressed_last_frame = wiimote.btn_right_down;
         }
 
         else if (game_master.GetComponent<InputHandler>().use_mouse)
-        temppos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            temppos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         transform.position = temppos;
     }
@@ -97,33 +103,26 @@ public class CrosshairScript : MonoBehaviour
         {
             case (0):
                 {
-                    lerp_bias = 0f;
-                    wiimote.UpdateLEDs(false, false, false, false);
-                break;
-                }
-
-            case (1):
-                {
                     lerp_bias = .25f;
                     wiimote.UpdateLEDs(true, false, false, false);
                     break;
                 }
 
-            case (2):
+            case (1):
                 {
                     lerp_bias = .5f;
                     wiimote.UpdateLEDs(true, true, false, false);
                     break;
                 }
 
-            case (3):
+            case (2):
                 {
                     lerp_bias = .75f;
                     wiimote.UpdateLEDs(true, true, true, false);
                     break;
                 }
 
-            case (4):
+            case (3):
                 {
                     lerp_bias = 1;
                     wiimote.UpdateLEDs(true, true, true, true);
@@ -137,3 +136,4 @@ public class CrosshairScript : MonoBehaviour
         }
     }
 }
+

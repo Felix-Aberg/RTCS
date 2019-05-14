@@ -146,7 +146,7 @@ public class ReticleScript : MonoBehaviour
     /// </summary>
     void IndicateArrow(ArrowDirection dir)
     {
-        indicated_arrows.Add(all_arrows[(int)dir]);
+        //indicated_arrows.Add(all_arrows[(int)dir]);
     }
 
     /// <summary>

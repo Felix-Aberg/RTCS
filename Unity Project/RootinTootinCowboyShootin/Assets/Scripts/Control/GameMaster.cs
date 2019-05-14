@@ -119,10 +119,10 @@ public class GameMaster : MonoBehaviour
     public void SpawnEnemy(EnemyVariables enemy_variables)
     {;
         SpawnPackage sp = es.SpawnBasic(enemy_variables);
-        Debug.Log("ENEMY SPAWNED!!");
+        //Debug.Log("ENEMY SPAWNED!!");
         enemies.Add(sp.enemy);
-        Debug.Log("test");
-        Debug.Log("sp.enemy: " + sp.enemy);
+        //Debug.Log("test");
+        //Debug.Log("sp.enemy: " + sp.enemy);
         spawnpoints_used.Add(sp.spawn_point);
     }
 
@@ -139,9 +139,9 @@ public class GameMaster : MonoBehaviour
         {
             if (enemy == dead_enemy)
             {
-                Debug.Log(enemy);
-                Debug.Log(index);
-                Debug.Log(enemy.GetComponent<EnemyBase>().life_time);
+                //Debug.Log(enemy);
+                //Debug.Log(index);
+                //Debug.Log(enemy.GetComponent<EnemyBase>().life_time);
                 RequeDeath(enemy.GetComponent<EnemyBase>().life_time);
                 Destroy(enemies[index]);
                 enemies.Remove(enemies[index]);
