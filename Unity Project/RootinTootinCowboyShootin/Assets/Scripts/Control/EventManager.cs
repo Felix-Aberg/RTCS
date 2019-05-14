@@ -213,6 +213,7 @@ public class EventManager : MonoBehaviour
     void SpawnEnemy()
     {
         game_master.SpawnEnemy(event_array[event_array_index].enemy_variables);
+        Debug.Log("Spawn: " + Time.time);
     }
 
     void SpawnTwinEnemies()

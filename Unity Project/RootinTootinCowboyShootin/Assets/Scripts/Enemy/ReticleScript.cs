@@ -8,7 +8,7 @@ public enum ArrowDirection
     UP,
     DOWN,
     LEFT,
-    RIGHT
+    RIGHT,
 };
 
 public enum ArrowType
@@ -127,16 +127,17 @@ public class ReticleScript : MonoBehaviour
             UpdateReticle();
     }
 
-    public void InstantiateArrows(ArrowDirection dir) // When enemy is spawned set 2 arrows to indicated and enable reticle
-    {
-        IndicateArrow(dir);
-        WrongArrow();
-    }
-
     public void InstantiateArrows(ArrowDirection dir1, ArrowDirection dir2) // When enemy is spawned set 2 arrows to indicated and enable reticle
     {
-        IndicateArrow(dir1);
-        IndicateArrow(dir2);
+        if (dir1 == dir2)
+        {
+            IndicateArrow(dir1);
+        }
+        else
+        {
+            IndicateArrow(dir1);
+            IndicateArrow(dir2);
+        }
         WrongArrow();
     }
 

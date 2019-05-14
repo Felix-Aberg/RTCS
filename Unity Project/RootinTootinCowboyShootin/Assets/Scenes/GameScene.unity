@@ -2338,6 +2338,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6322381242667279026, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
+      propertyPath: enemies.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322381242667279026, guid: b4dc635166763f746acbc5d76a36d04b,
+        type: 3}
       propertyPath: special_waves
       value: 4
       objectReference: {fileID: 0}

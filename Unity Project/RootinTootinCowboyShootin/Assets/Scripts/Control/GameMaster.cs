@@ -61,7 +61,7 @@ public class GameMaster : MonoBehaviour
     {
         if (em.CheckNextEvent() != Events.SPECIALEVENT && enemies.Count == 0 && Time.time < spawn_time)
         {
-            spawn_time = Time.time - .1f;
+            //spawn_time = Time.time - .1f;
         }
 
         if (Time.time > spawn_time)
@@ -101,24 +101,28 @@ public class GameMaster : MonoBehaviour
         }
     }
 
+    /*
     public void SpawnEnemy(GameObject enemy)
     {
         SpawnPackage sp = es.SpawnBasic(enemy);
         enemies.Add(sp.enemy);  
         spawnpoints_used.Add(sp.spawn_point);
-    }
+    }//
 
     public void SpawnEnemy(GameObject enemy, SpawnPoint enum_spawnpoint, ArrowDirection dir1, ArrowDirection dir2)
     {
         SpawnPackage sp = es.SpawnBasic(enemy, enum_spawnpoint, dir1, dir2);
         enemies.Add(sp.enemy);
         spawnpoints_used.Add(sp.spawn_point);
-    }
+    }//*/
 
     public void SpawnEnemy(EnemyVariables enemy_variables)
-    {
+    {;
         SpawnPackage sp = es.SpawnBasic(enemy_variables);
+        Debug.Log("ENEMY SPAWNED!!");
         enemies.Add(sp.enemy);
+        Debug.Log("test");
+        Debug.Log("sp.enemy: " + sp.enemy);
         spawnpoints_used.Add(sp.spawn_point);
     }
 
