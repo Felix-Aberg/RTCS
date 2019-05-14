@@ -16,12 +16,14 @@ public class WiiMote : MonoBehaviour {
     private Vector2 scrollPosition;
 
     public bool btn_b_down;
+    public bool btn_left_down;
+    public bool btn_right_down;
 
     void Start()
     {
         WiimoteManager.FindWiimotes();
         wiimote = WiimoteManager.Wiimotes[0];
-        wiimote.SendPlayerLED(true, false, false, true);
+        wiimote.SendPlayerLED(true, true, false, false);
         wiimote.SetupIRCamera(IRDataType.FULL);
     }
 
@@ -74,6 +76,8 @@ public class WiiMote : MonoBehaviour {
         ir_pointer.anchorMax = new Vector2(pointer[0], pointer[1]);
 
         btn_b_down = wiimote.Button.b;
+        btn_left_down = wiimote.Button.d_left;
+        btn_right_down = wiimote.Button.d_right;
 	}
     
     private Vector3 GetAccelVector()
@@ -88,5 +92,10 @@ public class WiiMote : MonoBehaviour {
         accel_z = -accel[1];
 
         return new Vector3(accel_x, accel_y, accel_z).normalized;
+    }
+
+    public void UpdateLEDs(bool LED1, bool LED2, bool LED3, bool LED4)
+    {
+        wiimote.SendPlayerLED(LED1, LED2, LED3, LED4);
     }
 }
