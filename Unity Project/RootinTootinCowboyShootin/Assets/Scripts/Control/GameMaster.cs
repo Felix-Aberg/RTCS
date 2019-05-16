@@ -42,10 +42,16 @@ public class GameMaster : MonoBehaviour
 
     void Start()
     {
+
         es = GetComponent<EnemySpawner>();
         em = GetComponent<EventManager>();
-        spawn_time = Time.time + first_spawn_delay;
-        death_queue_total = death_array[0] + death_array[1] + death_array[2];
+
+        if (SceneManager.GetActiveScene().name == "GameScene")
+        {
+            spawn_time = Time.time + first_spawn_delay;
+            death_queue_total = death_array[0] + death_array[1] + death_array[2];
+        }
+            
     }
 
     void Update()
@@ -59,46 +65,75 @@ public class GameMaster : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (em.CheckNextEvent() != Events.SPECIALEVENT && enemies.Count == 0 && Time.time < spawn_time)
+        switch(SceneManager.GetActiveScene().name)
         {
-            //spawn_time = Time.time - .1f;
-        }
-
-        if (Time.time > spawn_time)
-        {
-            //When the time comes to try and spawn an event
-            if (em.NextEventReady())
-            {
-                //Start next event
-                em.StartEvent();
-
-                //Set the time for the next event to happen
-                spawn_time = Time.time;
-
-                switch(em.CheckNextEvent())
+            case "GameScene":
                 {
-                    case Events.ENEMY:
-                        {
-                            spawn_time += single_spawn_delay;
-                            break;
-                        }
+                    if (em.CheckNextEvent() != Events.SPECIALEVENT && enemies.Count == 0 && Time.time < spawn_time)
+                    {
+                        //spawn_time = Time.time - .1f;
+                    }
 
-                    case Events.TWINENEMIES:
-                        {
-                            spawn_time += twin_spawn_delay;
-                            break;
-                        }
+                    if (Input.GetKeyDown(KeyCode.G))
+                    {
+                        DontDestroyOnLoad(gameObject);
+                        SceneManager.LoadScene("WinScene");
+                    }
 
-                    case Events.SPECIALEVENT:
+                    if (Time.time > spawn_time)
+                    {
+                        //When the time comes to try and spawn an event
+                        if (em.NextEventReady())
                         {
-                            spawn_time += event_spawn_delay;
-                            break;
+                            //Start next event
+                            em.StartEvent();
+
+                            //Set the time for the next event to happen
+                            spawn_time = Time.time;
+
+                            switch (em.CheckNextEvent())
+                            {
+                                case Events.ENEMY:
+                                    {
+                                        spawn_time += single_spawn_delay;
+                                        break;
+                                    }
+
+                                case Events.TWINENEMIES:
+                                    {
+                                        spawn_time += twin_spawn_delay;
+                                        break;
+                                    }
+
+                                case Events.SPECIALEVENT:
+                                    {
+                                        spawn_time += event_spawn_delay;
+                                        break;
+                                    }
+                            }
+
+                            //Add velocity to non-special events
                         }
+                    }
+                    break;
                 }
 
-                //Add velocity to non-special events
-            }
+            case "WinScene":
+                {
+
+                    break;
+                }
+
+            case "GameOver":
+                {
+                    
+
+                    break;
+                }
+
         }
+
+        
     }
 
     /*

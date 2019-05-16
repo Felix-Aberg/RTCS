@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
+
 
 public enum ScoreEvent
 {
@@ -18,6 +21,10 @@ public enum ScoreEvent
 
 public class Score : MonoBehaviour
 {
+    public int[] high_score;
+    [Tooltip("The number of high scores to save")]
+    int max_high_scores = 10;
+
     public Text text_score;
 
     [Tooltip("Current player's score this run. Not to be confused with high-scores")]
@@ -54,6 +61,24 @@ public class Score : MonoBehaviour
     [Tooltip("Score taken from the player for getting shot. \n" +
              "USE NEGATIVE NUMBERS!")]
     public int score_shoot_yourself;
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("OnSceneLoaded: " + scene.name);
+        Debug.Log(mode);
+
+        if (scene.name == "WinScene")
+        {
+            Debug.Log("Found HighScoreReader: " + !!GameObject.Find("Canvas").GetComponentInChildren<HighScoreReader>());
+            GameObject.Find("Canvas").GetComponentInChildren<HighScoreReader>().RenderHighScores(high_score, max_high_scores);
+        }
+    }
+
     public void UpdateScore(ScoreEvent se)
     {
         switch(se)
@@ -117,5 +142,68 @@ public class Score : MonoBehaviour
         }
 
         text_score.text = current_score.ToString();
+    }
+
+    void Start()
+    {
+        UpdateHighScore(0);
+
+        //ClearHighScore();
+        /* //Dummy values used for testing
+        UpdateHighScore(1235);
+        UpdateHighScore(152);
+        UpdateHighScore(355);
+        UpdateHighScore(332);
+        UpdateHighScore(911);
+        UpdateHighScore(1337);
+        //*/
+    }
+
+    // ## High Score Functions ## //
+    
+    //Clears the saved high scores, used for debugging.
+    void ClearHighScore()
+    {
+        for (int i = 0; i < max_high_scores; i++)
+        {
+            PlayerPrefs.SetInt("HighScore_" + i, 0);
+        }
+    }
+
+    void UpdateHighScore(int score)
+    {
+        //If score is greater than the lowest score
+        if (true)
+        {
+            HighScorePull();
+
+            high_score[max_high_scores] = score;
+            Array.Sort(high_score);
+            Array.Reverse(high_score);
+            //high_score[max_high_scores] = 0;
+            PlayerPrefs.Save();
+
+            HighScorePush();
+        }
+    }
+
+    void HighScorePull()
+    {
+        for (int i = 0; i < max_high_scores; i++)
+        {
+            high_score[i] = PlayerPrefs.GetInt("HighScore_" + i, 0);
+        }
+
+        return;
+    }
+
+    void HighScorePush()
+    {
+        for(int i = 0; i < max_high_scores; i++)
+        {
+            PlayerPrefs.SetInt("HighScore_" + i, high_score[i]);
+        }
+        
+        return;
     }
 }

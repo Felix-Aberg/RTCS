@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputHandler : MonoBehaviour
 {
@@ -46,7 +47,8 @@ public class InputHandler : MonoBehaviour
         arrows[(int)ArrowDirection.LEFT] = Input.GetButton("DanceMatLeft");
         arrows[(int)ArrowDirection.RIGHT] = Input.GetButton("DanceMatRight");
 
-        UpdateArrows();
+        if(GameObject.Find("SceneVariables").GetComponent<SceneScript>().is_core_loop_scene == true)
+            UpdateArrows();
 
         // WIIMOTE SHOOTY
         // do code
@@ -80,7 +82,7 @@ public class InputHandler : MonoBehaviour
                 {
                     enemy.GetComponentInChildren<ReticleScript>().UpdateReticle((ArrowDirection)i, arrows[i]);
                 }
-            }           
+            }
         }
     }
 }

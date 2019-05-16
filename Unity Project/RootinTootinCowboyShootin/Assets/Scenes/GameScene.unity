@@ -1198,6 +1198,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.71, y: 2.2951527}
   m_EdgeRadius: 0
+--- !u!1 &1407762033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1407762035}
+  - component: {fileID: 1407762034}
+  m_Layer: 0
+  m_Name: SceneVariables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1407762034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407762033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52b7a2e814daac4428743b2f6f2408b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_core_loop_scene: 1
+--- !u!4 &1407762035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407762033}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -87.79995, y: 398.91766, z: -27.740587}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1414968267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1663,7 +1707,73 @@ MonoBehaviour:
       enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
         type: 3}
       spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 1
+      arrow_direction_1: 1
+      arrow_direction_2: 3
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 3
       arrow_direction_1: 2
+      arrow_direction_2: 2
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 1
+    enemy_variables:
+      enemy: {fileID: 5976167421542373025, guid: 4a7f1d23c8e2a4a46b80f449327f86c7,
+        type: 3}
+      spawnpoint: 2
+      arrow_direction_1: 2
+      arrow_direction_2: 1
+    enemy_variables_twin:
+      enemy: {fileID: 5976167421542373025, guid: c5a744ac850017f4e951262dce6d60d2,
+        type: 3}
+      spawnpoint: 3
+      arrow_direction_1: 1
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 1
+      arrow_direction_1: 3
+      arrow_direction_2: 3
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 0
+      arrow_direction_1: 0
       arrow_direction_2: 2
     enemy_variables_twin:
       enemy: {fileID: 0}
@@ -1676,21 +1786,8 @@ MonoBehaviour:
       enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
         type: 3}
       spawnpoint: 1
-      arrow_direction_1: 0
-      arrow_direction_2: 2
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
-        type: 3}
-      spawnpoint: 3
-      arrow_direction_1: 3
-      arrow_direction_2: 2
+      arrow_direction_1: 1
+      arrow_direction_2: 1
     enemy_variables_twin:
       enemy: {fileID: 0}
       spawnpoint: 0
@@ -1733,54 +1830,30 @@ MonoBehaviour:
       arrow_direction_1: 0
       arrow_direction_2: 0
     special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
+--- !u!114 &1688572489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688572487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74535a110e120444487caafc0fdf8848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  high_score: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  text_score: {fileID: 0}
+  current_score: 0
+  score_kill_basic: 0
+  score_kill_special: 0
+  score_wall_hole: 0
+  score_dance_step: 0
+  score_stomping_bomb: 0
+  score_defused_bomb: 0
+  score_time_left_multiplier: 0
+  score_get_shot: 0
+  score_shoot_yourself: 0
 --- !u!224 &1868733328 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1144981972597160742, guid: bdb840b7d075f714a87aadfbddb8923d,
