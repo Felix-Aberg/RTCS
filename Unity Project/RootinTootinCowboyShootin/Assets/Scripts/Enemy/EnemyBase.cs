@@ -20,8 +20,7 @@ public class EnemyBase : MonoBehaviour
     public float jump_time;
     bool jumping;
     bool returning;
-
-    public bool dead;
+    bool dead;
 
     public float jump_speed = 10;
     public float shoot_time = 5;
@@ -55,31 +54,34 @@ public class EnemyBase : MonoBehaviour
 
     void FixedUpdate()
     {
-        life_time += Time.fixedDeltaTime;
-
-        if (jumping)
+        if (!dead)
         {
-            transform.position = Vector2.MoveTowards(transform.position, final_position, jump_speed/100);
+            life_time += Time.fixedDeltaTime;
 
-            //To disable jumping
-            if (Vector2.Distance(transform.position, final_position) < 0.000002f)
+            if (jumping)
             {
-                jumping = false;
-                animator.SetBool("Walking", false);
-                animator.SetBool("Shooting", true);
-                Invoke("Shoot", shoot_time);
+                transform.position = Vector2.MoveTowards(transform.position, final_position, jump_speed / 100);
+
+                //To disable jumping
+                if (Vector2.Distance(transform.position, final_position) < 0.000002f)
+                {
+                    jumping = false;
+                    animator.SetBool("Walking", false);
+                    animator.SetBool("Shooting", true);
+                    Invoke("Shoot", shoot_time);
+                }
             }
-        }
 
-        else if (returning)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, hide_position, jump_speed / 100);
-
-            if(Vector2.Distance(transform.position, hide_position) < 0.000002f)
+            else if (returning)
             {
-                returning = false;
-                animator.SetBool("Walking", false);
-                Invoke("StartJump", jump_time);
+                transform.position = Vector2.MoveTowards(transform.position, hide_position, jump_speed / 100);
+
+                if (Vector2.Distance(transform.position, hide_position) < 0.000002f)
+                {
+                    returning = false;
+                    animator.SetBool("Walking", false);
+                    Invoke("StartJump", jump_time);
+                }
             }
         }
     }
