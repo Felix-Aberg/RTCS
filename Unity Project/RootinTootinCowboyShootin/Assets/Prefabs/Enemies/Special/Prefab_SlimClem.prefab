@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 186949717485371126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 4010582353693403950}
   - {fileID: 5730797234705274324}
@@ -103,7 +103,6 @@ MonoBehaviour:
   hide_position: {x: 0, y: 0}
   final_position: {x: 0, y: 0}
   jump_time: 1
-  dead: 0
   jump_speed: 10
   shoot_time: 5
 --- !u!70 &609179423134390129
@@ -248,7 +247,7 @@ PrefabInstance:
     - target: {fileID: 462846734510833188, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.46
+      value: -2.22
       objectReference: {fileID: 0}
     - target: {fileID: 462846734510833188, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}
