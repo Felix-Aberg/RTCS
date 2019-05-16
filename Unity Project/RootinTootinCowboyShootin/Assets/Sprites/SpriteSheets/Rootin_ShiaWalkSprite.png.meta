@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: c0bc85b145130d540aef1c024c2a4965
+guid: 966224ad25d95e44cb22ab4659501559
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Rootin_BillSprite_0
-    21300002: Rootin_BillSprite_1
-    21300004: Rootin_BillSprite_2
-    21300006: Rootin_BillSprite_3
-    21300008: Rootin_BillSprite_4
-    21300010: Rootin_BillSprite_5
+    21300000: Rootin_ShiaWalkSprite_0
+    21300002: Rootin_ShiaWalkSprite_1
+    21300004: Rootin_ShiaWalkSprite_2
+    21300006: Rootin_ShiaWalkSprite_3
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -90,13 +88,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rootin_BillSprite_0
+      name: Rootin_ShiaWalkSprite_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 302
-        height: 316
+        width: 312
+        height: 396
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -104,19 +102,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4aea5e14f8a3cbd4ca4751227fce785c
+      spriteID: e103aba3805cd5a4696559d7553ec692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_BillSprite_1
+      name: Rootin_ShiaWalkSprite_1
       rect:
         serializedVersion: 2
-        x: 302
+        x: 312
         y: 0
-        width: 302
-        height: 316
+        width: 312
+        height: 396
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,19 +122,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d087d5112d4e3444b26d5a10c25984c
+      spriteID: 18db4fb7c03a33a41886b229a93e079c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_BillSprite_2
+      name: Rootin_ShiaWalkSprite_2
       rect:
         serializedVersion: 2
-        x: 604
+        x: 624
         y: 0
-        width: 302
-        height: 316
+        width: 312
+        height: 396
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,19 +142,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61b01425e4011374e8aa8cabc53b1e8b
+      spriteID: a91a587b6bb16ba499c694206724c2f2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_BillSprite_3
+      name: Rootin_ShiaWalkSprite_3
       rect:
         serializedVersion: 2
-        x: 906
+        x: 936
         y: 0
-        width: 302
-        height: 316
+        width: 312
+        height: 396
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,47 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d562067d98407f34981dca6284d6ced5
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rootin_BillSprite_4
-      rect:
-        serializedVersion: 2
-        x: 1208
-        y: 0
-        width: 302
-        height: 316
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48fddf696bc236f4496fd5358e547ca3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rootin_BillSprite_5
-      rect:
-        serializedVersion: 2
-        x: 1510
-        y: 0
-        width: 302
-        height: 316
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2bdc1845dfc79bd4985ddd6ff8e60f4d
+      spriteID: 7b13ad21b6c0c394b91004a5ccd79ecb
       vertices: []
       indices: 
       edges: []
@@ -212,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 91191ef3a3536d443a3525d0f5556e70
+    spriteID: 1af89cb85413b9849baf70caa63ef5b5
     vertices: []
     indices: 
     edges: []

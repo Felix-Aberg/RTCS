@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour
 {
     public GameObject reticle;
+    public Animator animator;
 
     public ArrowDirection indicated_arrow_1;
     public ArrowDirection indicated_arrow_2;
@@ -20,6 +21,8 @@ public class EnemyBase : MonoBehaviour
     bool jumping;
     bool returning;
 
+    public bool dead;
+
     public float jump_speed = 10;
     public float shoot_time = 5;
 
@@ -31,6 +34,7 @@ public class EnemyBase : MonoBehaviour
 
     void StartJump()
     {
+        animator.SetBool("Walking", true);
         jumping = true;
     }
 
@@ -38,11 +42,13 @@ public class EnemyBase : MonoBehaviour
     {
         //Play shooting anim
         GameObject.Find("Prefab_Player").GetComponent<PlayerHealth>().ShootPlayer();
+        animator.SetBool("Shooting", false);
         StartReturn();
     }
 
    void StartReturn()
     {
+        animator.SetBool("Walking", true);
         returning = true;
     }
 
@@ -59,6 +65,8 @@ public class EnemyBase : MonoBehaviour
             if (Vector2.Distance(transform.position, final_position) < 0.000002f)
             {
                 jumping = false;
+                animator.SetBool("Walking", false);
+                animator.SetBool("Shooting", true);
                 Invoke("Shoot", shoot_time);
             }
         }
@@ -70,6 +78,7 @@ public class EnemyBase : MonoBehaviour
             if(Vector2.Distance(transform.position, hide_position) < 0.000002f)
             {
                 returning = false;
+                animator.SetBool("Walking", false);
                 Invoke("StartJump", jump_time);
             }
         }
@@ -79,6 +88,12 @@ public class EnemyBase : MonoBehaviour
     {
         hide_position = spawn_point;
         final_position = jump_point;
+    }
+
+    public void OnDeath()
+    {
+        dead = true;
+        animator.SetBool("Dead", true);
     }
 
     void OnTriggerEnter2D(Collider2D other)

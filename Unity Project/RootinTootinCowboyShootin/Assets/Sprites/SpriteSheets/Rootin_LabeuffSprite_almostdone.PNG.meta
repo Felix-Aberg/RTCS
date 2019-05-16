@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: c0bc85b145130d540aef1c024c2a4965
+guid: 5f5a2e605647a224ab34d284b3321867
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Rootin_BillSprite_0
-    21300002: Rootin_BillSprite_1
-    21300004: Rootin_BillSprite_2
-    21300006: Rootin_BillSprite_3
-    21300008: Rootin_BillSprite_4
-    21300010: Rootin_BillSprite_5
+    21300000: Rootin_LabeuffSprite_almostdone_0
+    21300002: Rootin_LabeuffSprite_almostdone_1
+    21300004: Rootin_LabeuffSprite_almostdone_2
+    21300006: Rootin_LabeuffSprite_almostdone_3
+    21300008: Rootin_LabeuffSprite_almostdone_4
+    21300010: Rootin_LabeuffSprite_almostdone_5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -90,13 +90,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rootin_BillSprite_0
+      name: Rootin_LabeuffSprite_almostdone_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 302
-        height: 316
+        width: 351.33334
+        height: 412
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -104,19 +104,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4aea5e14f8a3cbd4ca4751227fce785c
+      spriteID: 6d938fb6fd1393244badc9027a67c95d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_BillSprite_1
+      name: Rootin_LabeuffSprite_almostdone_1
       rect:
         serializedVersion: 2
-        x: 302
+        x: 351
         y: 0
-        width: 302
-        height: 316
+        width: 351.33334
+        height: 412
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d087d5112d4e3444b26d5a10c25984c
+      spriteID: 0484baad7f07c0f4b90ad1c482077337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_BillSprite_2
+      name: Rootin_LabeuffSprite_almostdone_2
       rect:
         serializedVersion: 2
-        x: 604
+        x: 702
         y: 0
-        width: 302
-        height: 316
+        width: 351.33334
+        height: 412
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,19 +144,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61b01425e4011374e8aa8cabc53b1e8b
+      spriteID: 87986d9e3bb206a41bcc27be37eac7e1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_BillSprite_3
+      name: Rootin_LabeuffSprite_almostdone_3
       rect:
         serializedVersion: 2
-        x: 906
+        x: 1053
         y: 0
-        width: 302
-        height: 316
+        width: 351.33334
+        height: 412
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d562067d98407f34981dca6284d6ced5
+      spriteID: de800317786e08345842de69d4e1be64
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_BillSprite_4
+      name: Rootin_LabeuffSprite_almostdone_4
       rect:
         serializedVersion: 2
-        x: 1208
+        x: 1404
         y: 0
-        width: 302
-        height: 316
+        width: 351.33334
+        height: 412
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,19 +184,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48fddf696bc236f4496fd5358e547ca3
+      spriteID: 05d5f77066008de4da82cefcab62d482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_BillSprite_5
+      name: Rootin_LabeuffSprite_almostdone_5
       rect:
         serializedVersion: 2
-        x: 1510
+        x: 1755
         y: 0
-        width: 302
-        height: 316
+        width: 351.33334
+        height: 412
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,7 +204,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bdc1845dfc79bd4985ddd6ff8e60f4d
+      spriteID: 422d79c98132c3c47b723cfc5b610f36
       vertices: []
       indices: 
       edges: []
@@ -212,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 91191ef3a3536d443a3525d0f5556e70
+    spriteID: f63b1e4e7b413d740983a48f6ba8823b
     vertices: []
     indices: 
     edges: []
