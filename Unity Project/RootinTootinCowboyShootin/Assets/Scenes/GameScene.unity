@@ -1732,7 +1732,7 @@ MonoBehaviour:
     enemy_variables:
       enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
         type: 3}
-      spawnpoint: 3
+      spawnpoint: 2
       arrow_direction_1: 2
       arrow_direction_2: 2
     enemy_variables_twin:
@@ -1759,7 +1759,164 @@ MonoBehaviour:
     enemy_variables:
       enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
         type: 3}
+      spawnpoint: 3
+      arrow_direction_1: 3
+      arrow_direction_2: 3
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
       spawnpoint: 1
+      arrow_direction_1: 0
+      arrow_direction_2: 2
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 2
+      arrow_direction_1: 1
+      arrow_direction_2: 1
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 3
+      arrow_direction_1: 2
+      arrow_direction_2: 3
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 0
+      arrow_direction_1: 1
+      arrow_direction_2: 1
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 1
+      arrow_direction_1: 0
+      arrow_direction_2: 3
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 2
+      arrow_direction_1: 2
+      arrow_direction_2: 2
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 1
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 3
+    enemy_variables_twin:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 1
+      arrow_direction_1: 1
+      arrow_direction_2: 3
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 0
+      arrow_direction_1: 2
+      arrow_direction_2: 3
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 0
+      arrow_direction_1: 1
+      arrow_direction_2: 1
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 3
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 0
+      arrow_direction_1: 1
+      arrow_direction_2: 2
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 0
       arrow_direction_1: 3
       arrow_direction_2: 3
     enemy_variables_twin:
@@ -1776,6 +1933,20 @@ MonoBehaviour:
       arrow_direction_1: 0
       arrow_direction_2: 2
     enemy_variables_twin:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 3
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 0
+      arrow_direction_1: 2
+      arrow_direction_2: 3
+    enemy_variables_twin:
       enemy: {fileID: 0}
       spawnpoint: 0
       arrow_direction_1: 0
@@ -1785,8 +1956,8 @@ MonoBehaviour:
     enemy_variables:
       enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
         type: 3}
-      spawnpoint: 1
-      arrow_direction_1: 1
+      spawnpoint: 0
+      arrow_direction_1: 0
       arrow_direction_2: 1
     enemy_variables_twin:
       enemy: {fileID: 0}
@@ -1796,17 +1967,32 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 0}
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
       spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
+      arrow_direction_1: 2
+      arrow_direction_2: 2
     enemy_variables_twin:
       enemy: {fileID: 0}
       spawnpoint: 0
       arrow_direction_1: 0
       arrow_direction_2: 0
     special_event: 0
-  - type_of_event: 0
+  - type_of_event: 1
+    enemy_variables:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 3
+    enemy_variables_twin:
+      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+        type: 3}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 2
+    special_event: 0
+  - type_of_event: 2
     enemy_variables:
       enemy: {fileID: 0}
       spawnpoint: 0
@@ -1817,19 +2003,7 @@ MonoBehaviour:
       spawnpoint: 0
       arrow_direction_1: 0
       arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
+    special_event: 3
 --- !u!114 &1688572489
 MonoBehaviour:
   m_ObjectHideFlags: 0
