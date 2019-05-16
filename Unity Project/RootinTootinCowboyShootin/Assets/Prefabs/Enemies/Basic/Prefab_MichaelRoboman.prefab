@@ -103,7 +103,6 @@ MonoBehaviour:
   hide_position: {x: 0, y: 0}
   final_position: {x: 0, y: 0}
   jump_time: 1
-  dead: 0
   jump_speed: 10
   shoot_time: 5
 --- !u!70 &4157177334551748718
@@ -166,7 +165,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5283131750581422977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.43, z: 0}
+  m_LocalPosition: {x: 0, y: -2.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7479952174062072982}
