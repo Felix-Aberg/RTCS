@@ -25,9 +25,10 @@ public class BombTimer : MonoBehaviour
         {
             Debug.Log("Boom.");
             SceneManager.LoadScene("GameOver");
+            Destroy(gameObject);
         }
 
-        if (SceneManager.GetActiveScene().name != "BombStompScene") ;
+        if (SceneManager.GetActiveScene().name != "BombStompScene") 
         {
             fuse.fillAmount = time_left / bomb_timer;
             Vector2 temppos = new Vector2(690 * fuse.fillAmount, fuse_fire.transform.position.y);
