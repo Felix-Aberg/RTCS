@@ -127,7 +127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &29964242
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1082,14 +1082,13 @@ GameObject:
   - component: {fileID: 1343125969}
   - component: {fileID: 1343125971}
   - component: {fileID: 1343125970}
-  - component: {fileID: 1343125972}
   m_Layer: 5
   m_Name: fusefire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1343125969
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1106,7 +1105,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -360.5, y: 202.67}
+  m_AnchoredPosition: {x: -359.4, y: 210.4}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1343125970
@@ -1129,7 +1128,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 097bce3e9703bef4c9e1608cb6b82f04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eee493c7b067fc947a157a40041f4ce2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1146,25 +1145,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343125968}
   m_CullTransparentMesh: 0
---- !u!95 &1343125972
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343125968}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3533feb400241bb4a8ff2ac770b55b15, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1355104558 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6322381243348460840, guid: b4dc635166763f746acbc5d76a36d04b,
@@ -1671,80 +1651,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1228dbd158ecaad41857c6216f4c5211, type: 3}
---- !u!1 &1647682181
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1647682182}
-  - component: {fileID: 1647682184}
-  - component: {fileID: 1647682183}
-  m_Layer: 5
-  m_Name: Bomb
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1647682182
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1647682181}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1144981973178228919}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 369.8, y: 199.97}
-  m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1647682183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1647682181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 850c32b901c7e294b94649755295731d, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &1647682184
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1647682181}
-  m_CullTransparentMesh: 0
 --- !u!1 &1685730941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,7 +1717,7 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 5976167421542373025, guid: 4a7f1d23c8e2a4a46b80f449327f86c7,
         type: 3}
       spawnpoint: 1
       arrow_direction_1: 1
@@ -1824,7 +1730,7 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 1906132393403476251, guid: adb877a97bd51d843a40794440bee5c3,
         type: 3}
       spawnpoint: 2
       arrow_direction_1: 2
@@ -1837,13 +1743,13 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 1
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 5976167421542373025, guid: 6633c22ccb070b843957bdffb242b302,
         type: 3}
       spawnpoint: 2
       arrow_direction_1: 1
       arrow_direction_2: 2
     enemy_variables_twin:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 5976167421542373025, guid: 06cc85380f510ef4fb0cf09f4123b19d,
         type: 3}
       spawnpoint: 3
       arrow_direction_1: 0
@@ -1851,7 +1757,7 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 4559987724316148972, guid: 464fa2718d5d66349a9b6cdcbe520d51,
         type: 3}
       spawnpoint: 3
       arrow_direction_1: 3
@@ -1864,7 +1770,7 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 4242845238354352926, guid: 0e1245847abfa7e4a95b7ddf8b28affb,
         type: 3}
       spawnpoint: 1
       arrow_direction_1: 0
@@ -1877,7 +1783,7 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 1906132393403476251, guid: adb877a97bd51d843a40794440bee5c3,
         type: 3}
       spawnpoint: 2
       arrow_direction_1: 1
@@ -1890,7 +1796,7 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 5976167421542373025, guid: 06cc85380f510ef4fb0cf09f4123b19d,
         type: 3}
       spawnpoint: 3
       arrow_direction_1: 2
@@ -1903,7 +1809,7 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 186949717485371126, guid: 6fad7d9b8673e2f46820ad350fef064d,
         type: 3}
       spawnpoint: 0
       arrow_direction_1: 1
@@ -1916,7 +1822,7 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 5976167421542373025, guid: 4a7f1d23c8e2a4a46b80f449327f86c7,
         type: 3}
       spawnpoint: 1
       arrow_direction_1: 0
@@ -1929,7 +1835,7 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 5976167421542373025, guid: c5a744ac850017f4e951262dce6d60d2,
         type: 3}
       spawnpoint: 2
       arrow_direction_1: 2
@@ -1942,13 +1848,13 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 1
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 1906132393403476251, guid: adb877a97bd51d843a40794440bee5c3,
         type: 3}
       spawnpoint: 0
       arrow_direction_1: 0
       arrow_direction_2: 3
     enemy_variables_twin:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 1906132393403476251, guid: adb877a97bd51d843a40794440bee5c3,
         type: 3}
       spawnpoint: 1
       arrow_direction_1: 1
@@ -1956,9 +1862,9 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 4242845238354352926, guid: 0e1245847abfa7e4a95b7ddf8b28affb,
         type: 3}
-      spawnpoint: 0
+      spawnpoint: 3
       arrow_direction_1: 2
       arrow_direction_2: 3
     enemy_variables_twin:
@@ -1969,9 +1875,9 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 5976167421542373025, guid: 6633c22ccb070b843957bdffb242b302,
         type: 3}
-      spawnpoint: 0
+      spawnpoint: 2
       arrow_direction_1: 1
       arrow_direction_2: 1
     enemy_variables_twin:
@@ -1982,9 +1888,9 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 1906132393403476251, guid: adb877a97bd51d843a40794440bee5c3,
         type: 3}
-      spawnpoint: 0
+      spawnpoint: 3
       arrow_direction_1: 0
       arrow_direction_2: 3
     enemy_variables_twin:
@@ -1995,7 +1901,7 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 4559987724316148972, guid: 464fa2718d5d66349a9b6cdcbe520d51,
         type: 3}
       spawnpoint: 0
       arrow_direction_1: 1
@@ -2008,7 +1914,47 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 5976167421542373025, guid: 06cc85380f510ef4fb0cf09f4123b19d,
+        type: 3}
+      spawnpoint: 0
+      arrow_direction_1: 3
+      arrow_direction_2: 3
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 1
+    enemy_variables:
+      enemy: {fileID: 5976167421542373025, guid: 4a7f1d23c8e2a4a46b80f449327f86c7,
+        type: 3}
+      spawnpoint: 2
+      arrow_direction_1: 0
+      arrow_direction_2: 2
+    enemy_variables_twin:
+      enemy: {fileID: 5976167421542373025, guid: c5a744ac850017f4e951262dce6d60d2,
+        type: 3}
+      spawnpoint: 3
+      arrow_direction_1: 0
+      arrow_direction_2: 3
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 4242845238354352926, guid: 0e1245847abfa7e4a95b7ddf8b28affb,
+        type: 3}
+      spawnpoint: 1
+      arrow_direction_1: 2
+      arrow_direction_2: 1
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 1906132393403476251, guid: adb877a97bd51d843a40794440bee5c3,
         type: 3}
       spawnpoint: 0
       arrow_direction_1: 3
@@ -2021,49 +1967,9 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
+      enemy: {fileID: 5976167421542373025, guid: 6633c22ccb070b843957bdffb242b302,
         type: 3}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 2
-    enemy_variables_twin:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
-        type: 3}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 3
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
-        type: 3}
-      spawnpoint: 0
-      arrow_direction_1: 2
-      arrow_direction_2: 3
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
-        type: 3}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 1
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
-        type: 3}
-      spawnpoint: 0
+      spawnpoint: 2
       arrow_direction_1: 2
       arrow_direction_2: 2
     enemy_variables_twin:
@@ -2072,9 +1978,9 @@ MonoBehaviour:
       arrow_direction_1: 0
       arrow_direction_2: 0
     special_event: 0
-  - type_of_event: 0
+  - type_of_event: 1
     enemy_variables:
-      enemy: {fileID: 5373971763212089531, guid: 2a7b9b70cd4b3c349bd1449bda825ce5,
+      enemy: {fileID: 4559987724316148972, guid: 464fa2718d5d66349a9b6cdcbe520d51,
         type: 3}
       spawnpoint: 3
       arrow_direction_1: 2
@@ -2084,6 +1990,12 @@ MonoBehaviour:
         type: 3}
       spawnpoint: 0
       arrow_direction_1: 0
+      arrow_direction_2: 1
+    enemy_variables_twin:
+      enemy: {fileID: 4559987724316148972, guid: 464fa2718d5d66349a9b6cdcbe520d51,
+        type: 3}
+      spawnpoint: 3
+      arrow_direction_1: 3
       arrow_direction_2: 2
     special_event: 0
   - type_of_event: 2
@@ -2105,7 +2017,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688572487}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74535a110e120444487caafc0fdf8848, type: 3}
   m_Name: 
@@ -2387,8 +2299,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000005126, y: -22.3}
-  m_SizeDelta: {x: 721.49, y: 10}
+  m_AnchoredPosition: {x: 0.7, y: -14.5}
+  m_SizeDelta: {x: 720, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2130064565
 MonoBehaviour:
@@ -2410,7 +2322,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 114f38d6fc73e2443926d23882f5ad46, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13ee719cbda010245be3956271b1cefa, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2940,7 +2852,7 @@ PrefabInstance:
     - target: {fileID: 6322381242667279026, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
       propertyPath: twin_spawn_delay
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6322381242667279026, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
