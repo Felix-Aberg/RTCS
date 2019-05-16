@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5976167421542373039}
   - component: {fileID: 5976167421542373038}
   - component: {fileID: 9222882092798853462}
+  - component: {fileID: 7030715034734133195}
   m_Layer: 0
   m_Name: Prefab_Tenta
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5976167421542373025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.42, z: 0}
-  m_LocalScale: {x: 0.17, y: 0.17, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8912865152253542890}
   - {fileID: 8560548676552248173}
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a7ee4021d755f484698d34f9fd225b1a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ce2bce37485939f4ebc9caa25fe0d619, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,9 +118,28 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 11.71, y: 20.35}
+  m_Offset: {x: 0.09, y: 0.06}
+  m_Size: {x: 0.83, y: 1.71}
   m_Direction: 0
+--- !u!95 &7030715034734133195
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5976167421542373025}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: da88c22e11188be44aac98c54cfbb840, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7327405969440392889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -221,7 +241,7 @@ PrefabInstance:
     - target: {fileID: 462846734510833188, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.92
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 462846734510833188, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}

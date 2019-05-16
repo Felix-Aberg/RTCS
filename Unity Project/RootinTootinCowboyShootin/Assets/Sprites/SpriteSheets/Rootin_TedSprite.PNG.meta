@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: fc06bc5da6d5fea449e884ae1affd7fa
+guid: 97c65b6b772ad2c48ae59086e3336e3d
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Rootin_RoboSprite_0
-    21300002: Rootin_RoboSprite_1
-    21300004: Rootin_RoboSprite_2
-    21300006: Rootin_RoboSprite_3
-    21300008: Rootin_RoboSprite_4
-    21300010: Rootin_RoboSprite_5
+    21300000: Rootin_TedSprite_0
+    21300002: Rootin_TedSprite_1
+    21300004: Rootin_TedSprite_2
+    21300006: Rootin_TedSprite_3
+    21300008: Rootin_TedSprite_4
+    21300010: Rootin_TedSprite_5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -90,13 +90,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rootin_RoboSprite_0
+      name: Rootin_TedSprite_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 35
         y: 0
-        width: 388
-        height: 522
+        width: 319
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -104,19 +104,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdb11e5100b58de44a0de8c277ae2f5e
+      spriteID: cefbb6134ba3e4b43a5737c5ccbadd12
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_RoboSprite_1
+      name: Rootin_TedSprite_1
       rect:
         serializedVersion: 2
-        x: 388
-        y: 0
-        width: 388
-        height: 522
+        x: 411
+        y: 10
+        width: 325
+        height: 284
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef1355d815071fb419c0d6e5a72fe931
+      spriteID: e057082ae33e89642bde7cdb4db4aff4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_RoboSprite_2
+      name: Rootin_TedSprite_2
       rect:
         serializedVersion: 2
-        x: 776
+        x: 807
         y: 0
-        width: 388
-        height: 522
+        width: 319
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,19 +144,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dfc50a0eaf87e2429effadac59535ce
+      spriteID: 0681ef80d0a280a4aa8760586d2e53c2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_RoboSprite_3
+      name: Rootin_TedSprite_3
       rect:
         serializedVersion: 2
-        x: 1164
-        y: 0
-        width: 388
-        height: 522
+        x: 1203
+        y: 9
+        width: 314
+        height: 285
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ea96680a57ff5244977c0397f9accf1
+      spriteID: 8a7d901bcdc9fec409b65ef52d37d3a1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_RoboSprite_4
+      name: Rootin_TedSprite_4
       rect:
         serializedVersion: 2
-        x: 1552
+        x: 1543
         y: 0
         width: 388
-        height: 522
+        height: 210
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,19 +184,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1cced4841aca3b544adfdf3133668c8c
+      spriteID: b3830e6355a28f0438acfee2e6e5d03f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_RoboSprite_5
+      name: Rootin_TedSprite_5
       rect:
         serializedVersion: 2
-        x: 1940
+        x: 1993
         y: 0
-        width: 388
-        height: 522
+        width: 248
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,7 +204,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92d71675559678940aacdc5db9d8f3cc
+      spriteID: 355fa881038332f46bcb6d11c107a898
       vertices: []
       indices: 
       edges: []
@@ -212,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1bbaa5d3acf678a45bb7aba5358fea3e
+    spriteID: 884b07af7b9e24742a1d8d87fce565df
     vertices: []
     indices: 
     edges: []
