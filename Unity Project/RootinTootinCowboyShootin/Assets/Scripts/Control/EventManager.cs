@@ -52,8 +52,6 @@ public class EventManager : MonoBehaviour
         //Set variables and such
         game_master = gameObject.GetComponent<GameMaster>();
         enemy_spawner = gameObject.GetComponent<EnemySpawner>();
-
-        StartEvent();
     }
 
     ///<summary>

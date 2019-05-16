@@ -1998,13 +1998,13 @@ MonoBehaviour:
       arrow_direction_1: 0
       arrow_direction_2: 0
     special_event: 0
-  - type_of_event: 1
+  - type_of_event: 0
     enemy_variables:
       enemy: {fileID: 4559987724316148972, guid: 464fa2718d5d66349a9b6cdcbe520d51,
         type: 3}
       spawnpoint: 3
-      arrow_direction_1: 2
-      arrow_direction_2: 3
+      arrow_direction_1: 0
+      arrow_direction_2: 1
     enemy_variables_twin:
       enemy: {fileID: 7591017775565191249, guid: fb6953ba4b5604442a61968e9639e337,
         type: 3}
@@ -2012,6 +2012,19 @@ MonoBehaviour:
       arrow_direction_1: 0
       arrow_direction_2: 1
     special_event: 0
+  - type_of_event: 0
+    enemy_variables:
+      enemy: {fileID: 5373971763212089531, guid: 2a7b9b70cd4b3c349bd1449bda825ce5,
+        type: 3}
+      spawnpoint: 0
+      arrow_direction_1: 2
+      arrow_direction_2: 3
+    enemy_variables_twin:
+      enemy: {fileID: 0}
+      spawnpoint: 0
+      arrow_direction_1: 0
+      arrow_direction_2: 0
+    special_event: 3
   - type_of_event: 2
     enemy_variables:
       enemy: {fileID: 0}

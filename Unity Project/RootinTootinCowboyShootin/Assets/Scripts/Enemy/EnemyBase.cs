@@ -96,6 +96,7 @@ public class EnemyBase : MonoBehaviour
     {
         dead = true;
         animator.SetBool("Dead", true);
+        reticle.SetActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D other)

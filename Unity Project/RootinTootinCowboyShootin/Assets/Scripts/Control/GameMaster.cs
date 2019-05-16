@@ -67,7 +67,7 @@ public class GameMaster : MonoBehaviour
     {
         switch(SceneManager.GetActiveScene().name)
         {
-            case "GameScene":
+            default:
                 {
                     if (em.CheckNextEvent() != Events.SPECIALEVENT && enemies.Count == 0 && Time.time < spawn_time)
                     {

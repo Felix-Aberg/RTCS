@@ -7,6 +7,8 @@ public class CrosshairScript : MonoBehaviour
     public Transform crosshair_tracker;
     public GameObject current_reticle;
     public GameObject current_enemy;
+    GameObject shot_enemy;
+
     public int reticles_correct = 0; //How many reticles that are correct
     GameObject game_master;
 
@@ -89,8 +91,9 @@ public class CrosshairScript : MonoBehaviour
 
     void Shoot()
     {
-        current_enemy.GetComponent<EnemyBase>().OnDeath();
-        StartCoroutine(WaitForDeath(1.2f));
+        shot_enemy = current_enemy;
+        shot_enemy.GetComponent<EnemyBase>().OnDeath();
+        StartCoroutine(WaitForDeath(shot_enemy, 1.2f));
     }
 
     void ShootFoot()
@@ -137,10 +140,10 @@ public class CrosshairScript : MonoBehaviour
         }
     }
 
-    IEnumerator WaitForDeath(float time)
+    IEnumerator WaitForDeath(GameObject enemy, float time)
     {
         yield return new WaitForSeconds(time);
-        GameObject.Find("GameMaster").GetComponent<GameMaster>().ClearSpawn(current_enemy);
+        GameObject.Find("GameMaster").GetComponent<GameMaster>().ClearSpawn(enemy);
     }
 }
 
