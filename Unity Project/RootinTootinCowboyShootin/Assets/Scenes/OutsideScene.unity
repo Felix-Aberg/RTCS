@@ -1798,7 +1798,7 @@ MonoBehaviour:
   event_array:
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 4242845238354352926, guid: 0e1245847abfa7e4a95b7ddf8b28affb,
+      enemy: {fileID: 5976167421542373025, guid: c5a744ac850017f4e951262dce6d60d2,
         type: 3}
       spawnpoint: 0
       arrow_direction_1: 0
@@ -2076,7 +2076,7 @@ MonoBehaviour:
     enemy_variables:
       enemy: {fileID: 5373971763212089531, guid: 2a7b9b70cd4b3c349bd1449bda825ce5,
         type: 3}
-      spawnpoint: 4
+      spawnpoint: 3
       arrow_direction_1: 2
       arrow_direction_2: 3
     enemy_variables_twin:

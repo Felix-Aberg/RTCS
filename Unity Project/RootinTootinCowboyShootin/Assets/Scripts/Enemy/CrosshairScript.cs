@@ -89,8 +89,8 @@ public class CrosshairScript : MonoBehaviour
 
     void Shoot()
     {
-
-        GameObject.Find("GameMaster").GetComponent<GameMaster>().ClearSpawn(current_enemy);
+        current_enemy.GetComponent<EnemyBase>().OnDeath();
+        StartCoroutine(WaitForDeath(1.2f));
     }
 
     void ShootFoot()
@@ -135,6 +135,12 @@ public class CrosshairScript : MonoBehaviour
                 break;
 
         }
+    }
+
+    IEnumerator WaitForDeath(float time)
+    {
+        yield return new WaitForSeconds(time);
+        GameObject.Find("GameMaster").GetComponent<GameMaster>().ClearSpawn(current_enemy);
     }
 }
 
