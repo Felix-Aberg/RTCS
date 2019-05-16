@@ -70,7 +70,7 @@ public class Score : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
-        Debug.Log(mode);
+        //Debug.Log(mode); //4
 
         if (scene.name == "WinScene")
         {
