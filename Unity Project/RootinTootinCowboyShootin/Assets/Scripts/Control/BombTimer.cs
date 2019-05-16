@@ -27,8 +27,11 @@ public class BombTimer : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
 
-        fuse.fillAmount = time_left / bomb_timer;
-        Vector2 temppos = new Vector2(690 * fuse.fillAmount, fuse_fire.transform.position.y);
-        fuse_fire.transform.position = temppos;
+        if (SceneManager.GetActiveScene().name != "BombStompScene") ;
+        {
+            fuse.fillAmount = time_left / bomb_timer;
+            Vector2 temppos = new Vector2(690 * fuse.fillAmount, fuse_fire.transform.position.y);
+            fuse_fire.transform.position = temppos;
+        }
     }
 }

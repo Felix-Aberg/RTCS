@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum Events
 {
@@ -247,6 +248,8 @@ public class EventManager : MonoBehaviour
             case SpecialEvents.BOMBSTOMP:
                 {
                     //Load a scene? Do some DontDestroyOnLoad?+
+                    DontDestroyOnLoad(GameObject.Find("BombTimer"));
+                    SceneManager.LoadScene("BombStompScene");
                     break;
                 }
         }

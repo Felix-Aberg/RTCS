@@ -34,12 +34,12 @@ public class EnemyBase : MonoBehaviour
 
     void StartJump()
     {
+        animator.SetBool("Walking", true);
         jumping = true;
     }
 
     void Shoot()
     {
-        //Play shooting anim
         GameObject.Find("Prefab_Player").GetComponent<PlayerHealth>().ShootPlayer();
         animator.SetBool("Shooting", false);
         StartReturn();
@@ -95,8 +95,14 @@ public class EnemyBase : MonoBehaviour
     public void OnDeath()
     {
         dead = true;
-        animator.SetBool("Dead", true);
+        animator.SetTrigger("Dead");
         reticle.SetActive(false);
+        Invoke("Dead", 1.2f);
+    }
+
+    void Dead()
+    {
+        GameObject.Find("GameMaster").GetComponent<GameMaster>().ClearSpawn(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other)
