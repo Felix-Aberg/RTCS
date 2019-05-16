@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TutorialScene.unity
     guid: c9284f5e2cc32e54f9de2fe9a1b456a3
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
+    path: Assets/Scenes/OutsideScene.unity
     guid: 56f4adfda48727c489a2c9caf1306fc9
   - enabled: 1
     path: Assets/Scenes/BombStompScene.unity

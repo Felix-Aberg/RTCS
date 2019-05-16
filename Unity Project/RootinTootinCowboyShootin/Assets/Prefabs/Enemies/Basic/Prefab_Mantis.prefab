@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1127690698518189509}
   - component: {fileID: 9077449295133656651}
   - component: {fileID: 2056710435300658585}
-  - component: {fileID: 65455433248728451}
+  - component: {fileID: 6216484351385154270}
   m_Layer: 0
   m_Name: Prefab_Mantis
   m_TagString: Untagged
@@ -97,12 +97,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reticle: {fileID: 0}
+  animator: {fileID: 0}
   indicated_arrow_1: 4
   indicated_arrow_2: 4
   life_time: 0
   hide_position: {x: 0, y: 0}
   final_position: {x: 0, y: 0}
   jump_time: 1
+  dead: 0
   jump_speed: 10
   shoot_time: 5
 --- !u!70 &2056710435300658585
@@ -121,7 +123,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.88}
   m_Size: {x: 1.1, y: 2.63}
   m_Direction: 0
---- !u!95 &65455433248728451
+--- !u!95 &6216484351385154270
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0

@@ -89,6 +89,7 @@ public class CrosshairScript : MonoBehaviour
 
     void Shoot()
     {
+
         GameObject.Find("GameMaster").GetComponent<GameMaster>().ClearSpawn(current_enemy);
     }
 

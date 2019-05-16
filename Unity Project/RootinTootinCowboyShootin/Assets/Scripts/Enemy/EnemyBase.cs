@@ -6,7 +6,9 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour
 {
     public GameObject reticle;
-    public Animator animator;
+    Animator animator;
+
+    public AnimationClip anim_walk;
 
     public ArrowDirection indicated_arrow_1;
     public ArrowDirection indicated_arrow_2;
@@ -29,12 +31,12 @@ public class EnemyBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         Invoke("StartJump", jump_time);
     }
 
     void StartJump()
     {
-        animator.SetBool("Walking", true);
         jumping = true;
     }
 
