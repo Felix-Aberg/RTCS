@@ -96,13 +96,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbf47c67fdbdbe4e831918fef965ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reticle: {fileID: 0}
+  reticle: {fileID: 2828183629970646073}
   indicated_arrow_1: 4
   indicated_arrow_2: 4
   life_time: 0
   hide_position: {x: 0, y: 0}
   final_position: {x: 0, y: 0}
   jump_time: 1
+  dead: 0
   jump_speed: 10
   shoot_time: 5
 --- !u!70 &7701886659343843818
@@ -214,6 +215,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91754ba4fb8714540830fa0d11c4becc, type: 3}
+--- !u!1 &2828183629970646073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2161999718850594641, guid: 91754ba4fb8714540830fa0d11c4becc,
+    type: 3}
+  m_PrefabInstance: {fileID: 4125100776557912936}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2828183629970646075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2161999718850594643, guid: 91754ba4fb8714540830fa0d11c4becc,

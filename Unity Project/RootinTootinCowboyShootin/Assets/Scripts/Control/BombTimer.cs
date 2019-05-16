@@ -28,7 +28,7 @@ public class BombTimer : MonoBehaviour
         }
 
         fuse.fillAmount = time_left / bomb_timer;
-        Vector2 temppos = new Vector2(8.5f - 17 * fuse.fillAmount, fuse_fire.transform.position.y);
+        Vector2 temppos = new Vector2((345f - 705 * fuse.fillAmount), fuse_fire.transform.position.y);
         fuse_fire.transform.position = temppos;
     }
 }

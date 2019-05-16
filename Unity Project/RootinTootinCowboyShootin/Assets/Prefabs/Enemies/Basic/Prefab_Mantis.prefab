@@ -96,8 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbf47c67fdbdbe4e831918fef965ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reticle: {fileID: 0}
-  animator: {fileID: 0}
+  reticle: {fileID: 3002026842912045200}
   indicated_arrow_1: 4
   indicated_arrow_2: 4
   life_time: 0
@@ -254,6 +253,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91754ba4fb8714540830fa0d11c4becc, type: 3}
+--- !u!1 &3002026842912045200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2161999718850594641, guid: 91754ba4fb8714540830fa0d11c4becc,
+    type: 3}
+  m_PrefabInstance: {fileID: 4010913724127788993}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3002026842912045202 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2161999718850594643, guid: 91754ba4fb8714540830fa0d11c4becc,
