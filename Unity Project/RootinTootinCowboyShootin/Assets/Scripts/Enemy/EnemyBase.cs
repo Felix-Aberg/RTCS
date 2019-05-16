@@ -7,6 +7,7 @@ public class EnemyBase : MonoBehaviour
 {
     public GameObject reticle;
     Animator animator;
+    SpriteRenderer sr;
 
     public ArrowDirection indicated_arrow_1;
     public ArrowDirection indicated_arrow_2;
@@ -21,15 +22,19 @@ public class EnemyBase : MonoBehaviour
     bool jumping;
     bool returning;
     bool dead;
+    Color temp_color;
 
     public float jump_speed = 10;
     public float shoot_time = 5;
+
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
         Invoke("StartJump", jump_time);
+        temp_color = Color.white;
     }
 
     void StartJump()
@@ -83,6 +88,11 @@ public class EnemyBase : MonoBehaviour
                     Invoke("StartJump", jump_time);
                 }
             }
+        }
+        else if (dead)
+        {
+            temp_color.a -= Time.deltaTime / 1.2f;
+            sr.color = temp_color;
         }
     }
 

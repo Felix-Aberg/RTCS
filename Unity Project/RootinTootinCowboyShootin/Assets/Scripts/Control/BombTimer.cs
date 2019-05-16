@@ -31,7 +31,7 @@ public class BombTimer : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "BombStompScene") 
         {
             fuse.fillAmount = time_left / bomb_timer;
-            Vector2 temppos = new Vector2(690 * fuse.fillAmount, fuse_fire.transform.position.y);
+            Vector2 temppos = new Vector2(735 + (-690 * fuse.fillAmount), fuse_fire.transform.position.y);
             fuse_fire.transform.position = temppos;
         }
     }
