@@ -54,9 +54,6 @@ public class Tutorial : MonoBehaviour
             if (!dancemat_done)
                 DirectionsCorrect();
 
-            shoot_last_frame = shoot;
-            shoot = wiimote.btn_b_down;
-
             if ((!shoot_last_frame) && shoot)
             {
                 if (crosshair.GetComponent<CrosshairScript>().current_reticle != null)
@@ -147,6 +144,8 @@ public class Tutorial : MonoBehaviour
     void DirectionsCorrect() //Flashes checkmark and enables crosshair for shooting section
     {
         dancemat_done = true;
+        reticle.directions_correct = true;
+        reticle.FindCrosshair();
 
         StartCoroutine(ToggleSprite(checkmark, true, 0f));
         StartCoroutine(ToggleSprite(checkmark, false, .3f));
@@ -156,7 +155,7 @@ public class Tutorial : MonoBehaviour
         crosshair.gameObject.SetActive(true);
     }
 
-    void TutorialComplete()
+    public void TutorialComplete()
     {
         StartCoroutine(ToggleSprite(explosion, true, 0f));
         StartCoroutine(ToggleSprite(explosion, false, .2f));
@@ -179,6 +178,6 @@ public class Tutorial : MonoBehaviour
     IEnumerator StartGame(float time)
     {
         yield return new WaitForSeconds(time);
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("OutsideScene");
     }
 }

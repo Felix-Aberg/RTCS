@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CrosshairScript : MonoBehaviour
 {
@@ -52,8 +53,10 @@ public class CrosshairScript : MonoBehaviour
         {
             if (current_reticle != null)
             {
-                Debug.Log("reticle exists");
-                if (current_reticle.GetComponent<ReticleScript>().directions_correct)
+                if (SceneManager.GetActiveScene().name == "TutorialScene")
+                    GameObject.Find("Dancemat").GetComponent<Tutorial>().TutorialComplete();
+
+                else if (current_reticle.GetComponent<ReticleScript>().directions_correct)
                 {
                     Debug.Log("directions correct + reticle");
                     if (current_reticle.GetComponent<ReticleScript>().crosshair_correct)

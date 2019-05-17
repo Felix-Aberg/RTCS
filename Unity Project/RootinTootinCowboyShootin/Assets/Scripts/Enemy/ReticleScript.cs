@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public enum ArrowDirection
 {
@@ -42,9 +43,13 @@ public class ReticleScript : MonoBehaviour
 
     void Start()
     {
-        crosshair = GameObject.Find("Crosshair");
-        transform.localScale = Vector3.one;
-        transform.localScale = new Vector3(1 / transform.lossyScale.x, 1 / transform.lossyScale.y, 1 / transform.lossyScale.z);
+        FindCrosshair();
+
+        if (SceneManager.GetActiveScene().name != "TutorialScene")
+        {
+            transform.localScale = Vector3.one;
+            transform.localScale = new Vector3(1 / transform.lossyScale.x, 1 / transform.lossyScale.y, 1 / transform.lossyScale.z);
+        }
     }
 
     void Update()
@@ -179,8 +184,8 @@ public class ReticleScript : MonoBehaviour
         if (other.tag == "Crosshair")
         {
             crosshair_correct = true;
-            crosshair.GetComponent<CrosshairScript>().current_reticle = gameObject;
-            crosshair.GetComponent<CrosshairScript>().current_enemy = transform.parent.gameObject;
+            other.GetComponent<CrosshairScript>().current_reticle = gameObject;
+            other.GetComponent<CrosshairScript>().current_enemy = transform.parent.gameObject;
             UpdateReticle();
         }
     }
@@ -190,8 +195,13 @@ public class ReticleScript : MonoBehaviour
         if (other.tag == "Crosshair")
         {
             crosshair_correct = false;
-            crosshair.GetComponent<CrosshairScript>().current_reticle = null;
+            other.GetComponent<CrosshairScript>().current_reticle = null;
             UpdateReticle();
         }
+    }
+
+    public void FindCrosshair()
+    {
+        crosshair = GameObject.Find("Crosshair");
     }
 }
