@@ -19,6 +19,8 @@ public class CrosshairScript : MonoBehaviour
     bool left_pressed_last_frame;
     bool right_pressed_last_frame;
 
+    public Sprite[] crosshair_sprites;
+
     void Start()
     {
         Cursor.visible = false;
@@ -99,6 +101,11 @@ public class CrosshairScript : MonoBehaviour
     void ShootFoot()
     {
         Debug.Log("Ouch owie my footsie");
+    }
+
+    public void ChangeCrosshair(int sprite_index)
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = crosshair_sprites[sprite_index];
     }
 
     void ChangeLerpBias()
