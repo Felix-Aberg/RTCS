@@ -110,6 +110,7 @@ public class EnemyBase : MonoBehaviour
         dead = true;
         animator.SetTrigger("Dead");
         reticle.SetActive(false);
+        GameObject.Find("Crosshair").GetComponent<CrosshairScript>().ChangeCrosshair(0);
         Invoke("Dead", 1.2f);
     }
 

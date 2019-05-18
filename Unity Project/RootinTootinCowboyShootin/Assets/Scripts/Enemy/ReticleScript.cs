@@ -45,7 +45,7 @@ public class ReticleScript : MonoBehaviour
     {
         FindCrosshair();
 
-        if (SceneManager.GetActiveScene().name != "TutorialScene")
+        if (SceneManager.GetActiveScene().name != "TutorialScene" && SceneManager.GetActiveScene().name != "ShootWallScene")
         {
             transform.localScale = Vector3.one;
             transform.localScale = new Vector3(1 / transform.lossyScale.x, 1 / transform.lossyScale.y, 1 / transform.lossyScale.z);

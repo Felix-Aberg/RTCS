@@ -159,7 +159,7 @@ public class Tutorial : MonoBehaviour
     {
         StartCoroutine(ToggleSprite(explosion, true, 0f));
         StartCoroutine(ToggleSprite(explosion, false, .2f));
-        StartCoroutine(ToggleSprite(explosion, true, .1f));
+        StartCoroutine(ToggleSprite(explosion, true, .3f));
         StartCoroutine(ToggleSprite(explosion, false, .5f));
         StartCoroutine(ToggleSprite(explosion, true, .6f));
         StartCoroutine(ToggleSprite(explosion, false, .8f));
