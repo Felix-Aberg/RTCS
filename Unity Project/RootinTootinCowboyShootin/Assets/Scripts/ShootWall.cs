@@ -8,14 +8,17 @@ public class ShootWall : MonoBehaviour
 
     public ReticleScript[] targets;
 
+
     void Start()
     {
         foreach (ReticleScript reticle in targets)
+        {
             reticle.InstantiateArrows(ArrowDirection.LEFT, ArrowDirection.RIGHT);
+        }
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        
+
     }
 }

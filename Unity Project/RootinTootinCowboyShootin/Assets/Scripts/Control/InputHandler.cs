@@ -17,9 +17,17 @@ public class InputHandler : MonoBehaviour
 
     public bool use_mouse;
 
+    public ReticleScript[] special_targets;
+
     void Start()
     {
         wiimote = GameObject.Find("WiimoteHandler").GetComponent<WiiMote>();
+
+        if (PlayerPrefs.GetInt("MouseAiming") == 0)
+            use_mouse = false;
+
+        else if (PlayerPrefs.GetInt("MouseAiming") == 1)
+            use_mouse = true;
     }
     
     void Update()
@@ -27,10 +35,16 @@ public class InputHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (!use_mouse)
+            {
+                PlayerPrefs.SetInt("MouseAiming", 1);
                 use_mouse = true;
+            }
 
             else if (use_mouse)
+            {
+                PlayerPrefs.SetInt("MouseAiming", 0);
                 use_mouse = false;
+            }
         }
 
         // DANCE MAT INPUT
@@ -66,21 +80,27 @@ public class InputHandler : MonoBehaviour
             shooting = false;
     }
 
-    void LateUpdate()
-    {
-        //enemies_last_frame = GetComponent<GameMaster>().enemies.Count;
-    }
-
     public void UpdateArrows()
     {
         for (int i = 0; i < arrows.Length; i++)
         {
-            //update the appropriate arrow on all enemies reticles
-            foreach (GameObject enemy in GetComponent<GameMaster>().enemies)
+            if (SceneManager.GetActiveScene().name != "ShootWallScene")
             {
-                if (enemy.transform.GetChild(0).gameObject.activeInHierarchy)
+                //update the appropriate arrow on all enemies reticles
+                foreach (GameObject enemy in GetComponent<GameMaster>().enemies)
                 {
-                    enemy.GetComponentInChildren<ReticleScript>().UpdateReticle((ArrowDirection)i, arrows[i]);
+                    if (enemy.transform.GetChild(0).gameObject.activeInHierarchy)
+                    {
+                        enemy.GetComponentInChildren<ReticleScript>().UpdateReticle((ArrowDirection)i, arrows[i]);
+                    }
+                }
+            }
+
+            else
+            {
+                foreach (ReticleScript reticle in special_targets)
+                {
+                    reticle.UpdateReticle((ArrowDirection)i, arrows[i]);
                 }
             }
         }
