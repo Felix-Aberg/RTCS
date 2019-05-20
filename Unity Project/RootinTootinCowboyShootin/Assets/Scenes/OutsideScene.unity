@@ -381,7 +381,7 @@ PrefabInstance:
     - target: {fileID: 1690020145752860646, guid: be0b4ca2c8e505d4da9041cd99b468fb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1690020145752860646, guid: be0b4ca2c8e505d4da9041cd99b468fb,
         type: 3}
@@ -703,7 +703,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1414968267
 GameObject:
@@ -902,7 +902,7 @@ Transform:
   m_Children:
   - {fileID: 1888898392}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1435465458
 GameObject:
@@ -1031,7 +1031,7 @@ Transform:
   m_Children:
   - {fileID: 1027523549}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1449551759 stripped
 Transform:
@@ -1165,164 +1165,6 @@ MonoBehaviour:
   spawn_rejection_debugs: 0
   max_enemies_on_screen: 3
   event_array:
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 5976167421542373025, guid: c5a744ac850017f4e951262dce6d60d2,
-        type: 3}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 5976167421542373025, guid: 4a7f1d23c8e2a4a46b80f449327f86c7,
-        type: 3}
-      spawnpoint: 1
-      arrow_direction_1: 1
-      arrow_direction_2: 3
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 1906132393403476251, guid: adb877a97bd51d843a40794440bee5c3,
-        type: 3}
-      spawnpoint: 2
-      arrow_direction_1: 2
-      arrow_direction_2: 2
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 1
-    enemy_variables:
-      enemy: {fileID: 5976167421542373025, guid: 6633c22ccb070b843957bdffb242b302,
-        type: 3}
-      spawnpoint: 2
-      arrow_direction_1: 1
-      arrow_direction_2: 2
-    enemy_variables_twin:
-      enemy: {fileID: 5976167421542373025, guid: 06cc85380f510ef4fb0cf09f4123b19d,
-        type: 3}
-      spawnpoint: 3
-      arrow_direction_1: 0
-      arrow_direction_2: 1
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 4559987724316148972, guid: 464fa2718d5d66349a9b6cdcbe520d51,
-        type: 3}
-      spawnpoint: 3
-      arrow_direction_1: 3
-      arrow_direction_2: 3
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 4242845238354352926, guid: 0e1245847abfa7e4a95b7ddf8b28affb,
-        type: 3}
-      spawnpoint: 1
-      arrow_direction_1: 0
-      arrow_direction_2: 2
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 1906132393403476251, guid: adb877a97bd51d843a40794440bee5c3,
-        type: 3}
-      spawnpoint: 2
-      arrow_direction_1: 1
-      arrow_direction_2: 1
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 5976167421542373025, guid: 06cc85380f510ef4fb0cf09f4123b19d,
-        type: 3}
-      spawnpoint: 3
-      arrow_direction_1: 2
-      arrow_direction_2: 3
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 186949717485371126, guid: 6fad7d9b8673e2f46820ad350fef064d,
-        type: 3}
-      spawnpoint: 2
-      arrow_direction_1: 1
-      arrow_direction_2: 1
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 5976167421542373025, guid: 4a7f1d23c8e2a4a46b80f449327f86c7,
-        type: 3}
-      spawnpoint: 1
-      arrow_direction_1: 0
-      arrow_direction_2: 3
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 0
-    enemy_variables:
-      enemy: {fileID: 5976167421542373025, guid: c5a744ac850017f4e951262dce6d60d2,
-        type: 3}
-      spawnpoint: 0
-      arrow_direction_1: 2
-      arrow_direction_2: 2
-    enemy_variables_twin:
-      enemy: {fileID: 0}
-      spawnpoint: 0
-      arrow_direction_1: 0
-      arrow_direction_2: 0
-    special_event: 0
-  - type_of_event: 1
-    enemy_variables:
-      enemy: {fileID: 1906132393403476251, guid: adb877a97bd51d843a40794440bee5c3,
-        type: 3}
-      spawnpoint: 2
-      arrow_direction_1: 0
-      arrow_direction_2: 3
-    enemy_variables_twin:
-      enemy: {fileID: 1906132393403476251, guid: adb877a97bd51d843a40794440bee5c3,
-        type: 3}
-      spawnpoint: 3
-      arrow_direction_1: 1
-      arrow_direction_2: 3
-    special_event: 0
   - type_of_event: 0
     enemy_variables:
       enemy: {fileID: 4242845238354352926, guid: 0e1245847abfa7e4a95b7ddf8b28affb,
