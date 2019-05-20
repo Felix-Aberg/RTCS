@@ -64,7 +64,15 @@ public class CrosshairScript : MonoBehaviour
                     if (current_reticle.GetComponent<ReticleScript>().crosshair_correct)
                     {
                         Debug.Log("everything correct, shooting");
-                        Shoot();
+
+                        if (SceneManager.GetActiveScene().name == "ShootWallScene")
+                        {
+                            current_reticle.SetActive(false);
+                            GameObject.Find("Outline").GetComponent<ShootWall>().CheckReticles();
+                        }
+
+                        else
+                            Shoot();
                     }
                 }
             }
