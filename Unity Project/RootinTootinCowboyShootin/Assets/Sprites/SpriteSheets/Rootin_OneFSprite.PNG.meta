@@ -7,6 +7,7 @@ TextureImporter:
     21300004: Rootin_OneFSprite_2
     21300006: Rootin_OneFSprite_3
     21300008: Rootin_OneFSprite_4
+    21300010: Rootin_OneFSprite_5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -92,10 +93,10 @@ TextureImporter:
       name: Rootin_OneFSprite_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 36
-        width: 304
-        height: 328
+        x: 0
+        y: 0
+        width: 357
+        height: 373
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -103,7 +104,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90a254354b0a9f14bac2d4cce4f054c9
+      spriteID: ad45e3a73dbbf5c4fa9fc2eb7ad37760
       vertices: []
       indices: 
       edges: []
@@ -112,10 +113,10 @@ TextureImporter:
       name: Rootin_OneFSprite_1
       rect:
         serializedVersion: 2
-        x: 374
-        y: 26
-        width: 304
-        height: 341
+        x: 357
+        y: 0
+        width: 357
+        height: 373
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,7 +124,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83ab65cd5debd8442a48c366bdb5d050
+      spriteID: c7e438c4354564249aa7aa1eb775c2d2
       vertices: []
       indices: 
       edges: []
@@ -132,10 +133,10 @@ TextureImporter:
       name: Rootin_OneFSprite_2
       rect:
         serializedVersion: 2
-        x: 731
-        y: 36
-        width: 304
-        height: 328
+        x: 714
+        y: 0
+        width: 357
+        height: 373
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,7 +144,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb7737107c18c394795e873e38d8d612
+      spriteID: fc57d609ebd87f641bf7785532247920
       vertices: []
       indices: 
       edges: []
@@ -152,10 +153,10 @@ TextureImporter:
       name: Rootin_OneFSprite_3
       rect:
         serializedVersion: 2
-        x: 1088
-        y: 38
-        width: 306
-        height: 335
+        x: 1071
+        y: 0
+        width: 357
+        height: 373
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,7 +164,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5117b0aed100cb64eb5684dc32ec5493
+      spriteID: 214611a9c2cb41f4a819cff73d8238dc
       vertices: []
       indices: 
       edges: []
@@ -175,7 +176,7 @@ TextureImporter:
         x: 1428
         y: 0
         width: 357
-        height: 292
+        height: 373
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,7 +184,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32b78b953a8b10b48806f3d38a5e0ec9
+      spriteID: 941c0aaa6086ca049b39e78c7fb8c00e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rootin_OneFSprite_5
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 0
+        width: 357
+        height: 373
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bce23af4248b54b8cbe7e91e831c44
       vertices: []
       indices: 
       edges: []

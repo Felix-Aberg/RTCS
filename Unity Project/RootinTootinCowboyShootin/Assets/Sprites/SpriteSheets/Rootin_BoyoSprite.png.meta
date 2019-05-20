@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: ce2bce37485939f4ebc9caa25fe0d619
+guid: 2723df3ee0f74804cae7bf9eaaac4df8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Rootin_TentaSprite_0
-    21300002: Rootin_TentaSprite_1
-    21300004: Rootin_TentaSprite_2
-    21300006: Rootin_TentaSprite_3
-    21300008: Rootin_TentaSprite_4
-    21300010: Rootin_TentaSprite_5
+    21300000: Rootin_BoyoSprite_0
+    21300002: Rootin_BoyoSprite_1
+    21300004: Rootin_BoyoSprite_2
+    21300006: Rootin_BoyoSprite_3
+    21300008: Rootin_BoyoSprite_4
+    21300010: Rootin_BoyoSprite_5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -90,13 +90,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rootin_TentaSprite_0
+      name: Rootin_BoyoSprite_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 272
-        height: 372
+        width: 381
+        height: 463
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -104,19 +104,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 151765f7d55946a489d6e152a9fbb54d
+      spriteID: 0e68c62110908fb41a7afb94e0171fff
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_TentaSprite_1
+      name: Rootin_BoyoSprite_1
       rect:
         serializedVersion: 2
-        x: 272
+        x: 381
         y: 0
-        width: 272
-        height: 372
+        width: 381
+        height: 463
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 971cd2b6f7e0f714f8bbd943676cb309
+      spriteID: 5e0617a1ca847514f92e138905d41852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_TentaSprite_2
+      name: Rootin_BoyoSprite_2
       rect:
         serializedVersion: 2
-        x: 544
+        x: 762
         y: 0
-        width: 272
-        height: 372
+        width: 381
+        height: 463
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,19 +144,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce3da41338c0e8346948dc80350d0ef4
+      spriteID: 077ded2dc2cd4874da2a7be7722ba94b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_TentaSprite_3
+      name: Rootin_BoyoSprite_3
       rect:
         serializedVersion: 2
-        x: 816
+        x: 1143
         y: 0
-        width: 272
-        height: 372
+        width: 381
+        height: 463
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d532a2e4fc06c34a8f3450f55422171
+      spriteID: ac9bf7f2d9df35c4395a7a87430f99b0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_TentaSprite_4
+      name: Rootin_BoyoSprite_4
       rect:
         serializedVersion: 2
-        x: 1088
+        x: 1524
         y: 0
-        width: 272
-        height: 372
+        width: 381
+        height: 463
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,19 +184,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5f1de4ebb1e2174bb426bbbd4747b3f
+      spriteID: a838c8eedac9cab41994db53b99b9d04
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_TentaSprite_5
+      name: Rootin_BoyoSprite_5
       rect:
         serializedVersion: 2
-        x: 1360
+        x: 1905
         y: 0
-        width: 272
-        height: 372
+        width: 381
+        height: 463
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,7 +204,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9424585f4dfc9e1469e0eaeb652ce5cf
+      spriteID: 3b0014d6df333fd4992ba464a3dacbe9
       vertices: []
       indices: 
       edges: []
@@ -212,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 08172ec8db8eb1149923a59cd2580220
+    spriteID: e600335810fbff84fab622fb257851a5
     vertices: []
     indices: 
     edges: []

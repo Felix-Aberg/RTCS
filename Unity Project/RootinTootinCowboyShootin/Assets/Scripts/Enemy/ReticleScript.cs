@@ -204,6 +204,6 @@ public class ReticleScript : MonoBehaviour
 
     public void FindCrosshair()
     {
-        crosshair = GameObject.Find("Crosshair");
+        crosshair = FindObjectOfType<CrosshairScript>().gameObject;
     }
 }

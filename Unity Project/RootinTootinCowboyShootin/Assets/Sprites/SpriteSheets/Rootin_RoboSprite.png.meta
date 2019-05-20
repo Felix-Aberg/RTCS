@@ -93,9 +93,9 @@ TextureImporter:
       name: Rootin_RoboSprite_0
       rect:
         serializedVersion: 2
-        x: 61
+        x: 0
         y: 0
-        width: 294
+        width: 389
         height: 522
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -104,7 +104,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd5b465237b8fc146bb35f8c8fa619c5
+      spriteID: fd3e06c5c9a45814da16051e1b19ed4f
       vertices: []
       indices: 
       edges: []
@@ -113,9 +113,9 @@ TextureImporter:
       name: Rootin_RoboSprite_1
       rect:
         serializedVersion: 2
-        x: 388
+        x: 389
         y: 0
-        width: 375
+        width: 389
         height: 522
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,7 +124,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0472441b7e7e1aa4bb05c8b47068bcfd
+      spriteID: 8ada3d14fe3240642a68b06a081ac3d4
       vertices: []
       indices: 
       edges: []
@@ -133,9 +133,9 @@ TextureImporter:
       name: Rootin_RoboSprite_2
       rect:
         serializedVersion: 2
-        x: 838
+        x: 778
         y: 0
-        width: 295
+        width: 389
         height: 522
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -144,7 +144,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0227a681cde3e424384168a2f2ac52df
+      spriteID: 9506486cb5e971544818ffd0cdf81131
       vertices: []
       indices: 
       edges: []
@@ -153,9 +153,9 @@ TextureImporter:
       name: Rootin_RoboSprite_3
       rect:
         serializedVersion: 2
-        x: 1204
+        x: 1167
         y: 0
-        width: 353
+        width: 389
         height: 522
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -164,7 +164,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53ed0a99ee1b635499e4fed1021509be
+      spriteID: 41b6296e5eb530c468f851d30c8d23bc
       vertices: []
       indices: 
       edges: []
@@ -173,9 +173,9 @@ TextureImporter:
       name: Rootin_RoboSprite_4
       rect:
         serializedVersion: 2
-        x: 1617
+        x: 1556
         y: 0
-        width: 295
+        width: 389
         height: 522
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -184,7 +184,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 026d9d29531adeb44b6fb7f6cfc295ba
+      spriteID: 767488a038a62af44b82bef558ad4b94
       vertices: []
       indices: 
       edges: []
@@ -193,9 +193,9 @@ TextureImporter:
       name: Rootin_RoboSprite_5
       rect:
         serializedVersion: 2
-        x: 2000
+        x: 1945
         y: 0
-        width: 294
+        width: 389
         height: 522
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -204,7 +204,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d0b68017e2bfd8488529edd06a2137c
+      spriteID: dcafd739cad639b41b207e66b1c6d2fc
       vertices: []
       indices: 
       edges: []

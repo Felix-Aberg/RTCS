@@ -332,6 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooting: 0
   use_mouse: 0
+  special_targets: []
 --- !u!4 &780915673
 Transform:
   m_ObjectHideFlags: 0
