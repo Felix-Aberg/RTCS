@@ -23,8 +23,17 @@ public class BombTimer : MonoBehaviour
 
         if(time_left <= 0)
         {
-            Debug.Log("Boom.");
-            SceneManager.LoadScene("GameOver");
+            if (!!FindObjectOfType<BombTimer>())
+            {
+                Debug.Log("Boom.");
+                SceneManager.LoadScene("GameOver");
+
+            }
+            else
+            {
+                Debug.Log("Bomb ran out of time but it's already defused");
+            }
+
             Destroy(gameObject);
         }
 

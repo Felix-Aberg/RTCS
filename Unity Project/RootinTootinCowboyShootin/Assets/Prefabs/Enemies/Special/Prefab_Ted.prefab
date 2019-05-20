@@ -146,7 +146,6 @@ MonoBehaviour:
   hide_position: {x: 0, y: 0}
   final_position: {x: 0, y: 0}
   jump_time: 1
-  dead: 0
   jump_speed: 10
   shoot_time: 5
 --- !u!70 &8534481036094861985
@@ -204,7 +203,7 @@ PrefabInstance:
     - target: {fileID: 2161999718850594643, guid: 91754ba4fb8714540830fa0d11c4becc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2161999718850594643, guid: 91754ba4fb8714540830fa0d11c4becc,
         type: 3}

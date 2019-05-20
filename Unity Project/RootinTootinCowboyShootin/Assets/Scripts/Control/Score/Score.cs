@@ -166,7 +166,7 @@ public class Score : MonoBehaviour
     {
         for (int i = 0; i < max_high_scores; i++)
         {
-            PlayerPrefs.SetInt("HighScore_" + i, 0);
+            PlayerPrefs.SetInt("MouseAiming", 0);
         }
     }
 

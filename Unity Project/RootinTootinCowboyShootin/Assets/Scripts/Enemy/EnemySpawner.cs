@@ -85,9 +85,9 @@ public class EnemySpawner : MonoBehaviour
         GameObject clone = Instantiate(enemy_variables.enemy,
                                        spawnpoint.position,
                                        Quaternion.identity);
-
-        clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
-        clone.GetComponent<EnemyBase>().reticle.GetComponent<ReticleScript>().InstantiateArrows(enemy_variables.arrow_direction_1, enemy_variables.arrow_direction_2);
+        EnemyBase cloneEnemyBase = clone.GetComponent<EnemyBase>();
+        cloneEnemyBase.SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
+        cloneEnemyBase.reticle.GetComponent<ReticleScript>().InstantiateArrows(enemy_variables.arrow_direction_1, enemy_variables.arrow_direction_2);
         SpawnPackage sp;
         sp.enemy = clone;
         sp.spawn_point = spawnpoint;

@@ -21,13 +21,13 @@ public class InputHandler : MonoBehaviour
 
     void Start()
     {
-        wiimote = GameObject.Find("WiimoteHandler").GetComponent<WiiMote>();
 
         if (PlayerPrefs.GetInt("MouseAiming") == 0)
             use_mouse = false;
 
         else if (PlayerPrefs.GetInt("MouseAiming") == 1)
             use_mouse = true;
+        wiimote = GameObject.Find("WiimoteHandler").GetComponent<WiiMote>();
     }
     
     void Update()

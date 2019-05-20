@@ -21,6 +21,8 @@ public class BombFoot : MonoBehaviour
     public Vector2 step_position;
     public Vector2 unstep_position;
 
+    public bool bool_bomb_defused;
+
     void Start()
     {
         bomb = transform.parent.gameObject;
@@ -67,6 +69,7 @@ public class BombFoot : MonoBehaviour
 
     void BombDefused()
     {
+        bool_bomb_defused = true;
         //yeah idk u win
         Debug.Log("the bomb has been defused");
         bomb.GetComponent<SpriteRenderer>().sprite = bomb_defused;

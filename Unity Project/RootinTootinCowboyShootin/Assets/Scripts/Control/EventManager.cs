@@ -31,7 +31,7 @@ public class EventManager : MonoBehaviour
     public int max_enemies_on_screen;
 
     // REFERENCES //
-
+    
     private GameMaster game_master;
     private EnemySpawner enemy_spawner;
 
