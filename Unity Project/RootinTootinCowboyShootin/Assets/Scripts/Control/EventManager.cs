@@ -241,14 +241,15 @@ public class EventManager : MonoBehaviour
 
             case SpecialEvents.SHOOTAHOLE:
                 {
-                    //Load a scene? Do some DontDestroyOnLoad?
+                    DontDestroyOnLoad(GameObject.Find("DontDestroy"));
+                    SceneManager.LoadScene("ShootWallScene");
                     break;
                 }
 
             case SpecialEvents.BOMBSTOMP:
                 {
                     //Load a scene? Do some DontDestroyOnLoad?+
-                    DontDestroyOnLoad(GameObject.Find("BombTimer"));
+                    //DontDestroyOnLoad(GameObject.Find("BombTimer")); Not needed because done previously??
                     SceneManager.LoadScene("BombStompScene");
                     break;
                 }

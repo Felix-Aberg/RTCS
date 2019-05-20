@@ -178,6 +178,6 @@ public class Tutorial : MonoBehaviour
     IEnumerator StartGame(float time)
     {
         yield return new WaitForSeconds(time);
-        SceneManager.LoadScene("OutsideScene");
+        SceneManager.LoadScene("SaloonScene");
     }
 }
