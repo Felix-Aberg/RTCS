@@ -145,14 +145,13 @@ public class Tutorial : MonoBehaviour
     {
         dancemat_done = true;
         reticle.directions_correct = true;
+        crosshair.gameObject.SetActive(true);
         reticle.FindCrosshair();
 
         StartCoroutine(ToggleSprite(checkmark, true, 0f));
         StartCoroutine(ToggleSprite(checkmark, false, .3f));
         StartCoroutine(ToggleSprite(checkmark, true, .5f));
         StartCoroutine(ToggleSprite(checkmark, false, 1.2f));
-
-        crosshair.gameObject.SetActive(true);
     }
 
     public void TutorialComplete()
@@ -168,7 +167,6 @@ public class Tutorial : MonoBehaviour
 
         StartCoroutine(StartGame(1.5f));
     }
-
     IEnumerator ToggleSprite(SpriteRenderer spriterenderer, bool enabled, float time) //Toggle a sprite on or off after given time
     {
         yield return new WaitForSeconds(time);

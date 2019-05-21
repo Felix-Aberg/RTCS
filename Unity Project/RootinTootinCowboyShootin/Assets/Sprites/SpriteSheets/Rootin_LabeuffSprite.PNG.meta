@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 5f5a2e605647a224ab34d284b3321867
+guid: 234f9103db8aa3e47aae93f14bb437a1
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Rootin_LabeuffSprite_almostdone_0
-    21300002: Rootin_LabeuffSprite_almostdone_1
-    21300004: Rootin_LabeuffSprite_almostdone_2
-    21300006: Rootin_LabeuffSprite_almostdone_3
-    21300008: Rootin_LabeuffSprite_almostdone_4
-    21300010: Rootin_LabeuffSprite_almostdone_5
+    21300000: Rootin_LabeuffSprite_0
+    21300002: Rootin_LabeuffSprite_1
+    21300004: Rootin_LabeuffSprite_2
+    21300006: Rootin_LabeuffSprite_3
+    21300008: Rootin_LabeuffSprite_4
+    21300010: Rootin_LabeuffSprite_5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -90,12 +90,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rootin_LabeuffSprite_almostdone_0
+      name: Rootin_LabeuffSprite_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 351.33334
+        width: 350
         height: 412
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -104,18 +104,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d938fb6fd1393244badc9027a67c95d
+      spriteID: 29441a6bb04d7a04ab8d1bae103d2066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_LabeuffSprite_almostdone_1
+      name: Rootin_LabeuffSprite_1
       rect:
         serializedVersion: 2
-        x: 351
+        x: 350
         y: 0
-        width: 351.33334
+        width: 350
         height: 412
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,18 +124,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0484baad7f07c0f4b90ad1c482077337
+      spriteID: 5ed386ddf47985c43a09bc9f6b9d55b0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_LabeuffSprite_almostdone_2
+      name: Rootin_LabeuffSprite_2
       rect:
         serializedVersion: 2
-        x: 702
+        x: 700
         y: 0
-        width: 351.33334
+        width: 350
         height: 412
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -144,18 +144,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87986d9e3bb206a41bcc27be37eac7e1
+      spriteID: b92d759f7356cad42a429c345a96a524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_LabeuffSprite_almostdone_3
+      name: Rootin_LabeuffSprite_3
       rect:
         serializedVersion: 2
-        x: 1053
+        x: 1050
         y: 0
-        width: 351.33334
+        width: 350
         height: 412
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -164,18 +164,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de800317786e08345842de69d4e1be64
+      spriteID: a282341a910c83747a6b76bd2ad1fc3d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_LabeuffSprite_almostdone_4
+      name: Rootin_LabeuffSprite_4
       rect:
         serializedVersion: 2
-        x: 1404
+        x: 1400
         y: 0
-        width: 351.33334
+        width: 350
         height: 412
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -184,18 +184,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05d5f77066008de4da82cefcab62d482
+      spriteID: 2554c3b1c24993a4c8c03613ae867a52
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_LabeuffSprite_almostdone_5
+      name: Rootin_LabeuffSprite_5
       rect:
         serializedVersion: 2
-        x: 1755
+        x: 1750
         y: 0
-        width: 351.33334
+        width: 350
         height: 412
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -204,7 +204,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 422d79c98132c3c47b723cfc5b610f36
+      spriteID: 3c06559769d657044a720a3c582f87ef
       vertices: []
       indices: 
       edges: []
@@ -212,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f63b1e4e7b413d740983a48f6ba8823b
+    spriteID: 74f78cbf4b35717428fa580496503991
     vertices: []
     indices: 
     edges: []
