@@ -1,11 +1,13 @@
 fileFormatVersion: 2
-guid: f3d1b786dc53d4449911217f73215e5b
+guid: 5f054dd2ed3f57c4491f8008005e5b57
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Rootin_MantisWalkSprite_0
-    21300002: Rootin_MantisWalkSprite_1
-    21300004: Rootin_MantisWalkSprite_2
-    21300006: Rootin_MantisWalkSprite_3
+    21300000: Rootin_MantisSprite_0
+    21300002: Rootin_MantisSprite_1
+    21300004: Rootin_MantisSprite_2
+    21300006: Rootin_MantisSprite_3
+    21300008: Rootin_MantisSprite_4
+    21300010: Rootin_MantisSprite_5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -88,13 +90,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rootin_MantisWalkSprite_0
+      name: Rootin_MantisSprite_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 489
-        height: 468
+        width: 492
+        height: 467
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -102,19 +104,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d7233adbf47a7149a0ccf83f6236f7c
+      spriteID: 2a4b980f21fdbe04fb20fb073d513049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_MantisWalkSprite_1
+      name: Rootin_MantisSprite_1
       rect:
         serializedVersion: 2
-        x: 489
+        x: 492
         y: 0
-        width: 489
-        height: 468
+        width: 492
+        height: 467
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e58a54402ecf044dbc865e773942e3b
+      spriteID: 7b362c4d90552b74484039a3c720e8ed
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_MantisWalkSprite_2
+      name: Rootin_MantisSprite_2
       rect:
         serializedVersion: 2
-        x: 978
+        x: 984
         y: 0
-        width: 489
-        height: 468
+        width: 492
+        height: 467
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,19 +144,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 501665faaa6777f41802f268255f12e3
+      spriteID: 22e663a15deed124a82c26578308a777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rootin_MantisWalkSprite_3
+      name: Rootin_MantisSprite_3
       rect:
         serializedVersion: 2
-        x: 1467
+        x: 1476
         y: 0
-        width: 489
-        height: 468
+        width: 492
+        height: 467
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,7 +164,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab7ecccd2216e4e46bdf98dbb4dd290b
+      spriteID: fd2a600a85f67224ea73686d9a7d5482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rootin_MantisSprite_4
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 0
+        width: 492
+        height: 467
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc877fadc665ed4090cdefb5702275d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rootin_MantisSprite_5
+      rect:
+        serializedVersion: 2
+        x: 2460
+        y: 0
+        width: 492
+        height: 467
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce77b81c01c329409a358a4fe4fd929
       vertices: []
       indices: 
       edges: []
@@ -170,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 18b80cd54b56b904fb9e46ac2720a332
+    spriteID: a9a2409c8fd9ea64eb2c6c2ba9fa68bc
     vertices: []
     indices: 
     edges: []
