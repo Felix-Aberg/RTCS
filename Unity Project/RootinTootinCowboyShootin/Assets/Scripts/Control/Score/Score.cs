@@ -75,7 +75,7 @@ public class Score : MonoBehaviour
         if (scene.name == "WinScene")
         {
             Debug.Log("Found HighScoreReader: " + !!GameObject.Find("Canvas").GetComponentInChildren<HighScoreReader>());
-            GameObject.Find("Canvas").GetComponentInChildren<HighScoreReader>().RenderHighScores(high_score, max_high_scores);
+            GameObject.Find("Canvas").GetComponentInChildren<HighScoreReader>().RenderHighScores();
         }
     }
 

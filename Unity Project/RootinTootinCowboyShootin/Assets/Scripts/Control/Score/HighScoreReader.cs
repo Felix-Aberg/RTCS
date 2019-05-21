@@ -14,6 +14,7 @@ public class HighScoreReader : MonoBehaviour
         text = GetComponent<Text>();
         Debug.Log("Text: " + GetComponent<Text>());
         text.text += "instantiate \n test";
+        RenderHighScores();
     }
 
     // Update is called once per frame
@@ -22,14 +23,10 @@ public class HighScoreReader : MonoBehaviour
         
     }
 
-    public void RenderHighScores(int[] score, int length)
+    public void RenderHighScores()
     {
-
-        if (!once)
-        {
             Debug.Log("Rendering high scores??");
 
-            once = true;
             //Reset text
             text.text = "asdf123";
             text.text += "\n tesdt" + 2;
@@ -39,6 +36,5 @@ public class HighScoreReader : MonoBehaviour
             {
                 text.text += (i + 1) + ". " + score[i] + "\n";
             }//*/
-        }
     }
 }

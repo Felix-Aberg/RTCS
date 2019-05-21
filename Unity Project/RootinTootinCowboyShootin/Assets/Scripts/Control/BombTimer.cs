@@ -12,6 +12,8 @@ public class BombTimer : MonoBehaviour
     public Image fuse;
     public Image fuse_fire;
 
+    string current_scene_name;
+
     void Start()
     {
         time_left = bomb_timer;
@@ -23,21 +25,18 @@ public class BombTimer : MonoBehaviour
 
         if(time_left <= 0)
         {
-            if (!!FindObjectOfType<BombTimer>())
-            {
-                Debug.Log("Boom.");
-                SceneManager.LoadScene("GameOver");
-
-            }
-            else
-            {
-                Debug.Log("Bomb ran out of time but it's already defused");
-            }
-
+            Debug.Log("Boom.");
+            SceneManager.LoadScene("GameOver");
             Destroy(gameObject);
         }
 
-        if (SceneManager.GetActiveScene().name != "BombStompScene") 
+        current_scene_name = SceneManager.GetActiveScene().name;
+
+        if (current_scene_name == "BombStompScene")
+        {
+            Destroy(gameObject);
+        }
+        else
         {
             fuse.fillAmount = time_left / bomb_timer;
             Vector2 temppos = new Vector2(7 - (14 * fuse.fillAmount), fuse_fire.transform.position.y);

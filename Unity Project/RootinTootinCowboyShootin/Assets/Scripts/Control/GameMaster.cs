@@ -126,7 +126,12 @@ public class GameMaster : MonoBehaviour
 
             case "GameOver":
                 {
-                    
+
+                    break;
+                }
+
+            case "TutorialScene":
+                {
 
                     break;
                 }
