@@ -156,14 +156,14 @@ public class Tutorial : MonoBehaviour
 
     public void TutorialComplete()
     {
-        StartCoroutine(ToggleSprite(explosion, true, 0f));
-        StartCoroutine(ToggleSprite(explosion, false, .2f));
-        StartCoroutine(ToggleSprite(explosion, true, .3f));
-        StartCoroutine(ToggleSprite(explosion, false, .5f));
-        StartCoroutine(ToggleSprite(explosion, true, .6f));
-        StartCoroutine(ToggleSprite(explosion, false, .8f));
-        StartCoroutine(ToggleSprite(explosion, true, .9f));
-        StartCoroutine(ToggleSprite(explosion, false, .11f));
+        //StartCoroutine(ToggleSprite(explosion, true, 0f));
+        //StartCoroutine(ToggleSprite(explosion, false, .2f));
+        //StartCoroutine(ToggleSprite(explosion, true, .3f));
+        //StartCoroutine(ToggleSprite(explosion, false, .5f));
+        //StartCoroutine(ToggleSprite(explosion, true, .6f));
+        //StartCoroutine(ToggleSprite(explosion, false, .8f));
+        //StartCoroutine(ToggleSprite(explosion, true, .9f));
+        //StartCoroutine(ToggleSprite(explosion, false, .11f));
 
         StartCoroutine(StartGame(1.5f));
     }

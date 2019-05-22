@@ -20,6 +20,8 @@ public class CrosshairScript : MonoBehaviour
     bool right_pressed_last_frame;
 
     public Sprite[] crosshair_sprites;
+    public GameObject[] hit_feedback_objects;
+    public GameObject[] miss_feedback_objects;
 
     void Start()
     {
@@ -68,6 +70,7 @@ public class CrosshairScript : MonoBehaviour
                         if (SceneManager.GetActiveScene().name == "ShootWallScene")
                         {
                             current_reticle.SetActive(false);
+                            ShowHitFeedback();
                             GameObject.Find("Outline").GetComponent<ShootWall>().CheckReticles();
                         }
 
@@ -75,7 +78,15 @@ public class CrosshairScript : MonoBehaviour
                             Shoot();
                     }
                 }
+
+                else if (!current_reticle.GetComponent<ReticleScript>().directions_correct)
+                {
+                    ShowMissFeedback();
+                }
             }
+
+            else
+                ShowMissFeedback();
 
             if (reticles_correct < 1)
                 ShootFoot();
@@ -103,6 +114,7 @@ public class CrosshairScript : MonoBehaviour
 
     void Shoot()
     {
+        ShowHitFeedback();
         current_enemy.GetComponent<EnemyBase>().OnDeath();
     }
 
@@ -153,6 +165,17 @@ public class CrosshairScript : MonoBehaviour
                 break;
 
         }
+    }
+
+    void ShowHitFeedback()
+    {
+        int r = Random.Range(0, hit_feedback_objects.Length);
+        Instantiate(hit_feedback_objects[r], current_reticle.transform.position, Quaternion.identity);
+    }
+    void ShowMissFeedback()
+    {
+        int r = Random.Range(0, miss_feedback_objects.Length);
+        Instantiate(miss_feedback_objects[r], transform.position, Quaternion.identity);
     }
 }
 
