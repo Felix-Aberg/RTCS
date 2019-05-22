@@ -144,20 +144,15 @@ public class MusicPlayer : MonoBehaviour
         }
 
 
-        /*
+        
         if (Input.GetKeyDown(KeyCode.C))
         {
-            SelectSong(SongList.DEFAULT);
+            transitioning = Transitioning.DEFAULT;
         }
 
         if (Input.GetKeyDown(KeyCode.V))
         {
-            SelectSong(SongList.BATTLE);
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            SelectSong(SongList.SEA_SHANTY);
+            transitioning = Transitioning.BATTLE;
         }//*/
     }
 

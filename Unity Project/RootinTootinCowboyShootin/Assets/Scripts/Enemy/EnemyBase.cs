@@ -47,7 +47,7 @@ public class EnemyBase : MonoBehaviour
     {
         if (!dead)
         {
-            GameObject.Find("Prefab_Player").GetComponent<PlayerHealth>().ShootPlayer();
+            FindObjectOfType<PlayerHealth>().ShootPlayer();
             animator.SetBool("Shooting", false);
             StartReturn();
         }
