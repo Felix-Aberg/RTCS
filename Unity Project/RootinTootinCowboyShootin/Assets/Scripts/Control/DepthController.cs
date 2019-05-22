@@ -10,7 +10,7 @@ public class DepthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sr = GetComponentInParent<SpriteRenderer>();
+        sr = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
