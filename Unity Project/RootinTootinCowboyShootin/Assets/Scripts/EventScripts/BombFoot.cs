@@ -73,8 +73,12 @@ public class BombFoot : MonoBehaviour
         //yeah idk u win
         Debug.Log("the bomb has been defused");
         bomb.GetComponent<SpriteRenderer>().sprite = bomb_defused;
+        Invoke("GoToWinScene", 2f);
+    }
+
+    void GoToWinScene()
+    {
         Destroy(GameObject.Find("DontDestroy"));
         SceneManager.LoadScene("WinScene");
     }
-
 }
