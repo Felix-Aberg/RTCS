@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum SpawnPoint
 {
@@ -27,57 +28,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Tooltip("Height offset of enemy spawning compared to spawnpoint depth controller. Higher value = further up.")]
     public float offset = 0.1f;
-
-    /* //Default SpawnBasic
-    //Cut due to being replaced by EventManager.cs
-    public SpawnPackage SpawnBasic()
-    {
-        Transform spawnpoint = SelectSpawnPoint();
-
-        GameObject clone = Instantiate(basic_enemies[Random.Range(0, basic_enemies.Length)],
-                                       spawnpoint.position,
-                                       Quaternion.identity);
-
-        clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
-
-        SpawnPackage sp;
-        sp.enemy = clone;
-        sp.spawn_point = spawnpoint;
-        return sp;
-    }//
-
-    public SpawnPackage SpawnBasic(GameObject enemy)
-    {
-        Transform spawnpoint = SelectSpawnPoint();
-
-        GameObject clone = Instantiate(enemy,
-                                       spawnpoint.position,
-                                       Quaternion.identity);
-
-        clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
-
-        SpawnPackage sp;
-        sp.enemy = clone;
-        sp.spawn_point = spawnpoint;
-        return sp;
-    }//
-
-    public SpawnPackage SpawnBasic(GameObject enemy, SpawnPoint spawnpoint_index, ArrowDirection dir1, ArrowDirection dir2)
-    {
-        Transform spawnpoint = SelectSpawnPoint(spawnpoint_index);
-
-        GameObject clone = Instantiate(enemy,
-                                       spawnpoint.position,
-                                       Quaternion.identity);
-
-        clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
-        clone.GetComponent<EnemyBase>().reticle.GetComponent<ReticleScript>().InstantiateArrows(dir1, dir2);
-
-        SpawnPackage sp;
-        sp.enemy = clone;
-        sp.spawn_point = spawnpoint;
-        return sp;
-    }//*/
+    bool is_outside_scene;
 
     public SpawnPackage SpawnBasic(EnemyVariables enemy_variables)
     {
@@ -86,40 +37,23 @@ public class EnemySpawner : MonoBehaviour
                                        spawnpoint.position,
                                        Quaternion.identity);
 
-        clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
-        clone.GetComponent<EnemyBase>().reticle.GetComponent<ReticleScript>().InstantiateArrows(enemy_variables.arrow_direction_1, enemy_variables.arrow_direction_2);
+        EnemyBase eb = clone.GetComponent<EnemyBase>();
+        eb.SetPositions(spawnpoint.position, spawnpoint.GetChild(0).position);
+        eb.reticle.GetComponent<ReticleScript>().InstantiateArrows(enemy_variables.arrow_direction_1, enemy_variables.arrow_direction_2);
+
         SpawnPackage sp;
         sp.enemy = clone;
         sp.spawn_point = spawnpoint;
+
+        Debug.Log("Enemy spawned");
+        if (enemy_variables.spawnpoint == SpawnPoint.UP_LEFT || enemy_variables.spawnpoint == SpawnPoint.UP_RIGHT)
+        {
+            Debug.Log("scale adjusted");
+            clone.transform.localScale = new Vector3(0.8f, 0.8f, 1f);
+        }
+
         return sp;
     }
-
-    /* //SpawnSpecial
-    public SpawnPackage SpawnSpecial()
-    {
-        //return SpawnBasic();
-        Transform spawnpoint = SelectSpawnPoint();
-
-        if (special_enemies[0] != null )
-        {
-            GameObject clone = Instantiate(special_enemies[0],
-                                       spawnpoint.position,
-                                       Quaternion.identity);
-
-            special_enemies.Remove(special_enemies[0]);
-            clone.GetComponent<EnemyBase>().SetPositions(spawnpoint.position, spawnpoint.GetChild(0).transform.position);
-
-            SpawnPackage sp;
-            sp.enemy = clone;
-            sp.spawn_point = spawnpoint;
-            return sp;
-        }
-        else
-        {
-            return SpawnBasic();
-        }   
-    }
-    //*/
 
     Vector2 AdjustSpawnHeight(GameObject enemy, Transform spawnpoint)
     {

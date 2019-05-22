@@ -68,7 +68,7 @@ public class EnemyBase : MonoBehaviour
 
             if (jumping)
             {
-                transform.position = Vector2.MoveTowards(transform.position, final_position, jump_speed / 100);
+                transform.parent.position = Vector2.MoveTowards(transform.parent.position, final_position, jump_speed / 100);
 
                 //To disable jumping
                 if (Vector2.Distance(transform.position, final_position) < 0.000002f)
