@@ -92,5 +92,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be6cf14398b25a4408e74a478a4b677a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  display_time: 0.5
+  display_time: 0.35
   sound_effect: {fileID: 0}

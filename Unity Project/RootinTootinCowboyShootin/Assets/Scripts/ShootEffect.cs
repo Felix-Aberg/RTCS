@@ -14,7 +14,7 @@ public class ShootEffect : MonoBehaviour
         //StartCoroutine(DestroyObject(sound_effect.length)); enable when audio is implemented
         StartCoroutine(DisableSprite(display_time));
         StartCoroutine(DestroyObject(display_time)); // delete when audio is implemented;
-        a_s.PlayOneShot(sound_effect);
+        //a_s.PlayOneShot(sound_effect);
     }
 
     IEnumerator DisableSprite(float time)
