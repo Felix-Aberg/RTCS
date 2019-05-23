@@ -46,9 +46,9 @@ public class GameMaster : MonoBehaviour
         es = GetComponent<EnemySpawner>();
         em = GetComponent<EventManager>();
 
-        if (SceneManager.GetActiveScene().name == "GameScene")
+        if (SceneManager.GetActiveScene().name == "SaloonScene" || SceneManager.GetActiveScene().name == "OutsideScene")
         {
-            spawn_time = Time.time + first_spawn_delay;
+            spawn_time = Time.time + (first_spawn_delay);
             death_queue_total = death_array[0] + death_array[1] + death_array[2];
         }
             

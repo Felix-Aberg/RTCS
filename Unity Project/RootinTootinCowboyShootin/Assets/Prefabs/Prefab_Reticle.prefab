@@ -188,7 +188,7 @@ MonoBehaviour:
   arrow_sprites:
   - {fileID: 21300000, guid: 1b5394caf63569847b0604588f7d38bf, type: 3}
   - {fileID: 21300000, guid: 339f5931b9a7b59428289aad136919f4, type: 3}
-  - {fileID: 21300000, guid: d6ebcf2a88bd7884789e71e5c4d30813, type: 3}
+  - {fileID: 21300000, guid: 7f99022c86b78e44c96357f9189a9fee, type: 3}
   - {fileID: 21300000, guid: 06386300f77290f4ca6e0984572adcfb, type: 3}
   all_arrows:
   - dir: 0
@@ -366,7 +366,7 @@ SpriteRenderer:
   m_SortingLayerID: 1733210963
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d6ebcf2a88bd7884789e71e5c4d30813, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f99022c86b78e44c96357f9189a9fee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

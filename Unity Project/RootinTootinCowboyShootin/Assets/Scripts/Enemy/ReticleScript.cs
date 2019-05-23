@@ -188,6 +188,12 @@ public class ReticleScript : MonoBehaviour
             other.GetComponent<CrosshairScript>().current_enemy = transform.parent.gameObject;
             other.GetComponent<CrosshairScript>().ChangeCrosshair(1);
             UpdateReticle();
+         
+            if (SceneManager.GetActiveScene().name == "TutorialScene")
+            {
+                Tutorial tutorial = FindObjectOfType<Tutorial>();
+                tutorial.instructions.sprite = tutorial.instruction_sprites[2];
+            }
         }
     }
 

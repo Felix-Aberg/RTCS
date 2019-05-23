@@ -107,7 +107,10 @@ public class CrosshairScript : MonoBehaviour
         }
 
         else if (game_master.GetComponent<InputHandler>().use_mouse)
-            temppos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        {
+            temppos.x = Mathf.Lerp(transform.position.x, Camera.main.ScreenToWorldPoint(Input.mousePosition).x, lerp_bias);
+            temppos.y = Mathf.Lerp(transform.position.y, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, lerp_bias);
+        }
 
         transform.position = temppos;
     }
