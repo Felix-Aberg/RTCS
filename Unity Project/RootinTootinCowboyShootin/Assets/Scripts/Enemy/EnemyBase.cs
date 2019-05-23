@@ -71,7 +71,7 @@ public class EnemyBase : MonoBehaviour
                 transform.parent.position = Vector2.MoveTowards(transform.parent.position, final_position, jump_speed / 100);
 
                 //To disable jumping
-                if (Vector2.Distance(transform.position, final_position) < 0.000002f)
+                if (Vector2.Distance(transform.parent.position, final_position) < 0.000002f)
                 {
                     jumping = false;
                     animator.SetBool("Walking", false);
@@ -82,9 +82,9 @@ public class EnemyBase : MonoBehaviour
 
             else if (returning)
             {
-                transform.position = Vector2.MoveTowards(transform.position, hide_position, jump_speed / 100);
+                transform.parent.position = Vector2.MoveTowards(transform.parent.position, hide_position, jump_speed / 100);
 
-                if (Vector2.Distance(transform.position, hide_position) < 0.000002f)
+                if (Vector2.Distance(transform.parent.position, hide_position) < 0.000002f)
                 {
                     returning = false;
                     animator.SetBool("Walking", false);
