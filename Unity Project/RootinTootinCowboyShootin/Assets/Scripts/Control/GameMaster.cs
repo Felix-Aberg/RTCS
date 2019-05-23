@@ -173,16 +173,18 @@ public class GameMaster : MonoBehaviour
 
     public void ClearSpawn(GameObject dead_enemy) //Call after enemy death anim
     {
+        Debug.Log("ClearSpawn(" + dead_enemy + ") called");
         int index = 0;
 
         foreach (GameObject enemy in enemies)
         {
             if (enemy == dead_enemy)
             {
-                //Debug.Log(enemy);
+                //rDebug.Log(enemy);
                 //Debug.Log(index);
-                //Debug.Log(enemy.GetComponent<EnemyBase>().life_time);
-                RequeDeath(enemy.GetComponent<EnemyBase>().life_time);
+                //Debug.Log(enemy.GetComponentInChildren<EnemyBase>().life_time);
+                //Debug.Log("Erased " + enemy + " from enemies list.");
+                RequeDeath(enemy.GetComponentInChildren<EnemyBase>().life_time);
                 Destroy(enemies[index]);
                 enemies.Remove(enemies[index]);
                 spawnpoints_used.Remove(spawnpoints_used[index]);

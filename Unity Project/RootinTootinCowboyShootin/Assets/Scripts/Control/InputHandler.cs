@@ -65,11 +65,14 @@ public class InputHandler : MonoBehaviour
             UpdateArrows();
 
         // WIIMOTE SHOOTY
-        // do code
         shoot_last_frame = shoot;
 
         if (!use_mouse)
+        {
             shoot = wiimote.btn_b_down;
+            if (shoot)
+                Debug.Log("P R E S S E D");
+        }
 
         else if (use_mouse)
             shoot = Input.GetButton("Fire1");
@@ -84,14 +87,15 @@ public class InputHandler : MonoBehaviour
     {
         for (int i = 0; i < arrows.Length; i++)
         {
-            if (SceneManager.GetActiveScene().name != "ShootWallScene")
+            if (SceneManager.GetActiveScene().name != "ShootWallScene" && SceneManager.GetActiveScene().name != "TutorialScene")
             {
                 //update the appropriate arrow on all enemies reticles
                 foreach (GameObject enemy in GetComponent<GameMaster>().enemies)
                 {
-                    if (enemy.transform.GetChild(0).gameObject.activeInHierarchy)
+                    GameObject temp_reticle = enemy.transform.GetChild(0).transform.GetChild(0).gameObject;
+                    if (temp_reticle.activeInHierarchy)
                     {
-                        enemy.GetComponentInChildren<ReticleScript>().UpdateReticle((ArrowDirection)i, arrows[i]);
+                        temp_reticle.GetComponent<ReticleScript>().UpdateReticle((ArrowDirection)i, arrows[i]);
                     }
                 }
             }

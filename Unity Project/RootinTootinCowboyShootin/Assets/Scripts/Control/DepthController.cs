@@ -11,12 +11,24 @@ public class DepthController : MonoBehaviour
     void Start()
     {
         sr = GetComponentInChildren<SpriteRenderer>();
+
+        if (sr == null)
+        {
+            sr = GetComponentInParent<SpriteRenderer>();
+
+            if (sr == null)
+            {
+                Debug.LogError("ERROR! Depthcontroller Doesn't know what sprite to handle depth for!");
+            }
+        }
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        sort_order = gameObject.transform.position.y * -1000;
+        sort_order = transform.position.y * -1000;
         sr.sortingOrder = (int)sort_order;
     }
 }

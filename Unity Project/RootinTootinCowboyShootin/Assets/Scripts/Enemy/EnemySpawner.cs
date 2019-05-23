@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
                                        spawnpoint.position,
                                        Quaternion.identity);
 
-        EnemyBase eb = clone.GetComponent<EnemyBase>();
+        EnemyBase eb = clone.GetComponentInChildren<EnemyBase>();
         eb.SetPositions(spawnpoint.position, spawnpoint.GetChild(0).position);
         eb.reticle.GetComponent<ReticleScript>().InstantiateArrows(enemy_variables.arrow_direction_1, enemy_variables.arrow_direction_2);
 

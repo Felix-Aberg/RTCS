@@ -116,7 +116,8 @@ public class EnemyBase : MonoBehaviour
 
     void Dead()
     {
-        GameObject.Find("GameMaster").GetComponent<GameMaster>().ClearSpawn(gameObject);
+        //Debug.Log("void Dead() called");
+        GameObject.Find("GameMaster").GetComponent<GameMaster>().ClearSpawn(transform.parent.gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other)

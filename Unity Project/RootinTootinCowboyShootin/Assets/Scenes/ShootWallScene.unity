@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooting: 0
-  use_mouse: 0
+  use_mouse: 1
   special_targets:
   - {fileID: 1927986641}
   - {fileID: 1186057010}

@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int lives;
     public Image[] life_images;
+    public Sprite health_empty;
 
     void CheckHealth()
     {
@@ -27,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
         for (int i = 0; i < life_images.Length; i++)
         {
             if (i > lives - 1)
-                life_images[i].enabled = false;
+                life_images[i].sprite = health_empty;
         }
     }
 }
