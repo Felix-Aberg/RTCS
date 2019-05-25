@@ -18,10 +18,14 @@ public class CrosshairScript : MonoBehaviour
 
     bool left_pressed_last_frame;
     bool right_pressed_last_frame;
+    bool camera_shake;
 
     public Sprite[] crosshair_sprites;
     public GameObject[] hit_feedback_objects;
     public GameObject[] miss_feedback_objects;
+
+    public float freeze_duration;
+    bool frozen;
 
     void Start()
     {
@@ -96,6 +100,12 @@ public class CrosshairScript : MonoBehaviour
         right_pressed_last_frame = wiimote.btn_right_down;
     }
 
+    void FixedUpdate()
+    {
+        if (camera_shake)
+            ScreenShake();
+    }
+
     void LateUpdate()
     {
         Vector2 temppos = transform.position;
@@ -117,7 +127,12 @@ public class CrosshairScript : MonoBehaviour
 
     void Shoot()
     {
+        //camera_shake = true;
         ShowHitFeedback();
+
+        if (!frozen)
+            StartCoroutine(FreezeFrame(freeze_duration));
+
         current_enemy.GetComponent<EnemyBase>().OnDeath();
     }
 
@@ -170,15 +185,43 @@ public class CrosshairScript : MonoBehaviour
         }
     }
 
+    void ScreenShake() //Very broken;
+    {
+        Camera.main.orthographicSize = 4.7f;
+        Quaternion rotation = Camera.main.transform.localRotation;
+        rotation.z = Mathf.Lerp(-.5f, .5f, 1 * Time.deltaTime);
+
+        if (1 * Time.deltaTime == 1)
+        {
+            Camera.main.orthographicSize = 5;
+            rotation.z = 0;
+            camera_shake = false;
+        }
+
+        Camera.main.transform.localRotation = rotation;
+    }
+
     void ShowHitFeedback()
     {
         int r = Random.Range(0, hit_feedback_objects.Length);
         Instantiate(hit_feedback_objects[r], current_reticle.transform.position, Quaternion.identity);
     }
+
     void ShowMissFeedback()
     {
         int r = Random.Range(0, miss_feedback_objects.Length);
         Instantiate(miss_feedback_objects[r], transform.position, Quaternion.identity);
+    }
+
+    IEnumerator FreezeFrame(float time)
+    {
+        frozen = true;
+        float original_timescale = Time.timeScale;
+        Time.timeScale = 0f;
+
+        yield return new WaitForSecondsRealtime(time);
+        Time.timeScale = original_timescale;
+        frozen = false;
     }
 }
 

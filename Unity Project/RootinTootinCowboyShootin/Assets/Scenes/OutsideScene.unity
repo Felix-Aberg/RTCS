@@ -1796,6 +1796,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5915635280978652300, guid: e6656893af70b514aa651969eeab0c00,
         type: 3}
+    - target: {fileID: 1323464475637953565, guid: c7cb3a324d48f5a47ab4ef7ac2fb133b,
+        type: 3}
+      propertyPath: freeze_duration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1323464475637953567, guid: c7cb3a324d48f5a47ab4ef7ac2fb133b,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -1824,6 +1829,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1144981973119752035, guid: bdb840b7d075f714a87aadfbddb8923d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 1144981972698841735, guid: bdb840b7d075f714a87aadfbddb8923d,
         type: 3}
@@ -1954,11 +1964,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RenderMode
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1144981973119752035, guid: bdb840b7d075f714a87aadfbddb8923d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 1144981972698841753, guid: bdb840b7d075f714a87aadfbddb8923d,
         type: 3}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1298158839052983999}
   - component: {fileID: 1298158839052983998}
   - component: {fileID: 1298158839052983985}
+  - component: {fileID: 7251619037864431709}
   m_Layer: 0
   m_Name: bang
   m_TagString: Untagged
@@ -94,3 +95,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   display_time: 0.35
   sound_effect: {fileID: 0}
+--- !u!95 &7251619037864431709
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298158839052983984}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 76a4c974a01731148b860d1d2a633871, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
