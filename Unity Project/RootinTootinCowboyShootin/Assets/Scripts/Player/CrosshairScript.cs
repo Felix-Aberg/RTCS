@@ -18,6 +18,7 @@ public class CrosshairScript : MonoBehaviour
 
     bool left_pressed_last_frame;
     bool right_pressed_last_frame;
+    bool camera_shake;
 
     public Sprite[] crosshair_sprites;
     public GameObject[] hit_feedback_objects;
@@ -118,6 +119,9 @@ public class CrosshairScript : MonoBehaviour
     void Shoot()
     {
         ShowHitFeedback();
+        FindObjectOfType<ScreenShake>().StartShake(0.05f, 0.1f);
+        FindObjectOfType<FreezeFrame>().Freeze(0.1f);
+
         current_enemy.GetComponent<EnemyBase>().OnDeath();
     }
 
@@ -175,6 +179,7 @@ public class CrosshairScript : MonoBehaviour
         int r = Random.Range(0, hit_feedback_objects.Length);
         Instantiate(hit_feedback_objects[r], current_reticle.transform.position, Quaternion.identity);
     }
+
     void ShowMissFeedback()
     {
         int r = Random.Range(0, miss_feedback_objects.Length);

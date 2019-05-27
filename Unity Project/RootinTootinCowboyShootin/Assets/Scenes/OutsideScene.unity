@@ -258,7 +258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338947799}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.4200003, z: 0}
+  m_LocalPosition: {x: -0.27, y: 2.4200003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 371613723}
@@ -311,7 +311,7 @@ PrefabInstance:
     - target: {fileID: 243248842691811581, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}
       propertyPath: m_Name
-      value: Prefab_DepthController
+      value: DepthController_CoverBL
       objectReference: {fileID: 0}
     - target: {fileID: 243248842691811581, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}
@@ -530,7 +530,7 @@ PrefabInstance:
     - target: {fileID: 243248842691811581, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}
       propertyPath: m_Name
-      value: Prefab_DepthController
+      value: DepthController_CoverTL
       objectReference: {fileID: 0}
     - target: {fileID: 243248842691811581, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}
@@ -919,7 +919,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421274189}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.7700002, z: 0}
+  m_LocalPosition: {x: 0, y: 4.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1888898392}
@@ -1047,8 +1047,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435465458}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.177, y: 2.998, z: 0}
-  m_LocalScale: {x: 0.939, y: 0.939, z: 0.939}
+  m_LocalPosition: {x: -0.27, y: 3.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0.939}
   m_Children: []
   m_Father: {fileID: 1027523549}
   m_RootOrder: 0
@@ -1292,7 +1292,7 @@ PrefabInstance:
     - target: {fileID: 243248842691811581, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}
       propertyPath: m_Name
-      value: Prefab_DepthController
+      value: DepthController_CoverTR
       objectReference: {fileID: 0}
     - target: {fileID: 243248842691811581, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}
@@ -1485,7 +1485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785651028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.59, z: 0}
+  m_LocalPosition: {x: 0.49, y: 3.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1722094117}
@@ -1507,7 +1507,7 @@ PrefabInstance:
     - target: {fileID: 243248842691811581, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}
       propertyPath: m_Name
-      value: Prefab_DepthController
+      value: DepthController_CoverBR
       objectReference: {fileID: 0}
     - target: {fileID: 243248842691811581, guid: 1228dbd158ecaad41857c6216f4c5211,
         type: 3}
@@ -1652,7 +1652,7 @@ Transform:
   m_GameObject: {fileID: 1913562334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.93, y: 0.93, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1796,6 +1796,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5915635280978652300, guid: e6656893af70b514aa651969eeab0c00,
         type: 3}
+    - target: {fileID: 1323464475637953565, guid: c7cb3a324d48f5a47ab4ef7ac2fb133b,
+        type: 3}
+      propertyPath: freeze_duration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1323464475637953567, guid: c7cb3a324d48f5a47ab4ef7ac2fb133b,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -1824,6 +1829,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1144981973119752035, guid: bdb840b7d075f714a87aadfbddb8923d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 1144981972698841735, guid: bdb840b7d075f714a87aadfbddb8923d,
         type: 3}
@@ -1955,11 +1965,6 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1144981973119752035, guid: bdb840b7d075f714a87aadfbddb8923d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000061035156
-      objectReference: {fileID: 0}
     - target: {fileID: 1144981972698841753, guid: bdb840b7d075f714a87aadfbddb8923d,
         type: 3}
       propertyPath: m_UiScaleMode
@@ -2007,7 +2012,7 @@ PrefabInstance:
     - target: {fileID: 6322381243348460841, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.21
+      value: 8.01
       objectReference: {fileID: 0}
     - target: {fileID: 6322381243348460841, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
@@ -2024,6 +2029,12 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Cover
       objectReference: {fileID: 0}
+    - target: {fileID: 6322381243348460840, guid: b4dc635166763f746acbc5d76a36d04b,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 6322381243867954304, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2234,7 +2245,7 @@ PrefabInstance:
     - target: {fileID: 6322381242704305761, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4
+      value: -4.35
       objectReference: {fileID: 0}
     - target: {fileID: 6322381243022313833, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
