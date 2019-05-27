@@ -31,8 +31,8 @@ public class Score : MonoBehaviour
     [Tooltip("Score given to the player for killing a basic enemy.")]
     public int score_kill_basic;
 
-    [Tooltip("Score given to the player for killing a special enemy.")]
-    public int score_kill_special;
+    //[Tooltip("Score given to the player for killing a special enemy.")]
+    //public int score_kill_special;
 
     [Tooltip("Score given to the player for shooting a hole in the saloon wall.")]
     public int score_wall_hole;
@@ -64,22 +64,21 @@ public class Score : MonoBehaviour
         }
     }
 
-    public void UpdateScore(ScoreEvent se)
+    public void GiveScoreEnemy(float lifetime)
     {
-        switch(se)
+        if (lifetime < 80)
+            current_score += (int)(score_kill_basic * ((100 - lifetime)/100));
+
+        else
+            current_score += score_kill_basic * (int)(100 - 80);
+
+        UpdateScore();
+    }
+
+    public void GiveScoreEvent(ScoreEvent se)
+    {
+        switch (se)
         {
-            case (ScoreEvent.BASIC_KILL):
-                {
-                    current_score += score_kill_basic;
-                    break;
-                }
-
-            case (ScoreEvent.SPECIAL_KILL):
-                {
-                    current_score += score_kill_special;
-                    break;
-                }
-
             case (ScoreEvent.WALL_HOLE):
                 {
                     current_score += score_wall_hole;
@@ -108,6 +107,11 @@ public class Score : MonoBehaviour
                 break;
         }
 
+        UpdateScore();
+    }
+
+    void UpdateScore()
+    {
         text_score.text = current_score.ToString();
     }
 

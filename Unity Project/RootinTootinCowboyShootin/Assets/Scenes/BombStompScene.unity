@@ -138,7 +138,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565979970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.968421, y: 3.4736843, z: 0}
+  m_LocalPosition: {x: -8.52, y: 2.48, z: 0}
   m_LocalScale: {x: 1.0526316, y: 1.0526316, z: 1}
   m_Children:
   - {fileID: 1828909395}
@@ -157,9 +157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd48f54ead72fff4e8b18835705bd4ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bomb: {fileID: 0}
-  foot_step: {fileID: 21300000, guid: 5dc0ff18d3f89864db9a2357691e18c9, type: 3}
-  foot_unstep: {fileID: 21300000, guid: 7501379fefca9304299c1355030cbf89, type: 3}
+  bomb: {fileID: 1828909394}
+  foot_step_lit: {fileID: 21300000, guid: 9d80bba7715a12542839a87bb4fb5979, type: 3}
+  foot_unstep_lit: {fileID: 21300000, guid: c1b3c7923e6eb814781197870de2e71d, type: 3}
+  foot_step_defused: {fileID: 21300000, guid: aae9c8c01f4fca941a6c91479b19d8f3, type: 3}
+  foot_unstep_defused: {fileID: 21300000, guid: 4d75f9fb06fc0b34e881114d860c67dc,
+    type: 3}
   bomb_defused: {fileID: 21300000, guid: 3e00df9e6135b8844a0a5a839388602b, type: 3}
   stepping: 0
   stepping_last_frame: 0
@@ -204,7 +207,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7501379fefca9304299c1355030cbf89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1b3c7923e6eb814781197870de2e71d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -385,7 +388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983486815}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.1, y: 3.34, z: 0}
+  m_LocalPosition: {x: 6.38, y: 4.01, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -464,7 +467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161826361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.93, y: 1.4, z: 0}
+  m_LocalPosition: {x: 0.94, y: 4.04, z: 0}
   m_LocalScale: {x: 1.969, y: 1.969, z: 1.969}
   m_Children: []
   m_Father: {fileID: 0}
@@ -480,6 +483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1184910805}
   - component: {fileID: 1184910804}
+  - component: {fileID: 1184910806}
   m_Layer: 0
   m_Name: bomb_bg
   m_TagString: Untagged
@@ -524,7 +528,7 @@ SpriteRenderer:
   m_SortingLayerID: 2069226297
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 68747b4f6a36a8e4a95f850673c80b8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bac93aa92c55a27408bd2b3963127f23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -543,13 +547,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184910803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: -0.02, z: 0}
+  m_LocalPosition: {x: 3.22, y: -0.42, z: 0}
   m_LocalScale: {x: 0.95, y: 0.95, z: 1}
   m_Children:
   - {fileID: 565979971}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1184910806
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184910803}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5ff72c2e9b616843b42aa56d3f37ec0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1828909394
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,8 +596,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828909394}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.96, y: -2.85, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.93, y: -2.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 565979971}

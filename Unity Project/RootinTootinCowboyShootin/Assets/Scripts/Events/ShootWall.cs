@@ -20,11 +20,6 @@ public class ShootWall : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
-
-    }
-
     public void CheckReticles()
     {
         int i = 0;
