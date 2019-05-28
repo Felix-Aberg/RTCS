@@ -70,6 +70,7 @@ public class CrosshairScript : MonoBehaviour
 
                         if (SceneManager.GetActiveScene().name == "ShootWallScene")
                         {
+                            FindObjectOfType<Score>().GiveScoreEvent(ScoreEvent.WALL_HOLE);
                             current_reticle.SetActive(false);
                             ShowHitFeedback();
                             GameObject.Find("Outline").GetComponent<ShootWall>().CheckReticles();
@@ -170,7 +171,6 @@ public class CrosshairScript : MonoBehaviour
 
             default:
                 break;
-
         }
     }
 

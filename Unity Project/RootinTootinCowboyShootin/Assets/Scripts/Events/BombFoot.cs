@@ -9,8 +9,10 @@ public class BombFoot : MonoBehaviour
     public GameObject bomb;
     SpriteRenderer sr;
 
-    public Sprite foot_step;
-    public Sprite foot_unstep;
+    public Sprite foot_step_lit;
+    public Sprite foot_unstep_lit;
+    public Sprite foot_step_defused;
+    public Sprite foot_unstep_defused;
     public Sprite bomb_defused;
 
     public bool stepping;
@@ -46,14 +48,22 @@ public class BombFoot : MonoBehaviour
 
         if (stepping && !stepping_last_frame)
         {
-            sr.sprite = foot_step;
+            if(!bool_bomb_defused)
+                sr.sprite = foot_step_lit;
+            else
+                sr.sprite = foot_step_defused;
+
             transform.position = step_position;
 
             bomb_hp--;
+            FindObjectOfType<Score>().GiveScoreEvent(ScoreEvent.BOMB_STOMP);
         }
         else if (!stepping && stepping_last_frame)
         {
-            sr.sprite = foot_unstep;
+            if (!bool_bomb_defused)
+                sr.sprite = foot_unstep_lit;
+            else
+                sr.sprite = foot_unstep_defused;
             transform.position = unstep_position;
         }
     }
@@ -69,8 +79,8 @@ public class BombFoot : MonoBehaviour
 
     void BombDefused()
     {
+        FindObjectOfType<Score>().GiveScoreEvent(ScoreEvent.BOMB_DEFUSED);
         bool_bomb_defused = true;
-        //yeah idk u win
         Debug.Log("the bomb has been defused");
         bomb.GetComponent<SpriteRenderer>().sprite = bomb_defused;
         Invoke("GoToWinScene", 2f);

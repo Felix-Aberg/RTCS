@@ -107,6 +107,7 @@ public class EnemyBase : MonoBehaviour
 
     public void OnDeath()
     {
+        FindObjectOfType<Score>().GiveScoreEnemy(life_time);
         dead = true;
         animator.SetTrigger("Dead");
         reticle.SetActive(false);
