@@ -13,6 +13,6 @@ public class IntroCutsceneScript : MonoBehaviour
 
     void LoadSaloon()
     {
-        SceneManager.LoadScene("SaloonScene");
+        FindObjectOfType<LevelFadeScript>().SwapLevel(Stages.SALOON);
     }
 }
