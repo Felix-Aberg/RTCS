@@ -57,11 +57,11 @@ public class Score : MonoBehaviour
         Debug.Log("OnSceneLoaded: " + scene.name);
         //Debug.Log(mode); //4
 
-        if (scene.name == "WinScene")
-        {
-            Debug.Log("Found HighScoreReader: " + !!GameObject.Find("Canvas").GetComponentInChildren<HighScoreReader>());
-            GameObject.Find("Canvas").GetComponentInChildren<HighScoreReader>().RenderHighScores();
-        }
+        //if (scene.name == "WinScene")
+        //{
+        //    Debug.Log("Found HighScoreReader: " + !!GameObject.Find("Canvas").GetComponentInChildren<HighScoreReader>());
+        //    GameObject.Find("Canvas").GetComponentInChildren<HighScoreReader>().RenderHighScores();
+        //}
     }
 
     public void GiveScoreEnemy(float lifetime)
@@ -113,6 +113,11 @@ public class Score : MonoBehaviour
     void UpdateScore()
     {
         text_score.text = current_score.ToString();
+    }
+
+    public void SaveScore()
+    {
+        PlayerPrefs.SetInt("LastScore", current_score);
     }
 
     void Start()

@@ -5,36 +5,37 @@ using UnityEngine.UI;
 
 public class HighScoreReader : MonoBehaviour
 {
-    public Text text;
-    bool once = false;
+    public Text[] score_displays;
+    public int[] high_score;
+    public int max_high_scores;
 
     // Start is called before the first frame update
     void Start()
     {
-        text = GetComponent<Text>();
-        Debug.Log("Text: " + GetComponent<Text>());
-        text.text += "instantiate \n test";
+        HighScorePull();
         RenderHighScores();
     }
 
-    // Update is called once per frame
-    void Update()
+    void RenderHighScores()
     {
-        
+        for (int i = 0; i < max_high_scores; i++)
+        {
+            if (i > score_displays.Length)
+                return;
+
+            if (PlayerPrefs.GetInt("LastScore") == high_score[i])
+                score_displays[i].color = Color.yellow;
+            score_displays[i].text = high_score[i].ToString();
+        }
     }
 
-    public void RenderHighScores()
+    void HighScorePull()
     {
-            Debug.Log("Rendering high scores??");
+        for (int i = 0; i < max_high_scores; i++)
+        {
+            high_score[i] = PlayerPrefs.GetInt("HighScore_" + i, 0);
+        }
 
-            //Reset text
-            text.text = "asdf123";
-            text.text += "\n tesdt" + 2;
-
-            /*
-            for (int i = 0; i < length; i++)
-            {
-                text.text += (i + 1) + ". " + score[i] + "\n";
-            }//*/
+        return;
     }
 }

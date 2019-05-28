@@ -6,6 +6,7 @@ public class ScreenShake : MonoBehaviour
 {
     float ShakeAmount;
     Vector3 original_camerapos;
+    bool shaking;
 
     /// <summary>
     /// Shake the screen for time in seconds
@@ -14,12 +15,17 @@ public class ScreenShake : MonoBehaviour
     /// <param name="time">Shake duration</param>
     public void StartShake(float amount, float time)
     {
-        original_camerapos = Camera.main.transform.position;
+        if (!shaking)
+        {
+            shaking = true;
 
-        ShakeAmount = amount;
+            original_camerapos = Camera.main.transform.position;
 
-        InvokeRepeating("Shake", 0, 0.01f);
-        Invoke("StopShake", time);
+            ShakeAmount = amount;
+
+            InvokeRepeating("Shake", 0, 0.01f);
+            Invoke("StopShake", time);
+        }
     }
 
     void Shake()
@@ -41,5 +47,6 @@ public class ScreenShake : MonoBehaviour
     {
         CancelInvoke("Shake");
         Camera.main.transform.position = original_camerapos;
+        shaking = false;
     }
 }
