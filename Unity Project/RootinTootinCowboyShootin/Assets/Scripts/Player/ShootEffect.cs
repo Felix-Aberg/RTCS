@@ -5,16 +5,17 @@ using UnityEngine;
 public class ShootEffect : MonoBehaviour
 {
     public float display_time;
-    public AudioClip sound_effect;
-    AudioSource a_s;
+    public AudioClip[] sound_effects;
+    AudioSource AS;
 
     void Start()
     {
-        //a_s = GetComponent<AudioSource>(); enable when audio is implemented
-        //StartCoroutine(DestroyObject(sound_effect.length)); enable when audio is implemented
+        //AS = GetComponent<AudioSource>(); enable when audio is implemented
         StartCoroutine(DisableSprite(display_time));
         StartCoroutine(DestroyObject(display_time)); // delete when audio is implemented;
-        //a_s.PlayOneShot(sound_effect);
+        //int r = Random.Range(0, sound_effects.Length);
+        //AS.PlayOneShot(sound_effects[r]);
+        //StartCoroutine(DestroyObject(sound_effects[r].length)); enable when audio is implemented
     }
 
     IEnumerator DisableSprite(float time)

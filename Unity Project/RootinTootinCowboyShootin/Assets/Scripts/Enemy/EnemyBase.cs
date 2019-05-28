@@ -27,6 +27,12 @@ public class EnemyBase : MonoBehaviour
     public float jump_speed = 10;
     public float shoot_time = 5;
 
+    AudioSource AS;
+    public AudioClip yeehaw;
+    public AudioClip oof;
+
+    bool once;
+
 
     // Start is called before the first frame update
     void Start()
@@ -107,6 +113,7 @@ public class EnemyBase : MonoBehaviour
 
     public void OnDeath()
     {
+        AS.PlayOneShot(oof);
         FindObjectOfType<Score>().GiveScoreEnemy(life_time);
         dead = true;
         animator.SetTrigger("Dead");
@@ -133,6 +140,12 @@ public class EnemyBase : MonoBehaviour
     {
         if (other.tag == "Cover")
         {
+            if (!once)
+            {
+                once = true;
+                AS.PlayOneShot(yeehaw);
+            }
+
             reticle.SetActive(true);
         }
     }

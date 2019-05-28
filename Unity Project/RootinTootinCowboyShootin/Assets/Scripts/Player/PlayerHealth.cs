@@ -10,6 +10,13 @@ public class PlayerHealth : MonoBehaviour
     public Image[] life_images;
     public Sprite health_empty;
 
+    AudioSource AS;
+
+    void Awake()
+    {
+        //AS = GetComponent<AudioSource>();
+    }
+
     void CheckHealth()
     {
         if (lives <= 0)
@@ -19,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
     public void ShootPlayer()
     {
         lives--;
+        //AS.Play();
         UpdateHealthbar();
         CheckHealth();
     }
