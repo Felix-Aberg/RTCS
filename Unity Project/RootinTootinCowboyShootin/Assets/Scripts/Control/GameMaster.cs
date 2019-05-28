@@ -77,7 +77,7 @@ public class GameMaster : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.G))
                     {
                         DontDestroyOnLoad(gameObject);
-                        SceneManager.LoadScene("WinScene");
+                        FindObjectOfType<LevelFadeScript>().SwapLevel(Stages.WIN);
                     }
 
                     if (Time.time > spawn_time)
@@ -168,7 +168,7 @@ public class GameMaster : MonoBehaviour
 
     void LoadBombScene()
     {
-        SceneManager.LoadScene("BombStompScene");
+        FindObjectOfType<LevelFadeScript>().SwapLevel(Stages.BOMBSTOMP);
     }
 
     public void ClearSpawn(GameObject dead_enemy) //Call after enemy death anim
