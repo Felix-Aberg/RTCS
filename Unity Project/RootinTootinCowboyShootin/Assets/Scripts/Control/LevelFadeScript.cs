@@ -23,7 +23,6 @@ public class LevelFadeScript : MonoBehaviour
     public float fade_time;
     public Image image;
     public AudioSource audio_source;
-    public AudioClip audio_clip;
     private bool footsteps_enabled;
 
     // Start is called before the first frame update
@@ -46,7 +45,7 @@ public class LevelFadeScript : MonoBehaviour
             case Stages.CUTSCENE:
                 {
                     scene = "CutsceneScene";
-                    footsteps_enabled = false;
+                    footsteps_enabled = true;
                     break;
                 }
 
@@ -106,7 +105,12 @@ public class LevelFadeScript : MonoBehaviour
 
     IEnumerator Fade()
     {
-        for (float f = 1f; f >= 0; f -= (Time.fixedDeltaTime / fade_time))
+        if (footsteps_enabled)
+        {
+            Invoke("PlayFootSteps", 0.15f);
+        }
+
+        for (float f = 0f; f <= 1; f += (Time.fixedDeltaTime / fade_time))
         {
             Color c = image.color;
             c.a = f;
@@ -115,13 +119,20 @@ public class LevelFadeScript : MonoBehaviour
         }
 
         SceneManager.LoadScene(scene);
+        
 
-        for (float f = 0f; f <= 0; f += (Time.fixedDeltaTime / fade_time))
+
+        for (float f = 1f; f >= 0; f -= (Time.fixedDeltaTime / fade_time))
         {
             Color c = image.color;
             c.a = f;
             image.color = c;
             yield return null;
         }
+    }
+
+    void PlayFootSteps()
+    {
+        audio_source.Play();
     }
 }
