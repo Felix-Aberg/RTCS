@@ -118,6 +118,7 @@ public class Score : MonoBehaviour
     public void SaveScore()
     {
         PlayerPrefs.SetInt("LastScore", current_score);
+        UpdateHighScore(current_score);
     }
 
     void Start()

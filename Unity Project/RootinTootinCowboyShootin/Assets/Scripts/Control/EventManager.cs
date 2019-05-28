@@ -241,7 +241,6 @@ public class EventManager : MonoBehaviour
 
             case SpecialEvents.SHOOTAHOLE:
                 {
-                    DontDestroyOnLoad(GameObject.Find("DontDestroy"));
                     SceneManager.LoadScene("ShootWallScene");
                     break;
                 }
