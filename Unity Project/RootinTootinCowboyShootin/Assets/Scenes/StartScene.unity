@@ -622,6 +622,7 @@ GameObject:
   - component: {fileID: 1508441945}
   - component: {fileID: 1508441946}
   - component: {fileID: 1508441947}
+  - component: {fileID: 1508441948}
   m_Layer: 0
   m_Name: LevelTransitionFade
   m_TagString: Untagged
@@ -755,6 +756,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1508441948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508441944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b727a6fb5c457a46add4c08a2ca3a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1919679801
 GameObject:
   m_ObjectHideFlags: 0
