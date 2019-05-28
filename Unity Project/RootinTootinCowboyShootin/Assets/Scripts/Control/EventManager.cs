@@ -242,7 +242,7 @@ public class EventManager : MonoBehaviour
             case SpecialEvents.SHOOTAHOLE:
                 {
                     DontDestroyOnLoad(GameObject.Find("DontDestroy"));
-                    SceneManager.LoadScene("ShootWallScene");
+                    FindObjectOfType<LevelFadeScript>().SwapLevel(Stages.WALLSHOOT);
                     break;
                 }
 
@@ -250,7 +250,7 @@ public class EventManager : MonoBehaviour
                 {
                     //Load a scene? Do some DontDestroyOnLoad?+
                     //DontDestroyOnLoad(GameObject.Find("BombTimer")); Not needed because done previously??
-                    SceneManager.LoadScene("BombStompScene");
+                    FindObjectOfType<LevelFadeScript>().SwapLevel(Stages.BOMBSTOMP);
                     break;
                 }
         }

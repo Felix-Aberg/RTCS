@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     void CheckHealth()
     {
         if (lives <= 0)
-            SceneManager.LoadScene("GameOver");
+            FindObjectOfType<LevelFadeScript>().SwapLevel(Stages.LOSE);
     }
 
     public void ShootPlayer()
