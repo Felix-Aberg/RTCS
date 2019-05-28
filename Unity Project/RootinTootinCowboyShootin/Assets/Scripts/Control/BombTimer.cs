@@ -15,14 +15,21 @@ public class BombTimer : MonoBehaviour
     string current_scene_name;
     bool once;
 
+    AudioSource AS;
+
     void Start()
     {
+        AS = GetComponent<AudioSource>();
+        AS.Play();
         time_left = bomb_timer;
     }
 
     void FixedUpdate()
     {
         time_left -= Time.fixedDeltaTime;
+
+        if (time_left < 15f)
+            AS.Play();
 
         if(time_left <= 0 && !once)
         {

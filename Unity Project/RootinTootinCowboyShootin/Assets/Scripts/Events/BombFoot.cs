@@ -25,8 +25,13 @@ public class BombFoot : MonoBehaviour
 
     public bool bool_bomb_defused;
 
+    AudioSource[] AS; //two audiosources. index 0 fuse sound; index 1 stomp sound;
+
     void Start()
     {
+        //AS = GetComponents<AudioSource>();
+        //AS[0].Play();
+
         bomb = transform.parent.gameObject;
         sr = GetComponent < SpriteRenderer>();
 
@@ -56,6 +61,8 @@ public class BombFoot : MonoBehaviour
             transform.position = step_position;
 
             bomb_hp--;
+
+            //AS[1].Play();
             FindObjectOfType<Score>().GiveScoreEvent(ScoreEvent.BOMB_STOMP);
         }
         else if (!stepping && stepping_last_frame)
