@@ -113,13 +113,16 @@ public class EnemyBase : MonoBehaviour
 
     public void OnDeath()
     {
-        AS.PlayOneShot(oof);
-        FindObjectOfType<Score>().GiveScoreEnemy(life_time);
-        dead = true;
-        animator.SetTrigger("Dead");
-        reticle.SetActive(false);
-        GameObject.Find("Crosshair").GetComponent<CrosshairScript>().ChangeCrosshair(0);
-        Invoke("Dead", 1.2f);
+        if (!dead)
+        {
+            //AS.PlayOneShot(oof);
+            FindObjectOfType<Score>().GiveScoreEnemy(life_time);
+            dead = true;
+            animator.SetTrigger("Dead");
+            reticle.SetActive(false);
+            GameObject.Find("Crosshair").GetComponent<CrosshairScript>().ChangeCrosshair(0);
+            Invoke("Dead", 1.2f);
+        }
     }
 
     void Dead()
@@ -140,11 +143,11 @@ public class EnemyBase : MonoBehaviour
     {
         if (other.tag == "Cover")
         {
-            if (!once)
-            {
-                once = true;
-                AS.PlayOneShot(yeehaw);
-            }
+            //if (!once)
+            //{
+            //    once = true;
+            //    AS.PlayOneShot(yeehaw);
+            //}
 
             reticle.SetActive(true);
         }
