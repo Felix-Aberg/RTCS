@@ -77,7 +77,6 @@ public class MusicPlayer : MonoBehaviour
         audio_source_2.Play();
         audio_source_1.volume = 1;
         audio_source_2.volume = 0;
-        DontDestroyOnLoad(gameObject);
     }
     
     // called when the game is terminated
