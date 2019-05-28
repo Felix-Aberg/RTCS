@@ -71,7 +71,7 @@ public class BombFoot : MonoBehaviour
     void CheckBomb()
     {
         // Bomb HP
-        if (bomb_hp <= 0)
+        if (bomb_hp <= 0 && !bool_bomb_defused)
         {
             BombDefused();
         }
@@ -80,15 +80,14 @@ public class BombFoot : MonoBehaviour
     void BombDefused()
     {
         FindObjectOfType<Score>().GiveScoreEvent(ScoreEvent.BOMB_DEFUSED);
+        bomb.GetComponent<Animator>().SetTrigger("BombDefused");
         bool_bomb_defused = true;
         Debug.Log("the bomb has been defused");
-        bomb.GetComponent<SpriteRenderer>().sprite = bomb_defused;
         Invoke("GoToWinScene", 2f);
     }
 
     void GoToWinScene()
-    {
-        Destroy(GameObject.Find("DontDestroy"));
+    { 
         SceneManager.LoadScene("WinScene");
     }
 }

@@ -25,12 +25,6 @@ public class LevelFadeScript : MonoBehaviour
     public AudioSource audio_source;
     private bool footsteps_enabled;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     public void SwapLevel(Stages stage)
     {
         switch(stage)
