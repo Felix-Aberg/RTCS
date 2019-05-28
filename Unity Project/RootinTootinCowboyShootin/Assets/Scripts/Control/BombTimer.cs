@@ -13,6 +13,7 @@ public class BombTimer : MonoBehaviour
     public Image fuse_fire;
 
     string current_scene_name;
+    bool once;
 
     void Start()
     {
@@ -23,10 +24,11 @@ public class BombTimer : MonoBehaviour
     {
         time_left -= Time.fixedDeltaTime;
 
-        if(time_left <= 0)
+        if(time_left <= 0 && !once)
         {
+            once = true;
             Debug.Log("Boom.");
-            SceneManager.LoadScene("GameOver");
+            FindObjectOfType<LevelFadeScript>().SwapLevel(Stages.LOSE);
             Destroy(gameObject);
         }
 

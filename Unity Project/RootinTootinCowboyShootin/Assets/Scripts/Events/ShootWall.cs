@@ -51,7 +51,7 @@ public class ShootWall : MonoBehaviour
     IEnumerator GoToNextScene(float time)
     {
         yield return new WaitForSeconds(time);
-        SceneManager.LoadScene("OutsideScene");
+        FindObjectOfType<LevelFadeScript>().SwapLevel(Stages.OUTSIDE);
     }
     IEnumerator ToggleGameObject(GameObject GO, bool enabled, float time) 
     {
