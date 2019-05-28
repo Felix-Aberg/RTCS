@@ -181,6 +181,7 @@ public class Tutorial : MonoBehaviour
     IEnumerator StartGame(float time)
     {
         yield return new WaitForSeconds(time);
-        SceneManager.LoadScene("CutsceneScene");
+        //SceneManager.LoadScene("CutsceneScene");
+        FindObjectOfType<LevelFadeScript>().SwapLevel(Stages.CUTSCENE);
     }
 }

@@ -68,12 +68,12 @@ SpriteRenderer:
   m_SortingLayerID: 1733210963
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 06386300f77290f4ca6e0984572adcfb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e772a76dfee48845a479a97e705bba0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.75, y: 0.75}
+  m_Size: {x: 1.01, y: 0.93}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -188,8 +188,8 @@ MonoBehaviour:
   arrow_sprites:
   - {fileID: 21300000, guid: 1b5394caf63569847b0604588f7d38bf, type: 3}
   - {fileID: 21300000, guid: 339f5931b9a7b59428289aad136919f4, type: 3}
-  - {fileID: 21300000, guid: 7f99022c86b78e44c96357f9189a9fee, type: 3}
-  - {fileID: 21300000, guid: 06386300f77290f4ca6e0984572adcfb, type: 3}
+  - {fileID: 21300000, guid: d93b4ada7c48bfb479ec574159825c20, type: 3}
+  - {fileID: 21300000, guid: 0e772a76dfee48845a479a97e705bba0, type: 3}
   all_arrows:
   - dir: 0
     pressed: 0
@@ -366,12 +366,12 @@ SpriteRenderer:
   m_SortingLayerID: 1733210963
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 7f99022c86b78e44c96357f9189a9fee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d93b4ada7c48bfb479ec574159825c20, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.75, y: 0.75}
+  m_Size: {x: 1.01, y: 0.93}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
