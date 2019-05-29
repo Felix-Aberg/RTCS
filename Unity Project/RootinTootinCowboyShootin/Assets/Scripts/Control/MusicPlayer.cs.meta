@@ -3,7 +3,12 @@ guid: e0ceaef4354e48b46b462970060b608e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - audio_source_1: {instanceID: 0}
+  - audio_source_2: {instanceID: 0}
+  - default_song: {fileID: 8300000, guid: 292ed391fdf3b6b45a2112d638271d96, type: 3}
+  - battle_song: {instanceID: 0}
+  - sea_shanty_song: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

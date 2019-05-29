@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class EnemyBase : MonoBehaviour
@@ -25,7 +26,9 @@ public class EnemyBase : MonoBehaviour
     Color temp_color;
 
     public float jump_speed = 10;
-    public float shoot_time = 5;
+    public float shoot_time = 3f;
+    public float shoot_time_saloon = 6.5f;
+    public float shoot_time_outside = 4.5f;
 
     AudioSource AS;
     public AudioClip yeehaw;
@@ -38,10 +41,24 @@ public class EnemyBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AS = GetComponent<AudioSource>();
+        shoot_time = 3f;
+        shoot_time_saloon = 6.5f;
+        shoot_time_outside = 4.5f;
 
+
+        AS = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+
+        if (SceneManager.GetActiveScene().name == "SaloonScene")
+        {
+            shoot_time = shoot_time_saloon;
+        }
+        else
+        {
+            shoot_time = shoot_time_outside;
+        }
+
         Invoke("StartJump", jump_time);
         temp_color = Color.white;
     }

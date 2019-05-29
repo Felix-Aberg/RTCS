@@ -152,7 +152,7 @@ public class MusicPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V))
         {
             transitioning = Transitioning.BATTLE;
-        }//*/
+        }                   //*/
     }
 
     // Update is called once per frame
