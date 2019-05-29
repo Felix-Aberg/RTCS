@@ -9,14 +9,11 @@ public class GameOverScript : MonoBehaviour
 
     void Start()
     {
-        //AS = GetComponent<AudioSource>();
-
-        //if (SceneManager.GetActiveScene().name == "GameOver")
-        //{
-        //    AS.PlayOneShot(boom);
-        //}
-
-        FindObjectOfType<Score>().SaveScore();
+        Score score = FindObjectOfType<Score>();
+        if (score != null)
+            score.SaveScore();
+        else
+            Debug.LogError("Scores not found when trying to update scores!!");
         Destroy(GameObject.Find("DontDestroy"));
         Invoke("GoToEndScene",2f);
     }

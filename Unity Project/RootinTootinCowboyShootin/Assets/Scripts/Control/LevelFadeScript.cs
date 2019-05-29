@@ -39,7 +39,7 @@ public class LevelFadeScript : MonoBehaviour
             case Stages.CUTSCENE:
                 {
                     scene = "CutsceneScene";
-                    footsteps_enabled = true;
+                    footsteps_enabled = false;
                     break;
                 }
 
