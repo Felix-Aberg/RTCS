@@ -25,14 +25,17 @@ public class BombFoot : MonoBehaviour
 
     public bool bool_bomb_defused;
 
+    Animator bombanim;
+
     AudioSource[] AS; //two audiosources. index 0 fuse sound; index 1 stomp sound;
 
     void Start()
     {
-        //AS = GetComponents<AudioSource>();
-        //AS[0].Play();
+        AS = GetComponents<AudioSource>();
+        AS[0].Play();
 
         bomb = transform.parent.gameObject;
+        bombanim = GetComponentInParent<Animator>();
         sr = GetComponent < SpriteRenderer>();
 
         unstep_position = transform.position;
@@ -62,7 +65,7 @@ public class BombFoot : MonoBehaviour
 
             bomb_hp--;
 
-            //AS[1].Play();
+            AS[1].Play();
             FindObjectOfType<Score>().GiveScoreEvent(ScoreEvent.BOMB_STOMP);
         }
         else if (!stepping && stepping_last_frame)
@@ -86,10 +89,11 @@ public class BombFoot : MonoBehaviour
 
     void BombDefused()
     {
+        AS[0].Stop();
+        bombanim.SetTrigger("BombDefused");
         FindObjectOfType<Score>().GiveScoreEvent(ScoreEvent.BOMB_DEFUSED);
         bool_bomb_defused = true;
         Debug.Log("the bomb has been defused");
-        bomb.GetComponent<SpriteRenderer>().sprite = bomb_defused;
         Invoke("GoToWinScene", 2f);
     }
 

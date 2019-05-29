@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Awake()
     {
-        //AS = GetComponent<AudioSource>();
+        AS = GetComponent<AudioSource>();
     }
 
     void CheckHealth()
@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
     public void ShootPlayer()
     {
         lives--;
-        //AS.Play();
+        AS.Play();
         UpdateHealthbar();
         CheckHealth();
     }

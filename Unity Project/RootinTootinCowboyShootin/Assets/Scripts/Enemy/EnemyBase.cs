@@ -30,6 +30,7 @@ public class EnemyBase : MonoBehaviour
     AudioSource AS;
     public AudioClip yeehaw;
     public AudioClip oof;
+    public AudioClip shoot;
 
     bool once;
 
@@ -37,6 +38,8 @@ public class EnemyBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AS = GetComponent<AudioSource>();
+
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         Invoke("StartJump", jump_time);
@@ -54,6 +57,7 @@ public class EnemyBase : MonoBehaviour
         if (!dead)
         {
             FindObjectOfType<PlayerHealth>().ShootPlayer();
+            AS.PlayOneShot(shoot);
             animator.SetBool("Shooting", false);
             StartReturn();
         }
@@ -115,7 +119,8 @@ public class EnemyBase : MonoBehaviour
     {
         if (!dead)
         {
-            //AS.PlayOneShot(oof);
+            AS.Stop();
+            AS.PlayOneShot(oof);
             FindObjectOfType<Score>().GiveScoreEnemy(life_time);
             dead = true;
             animator.SetTrigger("Dead");
@@ -143,11 +148,11 @@ public class EnemyBase : MonoBehaviour
     {
         if (other.tag == "Cover")
         {
-            //if (!once)
-            //{
-            //    once = true;
-            //    AS.PlayOneShot(yeehaw);
-            //}
+            if (!once)
+            {
+                once = true;
+                AS.PlayOneShot(yeehaw);
+            }
 
             reticle.SetActive(true);
         }

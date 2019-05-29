@@ -10,12 +10,11 @@ public class ShootEffect : MonoBehaviour
 
     void Start()
     {
-        //AS = GetComponent<AudioSource>(); enable when audio is implemented
+        AS = GetComponent<AudioSource>(); 
         StartCoroutine(DisableSprite(display_time));
-        StartCoroutine(DestroyObject(display_time)); // delete when audio is implemented;
-        //int r = Random.Range(0, sound_effects.Length);
-        //AS.PlayOneShot(sound_effects[r]);
-        //StartCoroutine(DestroyObject(sound_effects[r].length)); enable when audio is implemented
+        int r = Random.Range(0, sound_effects.Length);
+        AS.PlayOneShot(sound_effects[r]);
+        StartCoroutine(DestroyObject(sound_effects[r].length));
     }
 
     IEnumerator DisableSprite(float time)

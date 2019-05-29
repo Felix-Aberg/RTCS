@@ -36,9 +36,15 @@ public class Tutorial : MonoBehaviour
     bool shoot;
     bool shoot_last_frame;
 
+    AudioSource AS;
+    public AudioClip step;
+    public AudioClip gunshot;
+
     // Start is called before the first frame update
     void Start()
     {
+        AS = GetComponent<AudioSource>();
+
         next_change = Time.time + step_time;
 
         crosshair.SetActive(false);
@@ -61,6 +67,7 @@ public class Tutorial : MonoBehaviour
             {
                 if (crosshair.GetComponent<CrosshairScript>().current_reticle != null)
                 {
+                    AS.PlayOneShot(gunshot);
                     TutorialComplete();
                 }
             }
@@ -92,6 +99,7 @@ public class Tutorial : MonoBehaviour
 
     void LeftBootDown()
     {
+        AS.PlayOneShot(step);
         reticle.UpdateReticle(ArrowDirection.LEFT, true);
         boot_left.transform.position = boot_left_positions[1];
     }
@@ -104,6 +112,7 @@ public class Tutorial : MonoBehaviour
 
     void RightBootDown()
     {
+        AS.PlayOneShot(step);
         reticle.UpdateReticle(ArrowDirection.RIGHT, true);
         boot_right.transform.position = boot_right_positions[1];
     }
@@ -161,6 +170,8 @@ public class Tutorial : MonoBehaviour
 
     public void TutorialComplete()
     {
+        AS.PlayOneShot(gunshot);
+
         StartCoroutine(ToggleSprite(explosion, true, 0f));
         StartCoroutine(ToggleSprite(explosion, false, .2f));
         StartCoroutine(ToggleSprite(explosion, true, .3f));
