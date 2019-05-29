@@ -151,6 +151,7 @@ MonoBehaviour:
   shoot_time: 5
   yeehaw: {fileID: 8300000, guid: 50fc207a412a388408af1919643e4d73, type: 3}
   oof: {fileID: 8300000, guid: c2d023f1d9cea0a4a8ab87d7a54a4ba2, type: 3}
+  shoot: {fileID: 0}
 --- !u!70 &3776269991472652680
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -293,6 +294,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Prefab_Reticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161999718850594641, guid: 91754ba4fb8714540830fa0d11c4becc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2161999718850594643, guid: 91754ba4fb8714540830fa0d11c4becc,
         type: 3}

@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: Prefab_Ted
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -294,6 +294,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Prefab_Reticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161999718850594641, guid: 91754ba4fb8714540830fa0d11c4becc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2161999718850594643, guid: 91754ba4fb8714540830fa0d11c4becc,
         type: 3}
