@@ -56,7 +56,7 @@ public class CrosshairScript : MonoBehaviour
 
         if (game_master.GetComponent<InputHandler>().shooting)
         {
-            if (current_reticle != null)
+            if (current_reticle != null && current_reticle.activeInHierarchy)
             {
                 if (SceneManager.GetActiveScene().name == "TutorialScene")
                     GameObject.Find("Dancemat").GetComponent<Tutorial>().TutorialComplete();

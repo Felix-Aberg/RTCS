@@ -81,7 +81,7 @@ public class BombFoot : MonoBehaviour
     void CheckBomb()
     {
         // Bomb HP
-        if (bomb_hp <= 0)
+        if (bomb_hp <= 0 && !bool_bomb_defused)
         {
             BombDefused();
         }
