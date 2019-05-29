@@ -20,7 +20,7 @@ public class BombTimer : MonoBehaviour
     void Start()
     {
         AS = GetComponent<AudioSource>();
-        AS.Play();
+
         time_left = bomb_timer;
     }
 
