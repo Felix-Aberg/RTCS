@@ -99,7 +99,6 @@ public class BombFoot : MonoBehaviour
 
     void GoToWinScene()
     {
-        Destroy(GameObject.Find("DontDestroy"));
         FindObjectOfType<LevelFadeScript>().SwapLevel(Stages.WIN);
     }
 }

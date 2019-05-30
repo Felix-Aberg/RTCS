@@ -75,14 +75,20 @@ public class EnemyBase : MonoBehaviour
         {
             FindObjectOfType<PlayerHealth>().ShootPlayer();
             AS.PlayOneShot(shoot);
-            animator.SetBool("Shooting", false);
             StartReturn();
         }
+    }
+
+    public void CancelShoot()
+    {
+        CancelInvoke("Shoot");
+        StartReturn();
     }
 
    void StartReturn()
     {
         animator.SetBool("Walking", true);
+        animator.SetBool("Shooting", false);
         returning = true;
     }
 

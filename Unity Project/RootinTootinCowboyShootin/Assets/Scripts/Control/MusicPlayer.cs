@@ -86,7 +86,7 @@ public class MusicPlayer : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    void resetDefaultSong()
+    void ResetDefaultSong()
     {
         if (audio_source_1.volume > 0.9f)
         {
@@ -96,12 +96,12 @@ public class MusicPlayer : MonoBehaviour
             audio_source_1.Play();
             audio_source_2.Play();
 
-            Invoke("resetDefaultSong", default_song.length);
-            Invoke("resetBattleSong", battle_song.length);
+            Invoke("ResetDefaultSong", default_song.length);
+            Invoke("ResetBattleSong", battle_song.length);
         }
     }
 
-    void resetBattleSong()
+    void ResetBattleSong()
     {
         if (audio_source_2.volume > 0.9f)
         {
@@ -111,8 +111,8 @@ public class MusicPlayer : MonoBehaviour
             audio_source_1.Play();
             audio_source_2.Play();
 
-            Invoke("resetDefaultSong", default_song.length);
-            Invoke("resetBattleSong", battle_song.length);
+            Invoke("ResetDefaultSong", default_song.length);
+            Invoke("ResetBattleSong", battle_song.length);
         }
     }
 

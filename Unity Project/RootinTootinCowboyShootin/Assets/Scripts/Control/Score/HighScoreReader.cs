@@ -8,6 +8,7 @@ public class HighScoreReader : MonoBehaviour
     public Text[] score_displays;
     public int[] high_score;
     public int max_high_scores;
+    bool once;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,11 @@ public class HighScoreReader : MonoBehaviour
             if (i > score_displays.Length)
                 return;
 
-            if (PlayerPrefs.GetInt("LastScore") == high_score[i])
+            if (PlayerPrefs.GetInt("LastScore") == high_score[i] && !once)
+            {
                 score_displays[i].color = Color.yellow;
+                once = true;
+            }
             score_displays[i].text = high_score[i].ToString();
         }
     }

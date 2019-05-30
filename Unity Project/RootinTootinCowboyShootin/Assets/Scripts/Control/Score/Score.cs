@@ -149,19 +149,15 @@ public class Score : MonoBehaviour
 
     void UpdateHighScore(int score)
     {
-        //If score is greater than the lowest score
-        if (true)
-        {
-            HighScorePull();
+        HighScorePull();
 
-            high_score[max_high_scores] = score;
-            Array.Sort(high_score);
-            Array.Reverse(high_score);
-            //high_score[max_high_scores] = 0;
-            PlayerPrefs.Save();
+        high_score[max_high_scores] = score;
+        Array.Sort(high_score);
+        Array.Reverse(high_score);
+        //high_score[max_high_scores] = 0;
+        PlayerPrefs.Save();
 
-            HighScorePush();
-        }
+        HighScorePush();
     }
 
     void HighScorePull()
