@@ -20,6 +20,6 @@ public class GameOverScript : MonoBehaviour
 
     void GoToEndScene()
     {
-        SceneManager.LoadScene("EndScene");
+        FindObjectOfType<LevelFadeScript>().SwapLevel(Stages.ENDING);
     }
 }
