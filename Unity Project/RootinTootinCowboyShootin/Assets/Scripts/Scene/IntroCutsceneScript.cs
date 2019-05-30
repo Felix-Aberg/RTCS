@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class IntroCutsceneScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public VideoPlayer VP;
+
     void Start()
     {
-        Invoke("LoadSaloon", 3f);
+        Invoke("LoadSaloon", 2f);//(float) VP.length);
     }
 
     void LoadSaloon()

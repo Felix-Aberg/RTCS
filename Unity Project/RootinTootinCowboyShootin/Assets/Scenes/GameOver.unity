@@ -146,8 +146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17, y: -129.1}
-  m_SizeDelta: {x: 818, y: 198.2}
+  m_AnchoredPosition: {x: 0, y: 109.3}
+  m_SizeDelta: {x: 768, y: 177.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &524068941
 MonoBehaviour:
@@ -414,6 +414,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744370226}
   m_CullTransparentMesh: 0
+--- !u!1 &1083432755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1083432756}
+  - component: {fileID: 1083432758}
+  - component: {fileID: 1083432757}
+  m_Layer: 5
+  m_Name: Cowboy_Advice_Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1083432756
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083432755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1600096989}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.1, y: -120.9}
+  m_SizeDelta: {x: 699.4, y: 141.8}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1083432757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083432755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1083432758
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083432755}
+  m_CullTransparentMesh: 0
 --- !u!1 &1600096985
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +586,7 @@ RectTransform:
   - {fileID: 524068940}
   - {fileID: 744370227}
   - {fileID: 607446354}
+  - {fileID: 1083432756}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -525,6 +605,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1660651588}
   - component: {fileID: 1660651587}
+  - component: {fileID: 1660651589}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -544,6 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57a096744bcb346b8d7b73a6671f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boom: {fileID: 0}
 --- !u!4 &1660651588
 Transform:
   m_ObjectHideFlags: 0
@@ -558,6 +640,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1660651589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660651586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5af56eed08e75d4eb6cb39026b9245b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cowboy_advice:
+  - "Never let your yearnin\u2019s\u2019 get ahead of your earnin\u2019s."
+  - "Don\u2019t worry about biting off more than you can chew. Your mouth is probably
+    a whole lot bigger than you think."
+  - When you get to the end of your rope, tie a knot and hang on.
+  - "You don\u2019t learn much when everything goes right."
+  - "Don\u2019t run down narrow stairs when you\u2019re wearing spurs."
+  - "You can\u2019t keep trouble from visitin, but you don\u2019t have to offer it
+    a chair."
+  - Letting the cat out of the bag is a whole lot easier than putting it back in.
+  - Never approach a bull from the front, a horse from the rear or a fool from any
+    direction.
+  - "Don\u2019t squat with your spurs on."
+  - Remember that silence is sometimes the best answer.
+  - "Don\u2019t interfere with something that ain\u2019t botherin\u2019 you none."
+  - "It\u2019s better to be a has-been than a never-was."
+  - Life is simpler when you plough around the stump.
+  - Every trail has some puddles.
+  - "There\u2019s no place \u2019round the campfire for a quitter\u2019s blanket."
+  - The measure of a cowboy is when they does the right thing even when no one is
+    watching.
+  - Like a good cowboy, a good hat just gets better as it gets older.
+  - "Live a good, honorable life. Then when you get older and think back, you\u2019ll
+    enjoy it a second time."
+  - "You can\u2019t unsay a cruel thing."
+  - "It don\u2019t take a very big person to carry a grudge."
+  text: {fileID: 1083432757}
 --- !u!1 &1769864663
 GameObject:
   m_ObjectHideFlags: 0

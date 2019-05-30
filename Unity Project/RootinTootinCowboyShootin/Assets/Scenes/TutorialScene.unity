@@ -1135,7 +1135,7 @@ PrefabInstance:
         type: 3}
       propertyPath: crosshair_tracker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1578981835}
     - target: {fileID: 1323464475637953565, guid: c7cb3a324d48f5a47ab4ef7ac2fb133b,
         type: 3}
       propertyPath: lerp_bias
