@@ -472,11 +472,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: ee2e24452b0788a48baeecfe4f55e4f9, type: 3}
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -678,6 +678,31 @@ MonoBehaviour:
     enjoy it a second time."
   - "You can\u2019t unsay a cruel thing."
   - "It don\u2019t take a very big person to carry a grudge."
+  - "Don\u2019t judge people by their relatives."
+  - Most of the stuff people worry about never happens. In this case? It sure did
+    happen.
+  - "If it don\u2019t seem like it\u2019s worth the effort, it probably ain\u2019t."
+  - Life is short and full of blisters.
+  - A good run is better than a bad stand.
+  - "When you climb into the saddle, you\u2019d better be prepared to ride. "
+  - "Go after life as if it\u2019s something that\u2019s got to be roped in a hurry
+    before it gets away."
+  - "A person is not born a cowboy \u2013 they become one."
+  - "Kickin\u2019 never gets you nowhere, \u2018less\u2019n you\u2019re a mule."
+  - Genius has its limits. Stupidity knows no bounds.
+  - "There\u2019s a whole lot more to ridin\u2019 a horse than sittin\u2019 in the
+    saddle and lettin\u2019 your feet hang down."
+  - "Some people talk \u2019cause they got somethin\u2019 to say. Others talk \u2019cause
+    they got to say somethin\u2019."
+  - "If your horse doesn\u2019t want to go there, neither do you."
+  - "No matter where you ride to, that\u2019s where you are."
+  - Use it up, wear it out, make do, or do without.
+  - "You don\u2019t need decorated words to make your meanin\u2019 clear. Say it plain
+    and save some breath for breathin\u2019."
+  - Confidence is the feeling you have before you understand the situation.
+  - "Cowboys aren\u2019t easy to love but they have the biggest hearts in the world."
+  - "When you\u2019re tryin\u2019 somethin\u2019 new, the fewer people who know about
+    it, the better."
   text: {fileID: 1083432757}
 --- !u!1 &1769864663
 GameObject:
