@@ -10,7 +10,7 @@ public class IntroCutsceneScript : MonoBehaviour
 
     void Start()
     {
-        Invoke("LoadSaloon", 2f);//(float) VP.length);
+        Invoke("LoadSaloon", (float) VP.length);
     }
 
     void LoadSaloon()
