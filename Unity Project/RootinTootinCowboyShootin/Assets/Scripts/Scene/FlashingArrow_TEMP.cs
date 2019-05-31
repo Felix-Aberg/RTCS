@@ -24,13 +24,13 @@ public class FlashingArrow_TEMP : MonoBehaviour
     void ArrowOn()
     {
         GetComponent<SpriteRenderer>().sprite = arrow_on;
-        Invoke("ArrowOff", 0.3f);
+        Invoke("ArrowOff", 0.25f);
     }
 
     void ArrowOff()
     {
         GetComponent<SpriteRenderer>().sprite = arrow_off;
-        Invoke("ArrowOn", 0.3f);
+        Invoke("ArrowOn", 0.25f);
     }
 }
 

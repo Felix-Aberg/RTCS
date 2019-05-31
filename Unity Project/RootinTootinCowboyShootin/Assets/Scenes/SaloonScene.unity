@@ -1296,7 +1296,7 @@ MonoBehaviour:
   event_array:
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 5976167421542373025, guid: c5a744ac850017f4e951262dce6d60d2,
+      enemy: {fileID: 5976167421542373025, guid: 5c6628e1a4dfc7e4f88ab2b566d9adf3,
         type: 3}
       spawnpoint: 0
       arrow_direction_1: 0
@@ -1309,7 +1309,7 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 5976167421542373025, guid: 4a7f1d23c8e2a4a46b80f449327f86c7,
+      enemy: {fileID: 5976167421542373025, guid: c5a744ac850017f4e951262dce6d60d2,
         type: 3}
       spawnpoint: 3
       arrow_direction_1: 1
@@ -1322,7 +1322,7 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 1906132393403476251, guid: adb877a97bd51d843a40794440bee5c3,
+      enemy: {fileID: 5976167421542373025, guid: 4a7f1d23c8e2a4a46b80f449327f86c7,
         type: 3}
       spawnpoint: 2
       arrow_direction_1: 2
