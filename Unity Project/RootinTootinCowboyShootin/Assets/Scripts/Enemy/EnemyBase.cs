@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class EnemyBase : MonoBehaviour
 {
     public GameObject reticle;
+    public Image shoot_indicator;
+    Color shoot_indicator_base;
     Animator animator;
     SpriteRenderer sr;
 
@@ -22,6 +25,7 @@ public class EnemyBase : MonoBehaviour
     public float jump_time;
     bool jumping;
     bool returning;
+    bool shooting;
     bool dead;
     Color temp_color;
 
@@ -61,6 +65,8 @@ public class EnemyBase : MonoBehaviour
 
         Invoke("StartJump", jump_time);
         temp_color = Color.white;
+
+        shoot_indicator_base = shoot_indicator.color;
     }
 
     void StartJump()
@@ -75,12 +81,18 @@ public class EnemyBase : MonoBehaviour
         {
             FindObjectOfType<PlayerHealth>().ShootPlayer();
             AS.PlayOneShot(shoot);
+            shooting = false;
+            shoot_indicator.fillAmount = 0;
+            shoot_indicator.color = shoot_indicator_base;
             StartReturn();
         }
     }
 
     public void CancelShoot()
     {
+        shooting = false;
+        shoot_indicator.fillAmount = 0;
+        shoot_indicator.color = shoot_indicator_base;
         CancelInvoke("Shoot");
         StartReturn();
     }
@@ -109,6 +121,7 @@ public class EnemyBase : MonoBehaviour
                     jumping = false;
                     animator.SetBool("Walking", false);
                     animator.SetBool("Shooting", true);
+                    shooting = true;
                     Invoke("Shoot", shoot_time);
                 }
             }
@@ -123,6 +136,12 @@ public class EnemyBase : MonoBehaviour
                     animator.SetBool("Walking", false);
                     Invoke("StartJump", jump_time);
                 }
+            }
+
+            if (shooting)
+            {
+                shoot_indicator.fillAmount += Time.deltaTime / shoot_time;
+                shoot_indicator.color = Color.Lerp(shoot_indicator_base, Color.red, shoot_indicator.fillAmount);
             }
         }
         else if (dead)

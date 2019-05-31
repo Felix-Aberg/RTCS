@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reticle: {fileID: 4161432455957457229}
+  shoot_indicator: {fileID: 1302080064973223497}
   indicated_arrow_1: 4
   indicated_arrow_2: 4
   life_time: 0
@@ -105,6 +106,8 @@ MonoBehaviour:
   jump_time: 1
   jump_speed: 10
   shoot_time: 5
+  shoot_time_saloon: 6.5
+  shoot_time_outside: 4.5
   yeehaw: {fileID: 8300000, guid: 562dbb312f9a9904ea9de4004403bb07, type: 3}
   oof: {fileID: 8300000, guid: a0fef7f173167004f83541423e71ba17, type: 3}
   shoot: {fileID: 8300000, guid: d504a5c9282db584ba2075390086d6a0, type: 3}
@@ -369,3 +372,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2864456003992530460}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1302080064973223497 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3878018625770952789, guid: 91754ba4fb8714540830fa0d11c4becc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2864456003992530460}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reticle: {fileID: 909650216532422005}
+  shoot_indicator: {fileID: 2832254145929228913}
   indicated_arrow_1: 4
   indicated_arrow_2: 4
   life_time: 0
@@ -105,6 +106,8 @@ MonoBehaviour:
   jump_time: 1
   jump_speed: 10
   shoot_time: 5
+  shoot_time_saloon: 6.5
+  shoot_time_outside: 4.5
   yeehaw: {fileID: 8300000, guid: 29802ab4c33035148ad1dfc89e5cf54c, type: 3}
   oof: {fileID: 8300000, guid: 4f1e9754c1a436e4eb70e9948777d832, type: 3}
   shoot: {fileID: 8300000, guid: d504a5c9282db584ba2075390086d6a0, type: 3}
@@ -295,6 +298,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prefab_Reticle
       objectReference: {fileID: 0}
+    - target: {fileID: 2161999718850594641, guid: 91754ba4fb8714540830fa0d11c4becc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2161999718850594643, guid: 91754ba4fb8714540830fa0d11c4becc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -379,3 +387,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1341876183277513252}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2832254145929228913 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3878018625770952789, guid: 91754ba4fb8714540830fa0d11c4becc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1341876183277513252}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
