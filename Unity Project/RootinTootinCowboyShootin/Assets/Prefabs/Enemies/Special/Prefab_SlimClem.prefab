@@ -149,6 +149,8 @@ MonoBehaviour:
   jump_time: 1
   jump_speed: 10
   shoot_time: 5
+  shoot_time_saloon: 6.5
+  shoot_time_outside: 4.5
   yeehaw: {fileID: 8300000, guid: ee06ade87d900f340bb034d236552467, type: 3}
   oof: {fileID: 8300000, guid: d0546f1653bb27b4e9467257b69db8f1, type: 3}
   shoot: {fileID: 8300000, guid: d504a5c9282db584ba2075390086d6a0, type: 3}
@@ -294,6 +296,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Prefab_Reticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161999718850594641, guid: 91754ba4fb8714540830fa0d11c4becc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2161999718850594643, guid: 91754ba4fb8714540830fa0d11c4becc,
         type: 3}
