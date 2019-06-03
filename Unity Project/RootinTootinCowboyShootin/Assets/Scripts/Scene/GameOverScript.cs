@@ -15,7 +15,7 @@ public class GameOverScript : MonoBehaviour
         else
             Debug.LogError("Scores not found when trying to update scores!!");
         Destroy(GameObject.Find("DontDestroy"));
-        Invoke("GoToEndScene",2f);
+        Invoke("GoToEndScene", 7f);
     }
 
     void GoToEndScene()

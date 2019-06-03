@@ -16,9 +16,11 @@ public class Tutorial : MonoBehaviour
 
     public Sprite[] instruction_sprites;
 
+    public Transform boot_dad;
     public GameObject boot_left;
     public GameObject boot_right;
 
+    public Vector2[] boot_dad_positions;
     public Vector2[] boot_left_positions;
     public Vector2[] boot_right_positions;
 
@@ -35,6 +37,8 @@ public class Tutorial : MonoBehaviour
 
     bool shoot;
     bool shoot_last_frame;
+
+    public int state = 0;
 
     AudioSource AS;
     public AudioClip step;
@@ -115,6 +119,7 @@ public class Tutorial : MonoBehaviour
         AS.PlayOneShot(step);
         reticle.UpdateReticle(ArrowDirection.RIGHT, true);
         boot_right.transform.position = boot_right_positions[1];
+        state = 1;
     }
 
     void IndicateBoots() //Boots move up and down to show where to place feet
@@ -171,15 +176,6 @@ public class Tutorial : MonoBehaviour
     public void TutorialComplete()
     {
         AS.PlayOneShot(gunshot);
-
-        StartCoroutine(ToggleSprite(explosion, true, 0f));
-        StartCoroutine(ToggleSprite(explosion, false, .2f));
-        StartCoroutine(ToggleSprite(explosion, true, .3f));
-        StartCoroutine(ToggleSprite(explosion, false, .5f));
-        StartCoroutine(ToggleSprite(explosion, true, .6f));
-        StartCoroutine(ToggleSprite(explosion, false, .8f));
-        StartCoroutine(ToggleSprite(explosion, true, .9f));
-        StartCoroutine(ToggleSprite(explosion, false, .11f));
 
         StartCoroutine(StartGame(1.5f));
     }

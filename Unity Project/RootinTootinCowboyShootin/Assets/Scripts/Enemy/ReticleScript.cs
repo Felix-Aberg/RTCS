@@ -193,6 +193,7 @@ public class ReticleScript : MonoBehaviour
             {
                 Tutorial tutorial = FindObjectOfType<Tutorial>();
                 tutorial.instructions.sprite = tutorial.instruction_sprites[2];
+                tutorial.state = 2;
             }
         }
     }
@@ -205,6 +206,13 @@ public class ReticleScript : MonoBehaviour
             other.GetComponent<CrosshairScript>().current_reticle = null;
             other.GetComponent<CrosshairScript>().ChangeCrosshair(0);
             UpdateReticle();
+
+            if (SceneManager.GetActiveScene().name == "TutorialScene")
+            {
+                Tutorial tutorial = FindObjectOfType<Tutorial>();
+                tutorial.instructions.sprite = tutorial.instruction_sprites[1];
+                tutorial.state = 1;
+            }
         }
     }
 
