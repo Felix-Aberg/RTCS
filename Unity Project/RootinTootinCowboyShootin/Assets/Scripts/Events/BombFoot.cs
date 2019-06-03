@@ -62,7 +62,7 @@ public class BombFoot : MonoBehaviour
                 sr.sprite = foot_step_defused;
 
             transform.position = step_position;
-
+            FindObjectOfType<ScreenShake>().StartShake(.05f, 1);
             bomb_hp--;
 
             AS[1].Play();
