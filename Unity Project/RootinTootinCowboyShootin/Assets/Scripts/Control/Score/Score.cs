@@ -47,9 +47,23 @@ public class Score : MonoBehaviour
              "Multiplied by the time left!")]
     public int score_time_left_multiplier;
 
+    public GameObject smol_plank;
+
+    //public Canvas canvas;
+    //List<GameObject> scoreplanks;
+    //public Vector2 first_plankpos;
+    //Vector2[] plank_positions;
+    //float plank_height;
+    //public float plank_speed;
+    //bool once;
+    //public int maxplanks = 3;
+
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        //scoreplanks = new List<GameObject>();
+        //plank_positions = new Vector2[3];
+        //plank_height = prefab_plank.GetComponent<Image>().flexibleHeight;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -66,12 +80,15 @@ public class Score : MonoBehaviour
 
     public void GiveScoreEnemy(float lifetime)
     {
+        int score;
         if (lifetime < 80)
-            current_score += (int)(score_kill_basic * ((100 - lifetime)/100));
+            score = (int)(score_kill_basic * ((100 - lifetime)/100));
 
         else
-            current_score += score_kill_basic * (int)(100 - 80);
+            score = score_kill_basic * (int)(100 - 80);
 
+        SetLatestScore(score);
+        current_score += score;
         UpdateScore();
     }
 
@@ -81,25 +98,30 @@ public class Score : MonoBehaviour
         {
             case (ScoreEvent.WALL_HOLE):
                 {
+                    SetLatestScore(score_wall_hole);
                     current_score += score_wall_hole;
                     break;
                 }
 
             case (ScoreEvent.BOMB_STOMP):
                 {
+                    SetLatestScore(score_stomping_bomb);
                     current_score += score_stomping_bomb;
                     break;
                 }
 
             case (ScoreEvent.BOMB_DEFUSED):
                 {
+                    SetLatestScore(score_defused_bomb);
                     current_score += score_defused_bomb;
                     break;
                 }
 
             case (ScoreEvent.TIME_LEFT):
                 {
-                    current_score += (int)GameObject.Find("BombTimer").GetComponent<BombTimer>().bomb_timer * score_time_left_multiplier;
+                    int score = (int)GameObject.Find("BombTimer").GetComponent<BombTimer>().bomb_timer * score_time_left_multiplier;
+                    SetLatestScore(score);
+                    current_score += score;
                     break;
                 }
 
@@ -109,6 +131,63 @@ public class Score : MonoBehaviour
 
         UpdateScore();
     }
+
+    void SetLatestScore(float score)
+    {
+        smol_plank.GetComponentInChildren<Text>().text = "+" + score;
+    }
+
+    //void CreatePlank(int score)
+    //{
+    //    int i = 0;
+    //    Vector2 plankpos;
+    //    GameObject clone_plank;
+
+    //    foreach (GameObject plank in scoreplanks)
+    //    {
+    //        i++;
+    //    }
+
+    //    plankpos = new Vector2(first_plankpos.x, first_plankpos.y - plank_height * i);
+    //    scoreplanks.Add(clone_plank = Instantiate(prefab_plank, plankpos, Quaternion.identity));
+    //    clone_plank.transform.parent = canvas.transform;
+
+
+    //    plank_positions[i] = clone_plank.transform.position;
+
+    //    clone_plank.GetComponentInChildren<Text>().text += score;
+
+
+    //    //if (!once)
+    //    InvokeRepeating("MovePlanksDown", 1f, .05f);
+    //}
+
+    //void MovePlanksDown() //it be broke :(
+    //{
+    //    //once = true;
+
+    //    int i = 0;
+    //    foreach (GameObject plank in scoreplanks)
+    //    {
+    //        Vector2 temppos = new Vector2(plank_positions[i].x, plank_positions[i].y + plank_height);
+    //        plank.transform.position = Vector2.MoveTowards(plank.transform.position, temppos, plank_speed);
+            
+    //        if (Mathf.Abs(plank.transform.position.y - temppos.y) <= .00002f)
+    //        {
+
+    //            if (i == scoreplanks.Count - 1)
+    //            {
+    //                GameObject prisonerplank = scoreplanks[0];
+    //                scoreplanks.Remove(prisonerplank);
+    //                Destroy(prisonerplank);
+    //                once = false;
+    //                CancelInvoke("MovePlanksDown");
+    //            }
+    //        }
+               
+    //        i++;
+    //    }
+    //}
 
     void UpdateScore()
     {
