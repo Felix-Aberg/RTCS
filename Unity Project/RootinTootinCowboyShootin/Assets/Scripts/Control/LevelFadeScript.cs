@@ -21,6 +21,7 @@ public class LevelFadeScript : MonoBehaviour
 {
     private string scene;
     public float fade_time;
+    public float fade_time_gameover;
     public Image image;
     public AudioSource audio_source;
     private bool footsteps_enabled;
@@ -40,6 +41,7 @@ public class LevelFadeScript : MonoBehaviour
                 {
                     scene = "CutsceneScene";
                     footsteps_enabled = false;
+                    FindObjectOfType<MusicPlayer>().Invoke("ForceStartBattleTheme", 4.55f);
                     break;
                 }
 
@@ -104,7 +106,28 @@ public class LevelFadeScript : MonoBehaviour
             Invoke("PlayFootSteps", 0.15f);
         }
 
-        for (float f = 0f; f <= 1; f += (Time.fixedDeltaTime / fade_time))
+        float fade_in;
+        float fade_out;
+
+        if (scene != "GameOver")
+        {
+            fade_in = fade_time;
+        }
+        else
+        {
+            fade_in = fade_time_gameover;
+        }
+
+        if (SceneManager.GetActiveScene().name != "GameOver")
+        {
+            fade_out = fade_time;
+        }
+        else
+        {
+            fade_out = fade_time_gameover;
+        }
+
+        for (float f = 0f; f <= 1; f += (Time.fixedDeltaTime / fade_out))
         {
             Color c = image.color;
             c.a = f;
@@ -116,7 +139,7 @@ public class LevelFadeScript : MonoBehaviour
         
 
 
-        for (float f = 1f; f >= 0; f -= (Time.fixedDeltaTime / fade_time))
+        for (float f = 1f; f >= 0; f -= (Time.fixedDeltaTime / fade_in))
         {
             Color c = image.color;
             c.a = f;

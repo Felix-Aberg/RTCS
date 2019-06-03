@@ -16,16 +16,19 @@ public class MusicPlayer : MonoBehaviour
     {
         NONE,
         DEFAULT,
-        BATTLE
+        BATTLE,
+        KICKDOOR
     }
 
     public AudioSource audio_source_1;
     public AudioSource audio_source_2;
+    public AudioSource audio_source_door;
 
     //Very extensive list of epic songs
     public AudioClip default_song;
     public AudioClip battle_song;
     public AudioClip sea_shanty_song;
+    public AudioClip door_song;
 
     private Transitioning transitioning;
 
@@ -43,29 +46,23 @@ public class MusicPlayer : MonoBehaviour
 
         if (scene.name =="WinScene" || scene.name == "GameOver")
         {
-            /*
-            SelectSong(SongList.DEFAULT);
-            audio_source.Play();
-            //*/
-
-            //play default song
-            //audio_source_1.volume = 1;
-            //audio_source_2.volume = 0;
             transitioning = Transitioning.DEFAULT;
         }
 
+        /*
         if(scene.name == "SaloonScene")
         {
             /*
-            SelectSong(SongList.BATTLE);
-            audio_source.Play();
-            //*/
+            //SelectSong(SongList.BATTLE);
+            //audio_source.Play();
+            
 
             //play battle song
             //audio_source_1.volume = 0;
             //audio_source_2.volume = 1;
             transitioning = Transitioning.BATTLE;
         }
+        //*/
     }
 
     // Start is called before the first frame update
@@ -116,8 +113,31 @@ public class MusicPlayer : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void ForceStartBattleTheme()
     {
+        transitioning = Transitioning.KICKDOOR;
+        Invoke("KickTheDoor", 0.45f);
+        audio_source_door.PlayDelayed(0.05f);
+    }
+
+    void KickTheDoor()
+    {
+        audio_source_1.volume = 0;
+        audio_source_2.volume = 1;
+
+        audio_source_1.Stop();
+        audio_source_2.Stop();
+
+        audio_source_1.Play();
+        audio_source_2.Play();
+
+        Invoke("ResetDefaultSong", default_song.length);
+        Invoke("ResetBattleSong", battle_song.length);
+    }
+
+    private void FixedUpdate()
+    {
+        //redo as switch?
         if (transitioning != Transitioning.NONE)
         {
             if (transitioning == Transitioning.DEFAULT)
@@ -130,7 +150,7 @@ public class MusicPlayer : MonoBehaviour
                     transitioning = Transitioning.NONE;
                 }
             }
-            else //Battle
+            else if (transitioning == Transitioning.BATTLE)
             {
                 audio_source_1.volume -= 0.012f;
                 audio_source_2.volume += 0.012f;
@@ -140,10 +160,18 @@ public class MusicPlayer : MonoBehaviour
                     transitioning = Transitioning.NONE;
                 }
             }
+            else //Kicking open the saloon door
+            {
+                audio_source_1.volume -= 0.016f;
+
+                if (audio_source_2.volume > 0.99f)
+                {
+                    audio_source_1.volume = 0f;
+                    transitioning = Transitioning.NONE;
+                }
+            }
         }
 
-
-        
         if (Input.GetKeyDown(KeyCode.C))
         {
             transitioning = Transitioning.DEFAULT;
@@ -154,27 +182,4 @@ public class MusicPlayer : MonoBehaviour
             transitioning = Transitioning.BATTLE;
         }                   //*/
     }
-
-    // Update is called once per frame
-    /*
-    public void SelectSong(SongList song)
-    {
-        switch(song)
-        {
-            case SongList.DEFAULT:
-                audio_source.clip = default_song;
-                audio_source.Play();
-                break;
-
-            case SongList.BATTLE:
-                audio_source.clip = battle_song;
-                audio_source.Play();
-                break;
-
-            case SongList.SEA_SHANTY:
-                audio_source.clip = sea_shanty_song;
-                audio_source.Play();
-                break;
-        }
-    }//*/
 }

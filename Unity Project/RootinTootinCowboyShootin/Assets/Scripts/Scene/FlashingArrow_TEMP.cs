@@ -15,12 +15,6 @@ public class FlashingArrow_TEMP : MonoBehaviour
         ArrowOn();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void ArrowOn()
     {
         GetComponent<SpriteRenderer>().sprite = arrow_on;

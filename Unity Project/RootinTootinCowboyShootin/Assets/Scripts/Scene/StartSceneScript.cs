@@ -8,6 +8,7 @@ public class StartSceneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.LoadScene("TutorialScene");   
+        SceneManager.LoadScene("TutorialScene");
+        Cursor.visible = false;
     }
 }
