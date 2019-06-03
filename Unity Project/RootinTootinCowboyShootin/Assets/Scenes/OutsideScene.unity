@@ -1211,7 +1211,7 @@ MonoBehaviour:
     special_event: 0
   - type_of_event: 0
     enemy_variables:
-      enemy: {fileID: 5976167421542373025, guid: 6633c22ccb070b843957bdffb242b302,
+      enemy: {fileID: 186949717485371126, guid: 6fad7d9b8673e2f46820ad350fef064d,
         type: 3}
       spawnpoint: 2
       arrow_direction_1: 2
@@ -1281,6 +1281,7 @@ MonoBehaviour:
   score_stomping_bomb: 0
   score_defused_bomb: 0
   score_time_left_multiplier: 0
+  smol_plank: {fileID: 0}
 --- !u!1001 &1722094116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2236,6 +2237,11 @@ PrefabInstance:
       propertyPath: spawn_points.Array.data[3]
       value: 
       objectReference: {fileID: 389174665}
+    - target: {fileID: 6322381242667279025, guid: b4dc635166763f746acbc5d76a36d04b,
+        type: 3}
+      propertyPath: use_mouse
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6322381242704305761, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -2266,6 +2272,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 3.83
       objectReference: {fileID: 0}
+    - target: {fileID: 6322381242704305760, guid: b4dc635166763f746acbc5d76a36d04b,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000,
+        type: 0}
+    - target: {fileID: 6322381243022313832, guid: b4dc635166763f746acbc5d76a36d04b,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000,
+        type: 0}
+    - target: {fileID: 6322381243345426037, guid: b4dc635166763f746acbc5d76a36d04b,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 6322381243348460846, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
       propertyPath: m_Sprite
@@ -2318,29 +2342,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6322381242704305760, guid: b4dc635166763f746acbc5d76a36d04b,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 6322381243022313832, guid: b4dc635166763f746acbc5d76a36d04b,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 6322381243345426037, guid: b4dc635166763f746acbc5d76a36d04b,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 6322381242667279025, guid: b4dc635166763f746acbc5d76a36d04b,
-        type: 3}
-      propertyPath: use_mouse
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6322381243520293572, guid: b4dc635166763f746acbc5d76a36d04b, type: 3}
