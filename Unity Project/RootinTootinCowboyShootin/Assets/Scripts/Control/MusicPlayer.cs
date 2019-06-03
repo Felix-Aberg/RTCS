@@ -131,6 +131,8 @@ public class MusicPlayer : MonoBehaviour
         audio_source_1.Play();
         audio_source_2.Play();
 
+        FindObjectOfType<ScreenShake>().StartShake(100f, 1f);
+
         Invoke("ResetDefaultSong", default_song.length);
         Invoke("ResetBattleSong", battle_song.length);
     }
