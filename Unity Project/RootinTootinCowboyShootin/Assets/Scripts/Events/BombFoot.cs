@@ -94,11 +94,18 @@ public class BombFoot : MonoBehaviour
         FindObjectOfType<Score>().GiveScoreEvent(ScoreEvent.BOMB_DEFUSED);
         bool_bomb_defused = true;
         Debug.Log("the bomb has been defused");
-        Invoke("GoToWinScene", 2f);
+        Invoke("GoToEndScene", 3.5f);
     }
 
-    void GoToWinScene()
+    void GoToEndScene()
     {
-        FindObjectOfType<LevelFadeScript>().SwapLevel(Stages.WIN);
+        Score score = FindObjectOfType<Score>();
+        if (score != null)
+            score.SaveScore();
+        else
+            Debug.LogError("Scores not found when trying to update scores!!");
+        Destroy(GameObject.Find("DontDestroy"));
+
+        FindObjectOfType<LevelFadeScript>().SwapLevel(Stages.ENDING);
     }
 }

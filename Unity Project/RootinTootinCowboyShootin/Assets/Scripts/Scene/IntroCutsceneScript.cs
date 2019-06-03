@@ -10,6 +10,7 @@ public class IntroCutsceneScript : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false;
         Invoke("LoadSaloon", (float) VP.length);
     }
 
