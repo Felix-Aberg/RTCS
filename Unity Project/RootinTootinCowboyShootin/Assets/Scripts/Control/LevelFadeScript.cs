@@ -26,9 +26,17 @@ public class LevelFadeScript : MonoBehaviour
     public AudioSource audio_source;
     private bool footsteps_enabled;
 
+    void Update() //Go back to tutorial from any scene
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.R))
+        {
+            SwapLevel(Stages.TUTORIAL);
+        }
+    }
+
     public void SwapLevel(Stages stage)
     {
-        switch(stage)
+        switch (stage)
         {
             case Stages.TUTORIAL:
                 {
@@ -136,7 +144,7 @@ public class LevelFadeScript : MonoBehaviour
         }
 
         SceneManager.LoadScene(scene);
-        
+
 
 
         for (float f = 1f; f >= 0; f -= (Time.fixedDeltaTime / fade_in))
