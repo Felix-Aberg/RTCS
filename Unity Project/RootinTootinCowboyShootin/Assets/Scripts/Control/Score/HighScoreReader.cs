@@ -26,7 +26,7 @@ public class HighScoreReader : MonoBehaviour
 
             if (PlayerPrefs.GetInt("LastScore") == high_score[i] && !once)
             {
-                score_displays[i].color = Color.yellow;
+                score_displays[i].color = Color.white;
                 once = true;
             }
             score_displays[i].text = high_score[i].ToString();
