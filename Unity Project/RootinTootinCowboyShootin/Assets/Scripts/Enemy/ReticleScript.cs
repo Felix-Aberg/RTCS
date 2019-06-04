@@ -192,8 +192,12 @@ public class ReticleScript : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "TutorialScene")
             {
                 Tutorial tutorial = FindObjectOfType<Tutorial>();
-                tutorial.instructions.sprite = tutorial.instruction_sprites[2];
-                tutorial.state = 2;
+                tutorial.colliding = true;
+                if (tutorial.state == 1)
+                {
+                    tutorial.instructions.sprite = tutorial.instruction_sprites[2];
+                    tutorial.state = 2;
+                }
             }
         }
     }
@@ -210,8 +214,12 @@ public class ReticleScript : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "TutorialScene")
             {
                 Tutorial tutorial = FindObjectOfType<Tutorial>();
-                tutorial.instructions.sprite = tutorial.instruction_sprites[1];
-                tutorial.state = 1;
+                tutorial.colliding = false;
+                if (tutorial.state == 2)
+                {
+                    tutorial.instructions.sprite = tutorial.instruction_sprites[1];
+                    tutorial.state = 1;
+                }
             }
         }
     }
