@@ -48,6 +48,8 @@ public class Tutorial : MonoBehaviour
 
     public int state = 0;
 
+    bool once;
+
     AudioSource AS;
     public AudioClip step;
     public AudioClip gunshot;
@@ -82,8 +84,12 @@ public class Tutorial : MonoBehaviour
             {
                 if (crosshair.GetComponent<CrosshairScript>().current_reticle != null)
                 {
-                    AS.PlayOneShot(gunshot);
-                    TutorialComplete();
+                    if (!once)
+                    {
+                        once = true;
+                        AS.PlayOneShot(gunshot);
+                        TutorialComplete();
+                    }
                 }
             }
         }

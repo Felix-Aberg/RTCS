@@ -24,6 +24,8 @@ public class CrosshairScript : MonoBehaviour
     public GameObject[] hit_feedback_objects;
     public GameObject[] miss_feedback_objects;
 
+    bool once_t;
+
     void Start()
     {
         Cursor.visible = false;
@@ -60,8 +62,12 @@ public class CrosshairScript : MonoBehaviour
             {
                 if (SceneManager.GetActiveScene().name == "TutorialScene")
                 {
-                    GameObject.Find("Dancemat").GetComponent<Tutorial>().TutorialComplete();
-                    ShowHitFeedback();
+                    if (!once_t)
+                    {
+                        once_t = true;
+                        GameObject.Find("Dancemat").GetComponent<Tutorial>().TutorialComplete();
+                        ShowHitFeedback();
+                    }
                 }
 
                 else if (current_reticle.GetComponent<ReticleScript>().directions_correct)
