@@ -99,6 +99,10 @@ public class BombFoot : MonoBehaviour
 
     void GoToEndScene()
     {
+        //FindObjectOfType<MusicPlayer>().Win();
+
+
+
         Score score = FindObjectOfType<Score>();
         if (score != null)
             score.SaveScore();

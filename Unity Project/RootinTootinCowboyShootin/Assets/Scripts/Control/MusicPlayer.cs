@@ -12,12 +12,13 @@ public class MusicPlayer : MonoBehaviour
         SEA_SHANTY
     }
 
-    private enum Transitioning
+    public enum Transitioning
     {
         NONE,
         DEFAULT,
         BATTLE,
-        KICKDOOR
+        KICKDOOR,
+        SILENCE
     }
 
     public AudioSource audio_source_1;
@@ -30,7 +31,7 @@ public class MusicPlayer : MonoBehaviour
     public AudioClip sea_shanty_song;
     public AudioClip door_song;
 
-    private Transitioning transitioning;
+    public Transitioning transitioning;
 
     // called first
     void OnEnable()
@@ -39,14 +40,42 @@ public class MusicPlayer : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    public void Win()
+    {
+        transitioning = Transitioning.DEFAULT;
+
+        audio_source_1.Stop();
+        audio_source_2.Stop();
+
+        audio_source_1.Play();
+        audio_source_2.Play();
+
+        Invoke("ResetDefaultSong", default_song.length);
+        Invoke("ResetBattleSong", battle_song.length);
+    }
+
     // called second
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
 
-        if (scene.name =="WinScene" || scene.name == "GameOver")
+        if (scene.name == "EndScene" || scene.name == "WinScene")
         {
             transitioning = Transitioning.DEFAULT;
+
+            audio_source_1.Stop();
+            audio_source_2.Stop();
+
+            audio_source_1.Play();
+            audio_source_2.Play();
+
+            Invoke("ResetDefaultSong", default_song.length);
+            Invoke("ResetBattleSong", battle_song.length);
+        }
+
+        if (scene.name == "GameOver")
+        {
+            transitioning = Transitioning.SILENCE;
         }
 
         /*
@@ -162,7 +191,7 @@ public class MusicPlayer : MonoBehaviour
                     transitioning = Transitioning.NONE;
                 }
             }
-            else //Kicking open the saloon door
+            else if (transitioning == Transitioning.KICKDOOR)//Kicking open the saloon door
             {
                 audio_source_1.volume -= 0.016f;
 
@@ -171,6 +200,28 @@ public class MusicPlayer : MonoBehaviour
                     audio_source_1.volume = 0f;
                     transitioning = Transitioning.NONE;
                 }
+            }
+            else if (transitioning == Transitioning.SILENCE)//Kicking open the saloon door
+            {
+                Debug.Log("transitioning: silence");
+                audio_source_1.volume -= 0.02f;
+                audio_source_2.volume -= 0.02f;
+
+                if (audio_source_1.volume < 0.02f)
+                {
+                    audio_source_1.volume = 0f;
+                }
+
+                if (audio_source_2.volume < 0.02f)
+                {
+                    audio_source_2.volume = 0f;
+                }
+
+                if (audio_source_1.volume < 0.02f && audio_source_2.volume < 0.02f)
+                {
+                    transitioning = Transitioning.NONE;
+                }
+                    
             }
         }
 

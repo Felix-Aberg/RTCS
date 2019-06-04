@@ -10,7 +10,6 @@ public class Tutorial : MonoBehaviour
 
     public WiiMote wiimote;
 
-    public SpriteRenderer checkmark;
     public SpriteRenderer explosion;
     public SpriteRenderer instructions;
     public SpriteRenderer circle;
@@ -236,11 +235,6 @@ public class Tutorial : MonoBehaviour
         }
 
         
-
-        StartCoroutine(ToggleSprite(checkmark, true, 0f));
-        StartCoroutine(ToggleSprite(checkmark, false, .3f));
-        StartCoroutine(ToggleSprite(checkmark, true, .5f));
-        StartCoroutine(ToggleSprite(checkmark, false, 1.2f));
     }
 
     public void TutorialComplete()
