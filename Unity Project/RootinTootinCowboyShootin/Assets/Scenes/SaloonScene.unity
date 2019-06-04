@@ -2921,7 +2921,7 @@ PrefabInstance:
     - target: {fileID: 6322381242667279026, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
       propertyPath: single_spawn_delay
-      value: 2
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6322381242667279026, guid: b4dc635166763f746acbc5d76a36d04b,
         type: 3}
