@@ -25,6 +25,15 @@ public class LossSceneScript : MonoBehaviour
         Destroy(GameObject.Find("DontDestroy"));
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            CancelInvoke();
+            GoToEndScene();
+        }
+    }
+
     void EnableText()
     {
         text.enabled = true;

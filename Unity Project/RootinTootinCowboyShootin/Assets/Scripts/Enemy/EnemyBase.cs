@@ -164,6 +164,7 @@ public class EnemyBase : MonoBehaviour
             AS.Stop();
             AS.PlayOneShot(oof);
             FindObjectOfType<Score>().GiveScoreEnemy(life_time);
+            FindObjectOfType<BombTimer>().time_left += life_time * .3f;
             dead = true;
             animator.SetTrigger("Dead");
             reticle.SetActive(false);

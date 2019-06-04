@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int lives;
+    public int max_lives;
     public Image[] life_images;
-    public Sprite health_empty;
+    public Sprite heart_empty;
+    public Sprite heart_full;
 
     AudioSource AS;
 
@@ -19,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         AS = GetComponent<AudioSource>();
+        max_lives = lives;
     }
 
     void CheckHealth()
@@ -41,12 +44,26 @@ public class PlayerHealth : MonoBehaviour
         CheckHealth();
     }
 
+    public void GiveLife()
+    {
+        lives++;
+
+        foreach  (Image img in life_images)
+        {
+            if (img.sprite == heart_empty)
+            {
+                img.sprite = heart_full;
+                return;
+            }
+        }
+    }
+
     void UpdateHealthbar()
     {
         for (int i = 0; i < life_images.Length; i++)
         {
             if (i > lives - 1)
-                life_images[i].sprite = health_empty;
+                life_images[i].sprite = heart_empty;
         }
     }
 

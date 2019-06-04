@@ -44,6 +44,11 @@ public class ShootWall : MonoBehaviour
     {
         StartCoroutine(ToggleGameObject(big_bang, true, 0f));
         StartCoroutine(ToggleGameObject(big_bang, false, .4f));
+
+        PlayerHealth ph = FindObjectOfType<PlayerHealth>();
+        if (ph.lives < ph.max_lives)
+            ph.GiveLife();
+
         gameObject.GetComponent<SpriteRenderer>().sprite = wall_hole;
         StartCoroutine(GoToNextScene(1.5f));
     }

@@ -77,24 +77,6 @@ public class MusicPlayer : MonoBehaviour
         {
             transitioning = Transitioning.SILENCE;
         }
-
-        if (scene.name == "TutorialScene")
-        {
-            CancelInvoke();
-
-            transitioning = Transitioning.DEFAULT;
-
-            audio_source_1.Stop();
-            audio_source_2.Stop();
-
-            audio_source_1.Play();
-            audio_source_2.Play();
-
-            Invoke("ResetDefaultSong", default_song.length);
-            Invoke("ResetBattleSong", battle_song.length);
-
-        }
-
         /*
         if(scene.name == "SaloonScene")
         {
@@ -109,6 +91,29 @@ public class MusicPlayer : MonoBehaviour
             transitioning = Transitioning.BATTLE;
         }
         //*/
+    }
+
+    public void OnRestart()
+    {
+        CancelInvoke();
+
+        transitioning = Transitioning.DEFAULT;
+
+        audio_source_1.Stop();
+        audio_source_2.Stop();
+
+        audio_source_1.Play();
+        audio_source_2.Play();
+
+        Invoke("ResetDefaultSong", default_song.length);
+        Invoke("ResetBattleSong", battle_song.length);
+    }
+
+    public void OnIntroSkip()
+    {
+        CancelInvoke();
+
+        transitioning = Transitioning.BATTLE;
     }
 
     // Start is called before the first frame update

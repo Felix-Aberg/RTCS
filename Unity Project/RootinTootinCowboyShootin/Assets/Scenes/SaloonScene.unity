@@ -2421,6 +2421,18 @@ PrefabInstance:
       propertyPath: image
       value: 
       objectReference: {fileID: 569987271}
+    - target: {fileID: 1591999600564327322, guid: b1c49543f9d75bc47a6ce14b27f5187f,
+        type: 3}
+      propertyPath: heart_full
+      value: 
+      objectReference: {fileID: 21300000, guid: ef7d6908dfcf27a488938f4b848e66ea,
+        type: 3}
+    - target: {fileID: 1591999600564327322, guid: b1c49543f9d75bc47a6ce14b27f5187f,
+        type: 3}
+      propertyPath: heart_empty
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c6642da8c30394b8154f127813d72d,
+        type: 3}
     - target: {fileID: 5280299589496149389, guid: b1c49543f9d75bc47a6ce14b27f5187f,
         type: 3}
       propertyPath: high_score.Array.size

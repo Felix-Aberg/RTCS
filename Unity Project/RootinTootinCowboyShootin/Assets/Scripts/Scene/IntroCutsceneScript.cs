@@ -14,6 +14,16 @@ public class IntroCutsceneScript : MonoBehaviour
         Invoke("LoadSaloon", (float) VP.length);
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            CancelInvoke("LoadSaloon");
+            FindObjectOfType<MusicPlayer>().OnIntroSkip();
+            LoadSaloon();
+        }
+    }
+
     void LoadSaloon()
     {
         FindObjectOfType<LevelFadeScript>().SwapLevel(Stages.SALOON);

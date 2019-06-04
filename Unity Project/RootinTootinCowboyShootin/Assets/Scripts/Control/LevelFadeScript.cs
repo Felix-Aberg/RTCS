@@ -30,6 +30,7 @@ public class LevelFadeScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.R))
         {
+            FindObjectOfType<MusicPlayer>().OnRestart();
             SwapLevel(Stages.TUTORIAL);
         }
     }

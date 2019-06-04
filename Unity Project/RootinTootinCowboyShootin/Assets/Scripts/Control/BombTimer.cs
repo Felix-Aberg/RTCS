@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class BombTimer : MonoBehaviour
 {
     public float bomb_timer;
-    float time_left;
+    public float time_left;
 
     public Image fuse;
     public Image fuse_fire;
