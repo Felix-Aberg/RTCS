@@ -61,6 +61,13 @@ public class GameMaster : MonoBehaviour
             //Reloads the current scene
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+
+
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.H))
+        {
+            FindObjectOfType<Score>().ClearHighScore();
+        }
     }
 
     void FixedUpdate()

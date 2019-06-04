@@ -248,7 +248,6 @@ MonoBehaviour:
   reticle: {fileID: 1556299730}
   crosshair: {fileID: 1839317014}
   wiimote: {fileID: 889698023}
-  checkmark: {fileID: 0}
   explosion: {fileID: 1629839184}
   instructions: {fileID: 1629976802}
   circle: {fileID: 428808043}
@@ -699,8 +698,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1920819651
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e27b41b69cf90b74f882e75e82acd5b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -813,8 +812,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2069226297
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -838,16 +837,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Prefab_Reticle
-      objectReference: {fileID: 0}
-    - target: {fileID: 2161999718850594642, guid: 91754ba4fb8714540830fa0d11c4becc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2161999718850594642, guid: 91754ba4fb8714540830fa0d11c4becc,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2161999718850594643, guid: 91754ba4fb8714540830fa0d11c4becc,
         type: 3}
@@ -919,6 +908,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.67497605
       objectReference: {fileID: 0}
+    - target: {fileID: 2161999718850594642, guid: 91754ba4fb8714540830fa0d11c4becc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161999718850594642, guid: 91754ba4fb8714540830fa0d11c4becc,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161999719791149293, guid: 91754ba4fb8714540830fa0d11c4becc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2161999720094281479, guid: 91754ba4fb8714540830fa0d11c4becc,
         type: 3}
       propertyPath: m_Sprite
@@ -926,11 +930,6 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 1b5394caf63569847b0604588f7d38bf,
         type: 3}
     - target: {fileID: 2161999720094281479, guid: 91754ba4fb8714540830fa0d11c4becc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2161999719791149293, guid: 91754ba4fb8714540830fa0d11c4becc,
         type: 3}
       propertyPath: m_Enabled
       value: 0

@@ -218,7 +218,7 @@ public class Score : MonoBehaviour
     // ## High Score Functions ## //
     
     //Clears the saved high scores, used for debugging.
-    void ClearHighScore()
+    public void ClearHighScore()
     {
         for (int i = 0; i < max_high_scores; i++)
         {
